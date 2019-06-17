@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Vegam-Iframe.master.cs" Inherits="Vegam_MaintenanceModule.Vegam_Iframe" %>
+<!DOCTYPE html>
+<html>
+<head id="HeadIFrame1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="<%= ConfigurationManager.AppSettings["MaintCssPath"].TrimEnd('/') %>/Styles/bootstrap.min.css"
+        rel="stylesheet" type="text/css" />
+    <!-- jquery ui CSS -->
+    <link href="<%= ConfigurationManager.AppSettings["MaintCssPath"].TrimEnd('/') %>/Styles/jquery-ui.min.css"
+        rel="stylesheet" type="text/css" />
+    <!-- font css -->
+    <link href="<%= ConfigurationManager.AppSettings["MaintCssPath"].TrimEnd('/') %>/Styles/fonts/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css" />
+    <!--ui-time-picker -->
+   <link href="<%= ConfigurationManager.AppSettings["MaintCssPath"].TrimEnd('/') %>/Styles/jquery.ui.timepicker.css"
+        rel="stylesheet" type="text/css" />
+    <!-- customized css -->
+    <link href="<%= ConfigurationManager.AppSettings["MaintCssPath"].TrimEnd('/') %>/Styles/vegam_h_v21.css"
+        rel="stylesheet" type="text/css" />
+    <!--[if IE 9]>
+    <link href="<%= ConfigurationManager.AppSettings["MaintCssPath"].TrimEnd('/') %>/Styles/IE9_Conditional_comments.css" rel="Stylesheet" type="text/css"/>
+    <![endif]-->
+    <!--css for test server-->
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/iPAS_Spin.js"></script>
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/iPAS_Spinner_bs4.js"></script>
+    <%--tether js file--%>
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/tether.min.js"></script>
+    <%--Bootstrap js file--%>
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/bootstrap.min.js"></script>
+    <%--Drag and drop for mobile js    --%>
+    <%--<script type="text/javascript" src="<%= ConfigurationManager.AppSettings["jsPath"].TrimEnd('/') %>/Scripts/jquery.ui.touch-punch.min.js"></script>--%>
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/iPAS_Common_v4.js"></script>
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/placeHolder.js"></script>
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/iPAS_SiteNames_v6.js"></script>
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/knockout-3.4.2.js"></script>
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/bootstrap-progressbar.js"></script>
+
+        <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/signalr/hubs"></script>
+
+      <link href="<%= ConfigurationManager.AppSettings["MaintCssPath"].TrimEnd('/') %>/Styles/tables_v3.css"
+        rel="Stylesheet" type="text/css" />
+
+
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/Vegam_SignalRClient_v2.js"></script>
+    <script type="text/javascript" src="<%= ConfigurationManager.AppSettings["MaintJsPath"].TrimEnd('/') %>/Scripts/VegamViewSignalR_v2.js"></script>
+    <script type="text/javascript">
+        function scrollWin(x, y) {
+            window.scrollBy(x, y);
+        }
+    </script>
+
+    <script type="text/javascript">
+        (function ($) {
+            $.QueryString = (function (a) {
+                if (a == "") return {};
+                var b = {};
+                for (var i = 0; i < a.length; ++i) {
+                    var p = a[i].split('=');
+                    if (p.length != 2) continue;
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+                }
+                return b;
+            })(window.location.search.substr(1).split('&'))
+        })(jQuery);
+    </script>
+   <%-- <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>--%>
+</head>
+<body>
+    <form id="Iframeform1" runat="server">
+       <div class="container-fluid nopadding">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderKPI" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    
+</body>
+</html>

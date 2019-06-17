@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e0c61203-7873-4fc8-8b13-d31b76803067" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1590/CompanyService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CompanyService9.xsd" MetadataType="Schema" ID="26a37028-585f-416a-90df-aaa5e578aa8f" SourceId="1" SourceUrl="http://localhost:1590/CompanyService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CompanyService10.xsd" MetadataType="Schema" ID="89b20450-d824-403c-9fb2-59e46d1fc848" SourceId="1" SourceUrl="http://localhost:1590/CompanyService.svc?xsd=xsd7" />
+    <MetadataFile FileName="CompanyService11.xsd" MetadataType="Schema" ID="7960695c-4c7d-49de-90b4-d6c04cda7176" SourceId="1" SourceUrl="http://localhost:1590/CompanyService.svc?xsd=xsd6" />
+    <MetadataFile FileName="CompanyService2.wsdl" MetadataType="Wsdl" ID="45ab95ad-9b0c-4e77-a4a7-8f5e391de1fa" SourceId="1" SourceUrl="http://localhost:1590/CompanyService.svc?wsdl" />
+    <MetadataFile FileName="CompanyService12.xsd" MetadataType="Schema" ID="788e532d-93ea-4fa4-90ea-2b9cd3967583" SourceId="1" SourceUrl="http://localhost:1590/CompanyService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CompanyService13.xsd" MetadataType="Schema" ID="2e5273ef-aa59-4af0-8f5a-b22ec93a83c8" SourceId="1" SourceUrl="http://localhost:1590/CompanyService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CompanyService14.xsd" MetadataType="Schema" ID="eb4f1539-9f89-4993-b990-00b18f331f38" SourceId="1" SourceUrl="http://localhost:1590/CompanyService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CompanyService15.xsd" MetadataType="Schema" ID="1915d4d0-f846-4a77-a575-63abd57e1adb" SourceId="1" SourceUrl="http://localhost:1590/CompanyService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CompanyService2.disco" MetadataType="Disco" ID="0c7c3a67-cc06-43fb-9460-8f9730a25124" SourceId="1" SourceUrl="http://localhost:1590/CompanyService.svc?disco" />
+    <MetadataFile FileName="CompanyService16.xsd" MetadataType="Schema" ID="e4f63903-c1f9-456f-8b73-b33951004b6d" SourceId="1" SourceUrl="http://localhost:1590/CompanyService.svc?xsd=xsd8" />
+    <MetadataFile FileName="CompanyService17.xsd" MetadataType="Schema" ID="1ee9e52c-17f6-4ad0-8c3f-f62fbadaf86f" SourceId="1" SourceUrl="http://localhost:1590/CompanyService.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

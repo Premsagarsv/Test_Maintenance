@@ -1,0 +1,34 @@
+﻿var languageResource = {};
+languageResource.resMsg_Error = "Error: ";
+languageResource.resMsg_AlreadyExistsWorkGroupName = "Work group name already exist";
+languageResource.resMsg_SuccessfullyInsertedWorkGroupInfo = "Successfully inserted work group information";
+languageResource.resMsg_SuccessfullyUpdatedWorkGroupInfo = "Successfully updated work group information";
+languageResource.resMsg_CanNotUpdatedAlreadyExistInInActiveState = "Work group info already exist in inactive state and can't be updated";
+languageResource.resMsg_FailedAddOrUpdateWorkGroupInfo = "Failed to add/update work group information";
+languageResource.resMsg_SaveandAddMore = "Save & Add More";
+languageResource.resMsg_Update = "Update";
+languageResource.resMsg_BtnConfirm = "Confirm";
+languageResource.resMsg_BtnCancel = "Cancel";
+languageResource.resMsg_BtnOK = "Ok";
+languageResource.resMsg_FailedToLoadWorkGroup = "Failed to load work group";
+languageResource.resMsg_FailedToLoadAutoCompleteForUser ="Failed to load autocomplete member list";
+languageResource.resMsg_FailedToLoadWorkGroupInfo = "Failed to load work group information";
+
+languageResource.resMsg_EnterGroupName = "Please enter work group name"; 
+languageResource.resMsg_UserAddedBothAssigneeAndReportTo = "Same member name cannot be added to both assignee and report to";
+languageResource.resMsg_EnterValidUserName = "Please enter a valid username";
+languageResource.resMsg_AlreadyAdded = " already added";
+languageResource.resMsg_AtleastOneNotificationEnable = "Atleast one notification should be enabled for ";
+languageResource.resMsg_PleaseEnterAtleastOneUser = "Please enter atleast one user for assignee/report to";
+
+languageResource.resMsg_DeleteWorkGroupInfoConfirm = "Are you sure you want to delete 'this' work group?";
+languageResource.resMsg_FailedToDeleteWorkGroupInfo = "Failed to delete work group information";
+languageResource.resMsg_DeleteWorkGroupUserInfoConfirm = "Are you sure you want to remove this user from work group?";
+languageResource.resMsg_CantDeleteWorkGroupInfo = "Can't delete member information, atleast one member should exists in a work group";
+languageResource.resMsg_WorkGroupUserInfoDoesnotExist = "User information does not exist in 'active' status";
+languageResource.resMsg_FailedToDeleteWorkGroupUserInfo = "Failed to delete work group member information";
+languageResource.resMsg_WorkGroupAlreadyLinkedToSchedule = "Work group is already mapped to schedule, can't be deleted";
+languageResource.resMsg_FailedToPerformOperation = "Failed to perform operation";
+languageResource.resMsg_InvalidSiteOrUser = "Invalid user/site identification number";
+languageResource.resMsg_InvalidFileFormat = "Invalid file format, Please select .xls or .xlsx file";
+languageResource.resMsg_FailedToUpload = "Failed to upload data";

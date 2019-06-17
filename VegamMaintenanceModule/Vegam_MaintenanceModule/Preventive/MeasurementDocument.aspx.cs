@@ -1,0 +1,122 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Web;
+using System.Web.Script.Serialization;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Vegam_MaintenanceModule.Preventive
+{
+    public partial class MeasurementDocument : iPAS_Base.BasePage
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                #region Script Resource
+
+                ScriptReference scriptReference = new ScriptReference();
+                scriptReference.Path = ConfigurationManager.AppSettings["MaintJsPath"].ToString().TrimEnd('/') + "/ScriptResources/MeasurementDocumentScriptResource.js";
+                string[] cultures = ConfigurationManager.AppSettings["SupportLanguages"].ToString().Split(',');
+                scriptReference.ResourceUICultures = CommonBLL.GetCultures(cultures, scriptReference.Path);
+                scriptManager.Scripts.Add(scriptReference);
+
+                #endregion
+
+                int siteID = CommonBLL.ValidateSiteID(Request);
+                if (siteID == 0)
+                {
+                    Response.Redirect(ConfigurationManager.AppSettings["NoAccessPage"].ToString());
+                }
+
+                //if loading page in edit mode
+                int maintScheduleID = 0;
+                if (Request.QueryString["maintscheduleid"] != null && Request.QueryString["maintscheduleid"].Trim().Length > 0)
+                {
+                    maintScheduleID = Convert.ToInt32(Request.QueryString["maintscheduleid"].ToString().Trim());
+                }
+
+                if (maintScheduleID > 0)
+                {
+                    btnAdd.Text = "Update";
+                }
+
+                int userID = this.CurrentUser.UserID;
+                int accessLevelID = CommonBLL.GetAccessLevelID(this.CurrentUser.AccessLevel);
+                bool hasDeleteAccess = false;
+                bool hasEditAccess = false;
+
+                AccessType accessType = ValidateUserPrivileges(siteID, accessLevelID);
+
+                if (accessType == AccessType.FULL_ACCESS)
+                {
+                    hasDeleteAccess = true;
+                }
+                if (accessType == AccessType.FULL_ACCESS || accessType == AccessType.EDIT_ONLY)
+                {
+                    hasEditAccess = true;
+                }
+
+                if(accessType==AccessType.FULL_ACCESS || (maintScheduleID > 0 && accessType == AccessType.EDIT_ONLY))
+                {
+                    btnAdd.Attributes.Add("onclick", "javascript:AddUpdateMeasurementDocument();return false;");
+                }
+                else
+                {
+                    btnAdd.Attributes.Add("disabled", "disabled");
+                }
+
+                if (accessType == AccessType.FULL_ACCESS)
+                {
+                    btnActivateSchedule.Attributes.Add("onclick", "javascript:ActivateScheduleInfoCinfirm();return false;");
+                }
+                else
+                {
+                    btnActivateSchedule.Attributes.Add("disabled", "disabled");
+                }
+
+                string basePath = ConfigurationManager.AppSettings["MaintBasePath"].ToString().TrimEnd('/');
+                string webServicePath = ConfigurationManager.AppSettings["MaintWebServicePath"].Trim();
+
+                //using pager for displaying maintenance types in configure maintenance types modal popup 
+                UserControls.PagerData measPointPagerData = new UserControls.PagerData();
+                measPointPagerData.PageIndex = 0;
+                measPointPagerData.PageSize = int.Parse(hdnPageSize.Value.ToString());
+                measPointPagerData.SelectMethod = "LoadAvailableMeasuringPoints";
+                measPointPagerData.ServicePath = webServicePath;
+                measPointPagerData.SiteID = siteID;
+                measPointPagerData.UserID = userID;
+                measPointPagerData.AccessLevelID = accessLevelID;
+                measPointPagerData.LoadControlID = btnAdd.ClientID;
+                measPointPagerData.PageAccessRights = accessType.ToString();
+
+
+                thAMFLocName.Attributes.Add("onclick", "javascript:SortMeasuringPointsTabs('" + thAMFLocName.ClientID + "','FLocationName',"+ (new JavaScriptSerializer()).Serialize(true) + ");");
+                thAMEquipment.Attributes.Add("onclick", "javascript:SortMeasuringPointsTabs('" + thAMEquipment.ClientID + "','Equipment'," + (new JavaScriptSerializer()).Serialize(true) + ");");
+                thAMMeasPoint.Attributes.Add("onclick", "javascript:SortMeasuringPointsTabs('" + thAMMeasPoint.ClientID + "','MeasuringPoint'," + (new JavaScriptSerializer()).Serialize(true) + ");");
+                thAMCategory.Attributes.Add("onclick", "javascript:SortMeasuringPointsTabs('" + thAMCategory.ClientID + "','Category'," + (new JavaScriptSerializer()).Serialize(true) + ");");
+
+                thSMFLocName.Attributes.Add("onclick", "javascript:SortMeasuringPointsTabs('" + thSMFLocName.ClientID + "','FLocationName'," + (new JavaScriptSerializer()).Serialize(false) + ");");
+                thSMEquipment.Attributes.Add("onclick", "javascript:SortMeasuringPointsTabs('" + thSMEquipment.ClientID + "','Equipment'," + (new JavaScriptSerializer()).Serialize(false) + ");");
+                thSMMeasPoint.Attributes.Add("onclick", "javascript:SortMeasuringPointsTabs('" + thSMMeasPoint.ClientID + "','MeasuringPoint'," + (new JavaScriptSerializer()).Serialize(false) + ");");
+                thSMCategory.Attributes.Add("onclick", "javascript:SortMeasuringPointsTabs('" + thSMCategory.ClientID + "','Category'," + (new JavaScriptSerializer()).Serialize(false) + ");");
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "InitMeasurementDocumentInfo", "javascript:InitMeasurementDocumentInfo(" + (new JavaScriptSerializer()).Serialize(measPointPagerData) + ",'" + basePath + "','" + maintScheduleID + "','" + hasDeleteAccess + "','" + hasEditAccess + "');", true);
+            }
+        }
+
+        private AccessType ValidateUserPrivileges(int siteID, int accessLevelID)
+        {
+            AccessType access = AccessType.NO_ACCESS;
+            access = CommonBLL.ValidateUserPrivileges(siteID, this.CurrentUser.SiteID, this.CurrentUser.UserID, accessLevelID, Convert.ToInt32(Language_Resources.MaintenancePageID_Resource.ManageChecklist));
+            if (access == AccessType.NO_ACCESS)
+            {
+                Response.Redirect(ConfigurationManager.AppSettings["NoAccessPage"].ToString());
+            }
+
+            return access;
+        }
+    }
+}

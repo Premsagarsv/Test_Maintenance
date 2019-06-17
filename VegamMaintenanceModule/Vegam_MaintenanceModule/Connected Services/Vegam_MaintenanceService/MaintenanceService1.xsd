@@ -1,0 +1,1835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9093/MaintenanceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" />
+  <xs:element name="InsertSelectedMeasuringPoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="measurementDocInfo" nillable="true" type="q1:MeasusrementDocumentScheduleInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSelectedMeasuringPointResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertSelectedMeasuringPointResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSelectedMeasuringPoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q2:MeasDocScheduleMeasPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSelectedMeasuringPointResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteSelectedMeasuringPointResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSparePartMaterialDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q3:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSparePartMaterialDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetSparePartMaterialDetailsResult" nillable="true" type="q4:ArrayOfMaintSparePartInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintSparePartDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q5:MaintenanceFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintSparePartDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetMaintSparePartDetailsResult" nillable="true" type="q6:ArrayOfMaintSparePartInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveMaintSparePartInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="maintSparePartDetails" nillable="true" type="q7:MaintSparePartDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveMaintSparePartInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveMaintSparePartInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaintSparePartInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q8:MaintSparePartFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaintSparePartInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMaintSparePartInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachmentDetailsForSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q9:MaintenanceFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachmentDetailsForScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetAttachmentDetailsForScheduleResult" nillable="true" type="q10:ArrayOfDocumentInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachmentDetailsForWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q11:BasicParam" />
+        <xs:element minOccurs="0" name="workOrderID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachmentDetailsForWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetAttachmentDetailsForWorkOrderResult" nillable="true" type="q12:ArrayOfDocumentInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserNameForAutoComplete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="searchInfo" nillable="true" type="q13:AutoCompleteSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserNameForAutoCompleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetUserNameForAutoCompleteResult" nillable="true" type="q14:ArrayOfAutoCompleteUserInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditWorkGroupInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="workGroupFilterInfo" nillable="true" type="q15:WorkGroupFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditWorkGroupInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetEditWorkGroupInfoResult" nillable="true" type="q16:WorkGroupInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateWorkGroupInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q17:BasicParam" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="workGroupInfo" nillable="true" type="q18:WorkGroupInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateWorkGroupInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateWorkGroupInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkGroupUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="workGroupFilterInfo" nillable="true" type="q19:WorkGroupFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWorkGroupUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteWorkGroupUserInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadWorkGroupExcelTemplateInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q20:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadWorkGroupExcelTemplateInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadWorkGroupExcelTemplateInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadAllWorkGroupInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="workGroupFilterInfo" nillable="true" type="q21:WorkGroupFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadAllWorkGroupInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadAllWorkGroupInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadExcelWorkGroupInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q22:BasicParam" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadExcelWorkGroupInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadExcelWorkGroupInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserWorkGroupInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q23:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserWorkGroupInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetUserWorkGroupInfoResult" nillable="true" type="q24:ArrayOfUserWorkGroupInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceViewWorkOrderInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filter" nillable="true" type="q25:WorkOrderResourceViewFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceViewWorkOrderInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetResourceViewWorkOrderInfoResult" nillable="true" type="q26:WorkOrderResourceViewInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderBasicInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filter" nillable="true" type="q27:WorkOrderFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderBasicInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetWorkOrderBasicInfoResult" nillable="true" type="q28:WorkOrderBasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderEquipmentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filter" nillable="true" type="q29:WorkOrderFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderEquipmentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetWorkOrderEquipmentInfoResult" nillable="true" type="q30:WorkOrderEquipmentInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderEquipmentHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q31:BasicParam" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="equipmentHistoryFilter" nillable="true" type="q32:EquipmentHistoryFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderEquipmentHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetWorkOrderEquipmentHistoryResult" nillable="true" type="q33:WorkOrderEquipmentHistoryDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderTaskInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filter" nillable="true" type="q34:WorkOrderFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderTaskInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetWorkOrderTaskInfoResult" nillable="true" type="q35:WorkOrderTaskDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartWorkOrderTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="startTaskInfo" nillable="true" type="q36:WorkOrderTaskProcessInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartWorkOrderTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="StartWorkOrderTaskResult" nillable="true" type="q37:TaskStartEndReturnInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndWorkOrderTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="endTaskInfo" nillable="true" type="q38:WorkOrderTaskProcessInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EndWorkOrderTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="EndWorkOrderTaskResult" nillable="true" type="q39:TaskStartEndReturnInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTaskParameterValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="taskParameter" nillable="true" type="q40:TaskParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTaskParameterValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveTaskParameterValueResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertWorkOrderTaskImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="imageUploadInfo" nillable="true" type="q41:WorkOrderTaskImageUploadInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertWorkOrderTaskImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="InsertWorkOrderTaskImageResult" nillable="true" type="q42:WorkOrderTaskImageInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderSpareParts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q43:WorkOrderFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkOrderSparePartsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetWorkOrderSparePartsResult" nillable="true" type="q44:WorkOrderSparePartsInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveWorkOrderSparePartInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q45:MaintSparePartDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveWorkOrderSparePartInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveWorkOrderSparePartInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseWorkOrderInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="workOrderCloseFilter" nillable="true" type="q46:WorkOrderCloseInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseWorkOrderInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CloseWorkOrderInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllToolsInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q47:ToolsFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllToolsInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetAllToolsInfoResult" nillable="true" type="q48:ToolsListInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateToolInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q49:BasicParam" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="toolsInfo" nillable="true" type="q50:ToolsInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateToolInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateToolInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteToolsInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q51:BasicParam" />
+        <xs:element minOccurs="0" name="toolID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteToolsInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteToolsInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadSparePartsTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q52:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadSparePartsTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadSparePartsTemplateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadSparePartsListExcel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filter" nillable="true" type="q53:SparePartsFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadSparePartsListExcelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadSparePartsListExcelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadSparePartsinfoExcel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q54:BasicParam" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadSparePartsinfoExcelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadSparePartsinfoExcelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q55:BasicParam" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="notificationFilter" nillable="true" type="q56:NotificationtFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetNotificationListResult" nillable="true" type="q57:NotificationList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q58:BasicParam" />
+        <xs:element minOccurs="0" name="notificationID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetNotificationInfoResult" nillable="true" type="q59:NotificationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateNotificationInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q60:BasicParam" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="notificationInfo" nillable="true" type="q61:NotificationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateNotificationInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUpdateNotificationInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteNotificationInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q62:BasicParam" />
+        <xs:element minOccurs="0" name="notificationID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteNotificationInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteNotificationInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentListForDropDown">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="equipmentFilterInfo" nillable="true" type="q63:EquipmentFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentListForDropDownResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetEquipmentListForDropDownResult" nillable="true" type="q64:ArrayOfTypeValueInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachmentDetailsForNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q65:BasicParam" />
+        <xs:element minOccurs="0" name="notificationID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttachmentDetailsForNotificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetAttachmentDetailsForNotificationResult" nillable="true" type="q66:ArrayOfDocumentInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextNotificationSequenceID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q67:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextNotificationSequenceIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNextNotificationSequenceIDResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcceptNotificationInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q68:BasicParam" />
+        <xs:element minOccurs="0" name="notificationID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcceptNotificationInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AcceptNotificationInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseNotificationInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q69:BasicParam" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="notificationInfo" nillable="true" type="q70:NotificationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseNotificationInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CloseNotificationInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintenanceFeatureInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q71:BasicParam" />
+        <xs:element minOccurs="0" name="featureName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintenanceFeatureInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetMaintenanceFeatureInfoResult" nillable="true" type="q72:ArrayOfMaintenanceFeatureInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteDateTimeFormatInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteDateTimeFormatInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetSiteDateTimeFormatInfoResult" nillable="true" type="q73:SiteDateTimeFormatInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteCurrentDateTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteCurrentDateTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetSiteCurrentDateTimeResult" nillable="true" type="q74:DateTimeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnumInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q75:BasicParam" />
+        <xs:element minOccurs="0" name="EnumType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnumInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetEnumInfoListResult" nillable="true" type="q76:ArrayOfEnumTypeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateRandomCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q77:BasicParam" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="infoType" type="q78:InfoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateRandomCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateRandomCodeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateUserPreference">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q79:UserPreferenceFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateUserPreferenceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateUserPreferenceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFunctionalLocInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="functionalLocFilterInfo" nillable="true" type="q80:FLocationFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFunctionalLocInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetAllFunctionalLocInfoResult" nillable="true" type="q81:FLocationListInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFunctionalLocList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterFLocInfo" nillable="true" type="q82:FLocationFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFunctionalLocListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetAllFunctionalLocListResult" nillable="true" type="q83:FLocationListDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFLocationEditInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q84:BasicParam" />
+        <xs:element minOccurs="0" name="fLocationID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFLocationEditInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetFLocationEditInfoResult" nillable="true" type="q85:FLocationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateFunctionalLocInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q86:BasicParam" />
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="functionalLocInfo" nillable="true" type="q87:FLocationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateFunctionalLocInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="InsertOrUpdateFunctionalLocInfoResult" nillable="true" type="q88:AddFLocationReturnInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFunctionalLocInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q89:BasicParam" />
+        <xs:element minOccurs="0" name="functionalLocationID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFunctionalLocInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteFunctionalLocInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFunctionalLocListForHierarchicalDropDown">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="fLocationFilterInfo" nillable="true" type="q90:FLocationFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFunctionalLocListForHierarchicalDropDownResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetFunctionalLocListForHierarchicalDropDownResult" nillable="true" type="q91:ArrayOfHierarchicalListInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParentLocationDropDown">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="parentlocationFilter" nillable="true" type="q92:FLocationFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParentLocationDropDownResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetParentLocationDropDownResult" nillable="true" type="q93:ArrayOfLocationWorkGroupInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserWorkGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q94:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserWorkGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetUserWorkGroupsResult" nillable="true" type="q95:ArrayOfTypeValueInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFuncLocForSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterFLocationInfo" nillable="true" type="q96:FLocationFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFuncLocForScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetAllFuncLocForScheduleResult" nillable="true" type="q97:FLocationListInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadFunctionalLocationInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="locationFilterInfo" nillable="true" type="q98:FLocationFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadFunctionalLocationInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadFunctionalLocationInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadFunctionalLocationTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q99:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadFunctionalLocationTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadFunctionalLocationTemplateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFunctionalLocationInfoExcel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q100:BasicParam" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="unzipedFolderName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFunctionalLocationInfoExcelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadFunctionalLocationInfoExcelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllEquipmentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="equipmentFilterInfo" nillable="true" type="q101:EquipmentFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllEquipmentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetAllEquipmentInfoResult" nillable="true" type="q102:EquipmentListInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="equipmentFilterInfo" nillable="true" type="q103:EquipmentFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetEquipmentInfoListResult" nillable="true" type="q104:EquipmentDetailList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentEditInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="equipmentFilterInfo" nillable="true" type="q105:EquipmentFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentEditInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetEquipmentEditInfoResult" nillable="true" type="q106:EquipmentDetailsInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateEquipmentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q107:BasicParam" />
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="equipmentDetailsInfo" nillable="true" type="q108:EquipmentDetailsInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateEquipmentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="InsertOrUpdateEquipmentInfoResult" nillable="true" type="q109:AddFLocationReturnInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEquipmentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q110:BasicParam" />
+        <xs:element minOccurs="0" name="equipmentID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEquipmentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteEquipmentInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q111:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetResourceInfoResult" nillable="true" type="q112:ArrayOfKeyValueInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEquipmentSupportInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="supportInfoFilter" nillable="true" type="q113:EquipmentSupportInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEquipmentSupportInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteEquipmentSupportInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllEquipmentModelList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="equipmentFilterInfo" nillable="true" type="q114:EquipmentFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllEquipmentModelListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetAllEquipmentModelListResult" nillable="true" type="q115:EquipmentModelListDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParentEquipmentListDropDown">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="parentEquipmentFilter" nillable="true" type="q116:EquipmentFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetParentEquipmentListDropDownResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetParentEquipmentListDropDownResult" nillable="true" type="q117:ArrayOfEquipmentDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllEquipmentLocationInfoSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="equipmentFilterInfo" nillable="true" type="q118:EquipmentFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllEquipmentLocationInfoScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetAllEquipmentLocationInfoScheduleResult" nillable="true" type="q119:EquipmentListInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadEquipmentTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q120:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadEquipmentTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadEquipmentTemplateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadEquipmentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="equipmentFilterInfo" nillable="true" type="q121:EquipmentFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadEquipmentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadEquipmentInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadEquipmentInfoExcel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q122:BasicParam" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="unzipedFolderName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadEquipmentInfoExcelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadEquipmentInfoExcelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateEquipmentModelInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q123:BasicParam" />
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="equipmentDetailsInfo" nillable="true" type="q124:EquipmentDetailsInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateEquipmentModelInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateEquipmentModelInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentModelList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="equipmentFilterInfo" nillable="true" type="q125:EquipmentFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentModelListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetEquipmentModelListResult" nillable="true" type="q126:EquipmentModelListInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentModelInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="equipmentFilterInfo" nillable="true" type="q127:EquipmentFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEquipmentModelInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetEquipmentModelInfoResult" nillable="true" type="q128:EquipmentModelInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEquipmentModelInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q129:BasicParam" />
+        <xs:element minOccurs="0" name="equipmentModelID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEquipmentModelInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteEquipmentModelInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSensorTypeInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q130:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSensorTypeInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetSensorTypeInfoResult" nillable="true" type="q131:ArrayOfTypeValueInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSensorUnitInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q132:BasicParam" />
+        <xs:element minOccurs="0" name="sensorTypeID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSensorUnitInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetSensorUnitInfoResult" nillable="true" type="q133:ArrayOfTypeValueInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMeasuringPointList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="measuringPointfilter" nillable="true" type="q134:MeasuringPointFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMeasuringPointListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetMeasuringPointListResult" nillable="true" type="q135:MeasuringPointListInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSelectedMeasuringPointInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q136:BasicParam" />
+        <xs:element minOccurs="0" name="measuringPointID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSelectedMeasuringPointInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetSelectedMeasuringPointInfoResult" nillable="true" type="q137:MeasuringPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMeasuringPointDropDownDataInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="measuringPointDataTypeFilterInfo" nillable="true" type="q138:MeasuringPointDataTypeFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMeasuringPointDropDownDataInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetMeasuringPointDropDownDataInfoResult" nillable="true" type="q139:MeasuringPointDataTypeList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateMeasuringPointInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q140:BasicParam" />
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="measuringPoint" nillable="true" type="q141:MeasuringPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateMeasuringPointInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUpdateMeasuringPointInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMeasuringPointInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q142:BasicParam" />
+        <xs:element minOccurs="0" name="measuringPointID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMeasuringPointInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMeasuringPointInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadMeasuringPointListTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q143:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadMeasuringPointListTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadMeasuringPointListTemplateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadMeasuringPointListExcel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filter" nillable="true" type="q144:MeasuringPointFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadMeasuringPointListExcelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadMeasuringPointListExcelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadMeasuringPointListExcel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q145:BasicParam" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="unzipedFolderName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadMeasuringPointListExcelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadMeasuringPointListExcelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDocumentsAndImagesInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filter" nillable="true" type="q146:DocumentBasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDocumentsAndImagesInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetAllDocumentsAndImagesInfoResult" nillable="true" type="q147:ArrayOfDocumentInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDocumentsAndImagesInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="documentFilterInfo" nillable="true" type="q148:DocumentFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDocumentsAndImagesInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertDocumentsAndImagesInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDocumentsAndImagesInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q149:BasicParam" />
+        <xs:element minOccurs="0" name="documentID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDocumentsAndImagesInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDocumentsAndImagesInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintMasterData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q150:BasicParam" />
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="masterDataFilterInfo" nillable="true" type="q151:MasterDataFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintMasterDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetMaintMasterDataResult" nillable="true" type="q152:MasterDataList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMaintMasterDropDownDataInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q153:BasicParam" />
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="masterDataDropDownListFilterInfo" nillable="true" type="q154:MasterDataDropDownListFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMaintMasterDropDownDataInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetAllMaintMasterDropDownDataInfoResult" nillable="true" type="q155:MasterDataDropDownList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateMasterData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q156:BasicParam" />
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="masterDataInfo" nillable="true" type="q157:MasterDataInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateMasterDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUpdateMasterDataResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMasterData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q158:BasicParam" />
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="masterDataInfo" nillable="true" type="q159:MasterDataInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMasterDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMasterDataResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskGroupInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q160:BasicParam" />
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="taskGroupFilterInfo" nillable="true" type="q161:TaskGroupFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskGroupInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetTaskGroupInfoResult" nillable="true" type="q162:TaskGroupBasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTaskGroupInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q163:BasicParam" />
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="taskGroupInfo" nillable="true" type="q164:TaskGroupBasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTaskGroupInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="SaveTaskGroupInfoResult" nillable="true" type="q165:TaskGroupIdentifier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTaskGroupInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q166:BasicParam" />
+        <xs:element xmlns:q167="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="taskGroupfilterInfo" nillable="true" type="q167:TaskGroupFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTaskGroupInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTaskGroupInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveGroupTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q168:BasicParam" />
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="taskGroupfilterInfo" nillable="true" type="q169:TaskGroupFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveGroupTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ApproveGroupTaskResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q170:BasicParam" />
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="taskFilterInfo" nillable="true" type="q171:TaskGroupFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetTaskInfoResult" nillable="true" type="q172:ArrayOfTaskInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTaskInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q173:BasicParam" />
+        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q174:TaskGroupFilterInfo" />
+        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="taskInfo" nillable="true" type="q175:TaskInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTaskInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="SaveTaskInfoResult" nillable="true" type="q176:TaskGroupIdentifier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTaskInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q177="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q177:BasicParam" />
+        <xs:element xmlns:q178="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q178:TaskGroupFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTaskInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="DeleteTaskInfoResult" nillable="true" type="q179:TaskGroupIdentifier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTaskSequenceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q180="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q180:BasicParam" />
+        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q181:TaskGroupFilterInfo" />
+        <xs:element xmlns:q182="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="taskBasicInfoList" nillable="true" type="q182:ArrayOfTaskBasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTaskSequenceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q183="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="SaveTaskSequenceInfoResult" nillable="true" type="q183:TaskGroupIdentifier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPPIDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q184="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q184:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPPIDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q185="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetPPIDetailsResult" nillable="true" type="q185:ArrayOfInstructionSelectorInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetToolsDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q186="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q186:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetToolsDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q187="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetToolsDetailsResult" nillable="true" type="q187:ArrayOfInstructionSelectorInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadSOPTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q188="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q188:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadSOPTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadSOPTemplateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadTaskGroupZip">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q189="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="basicParam" nillable="true" type="q189:BasicParam" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadTaskGroupZipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadTaskGroupZipResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateMaintenanceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q190="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="maintenanceInfo" nillable="true" type="q190:MaintenanceInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateMaintenanceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q191="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="InsertUpdateMaintenanceInfoResult" nillable="true" type="q191:MaintenanceIdentityInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintenanceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q192="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q192:MaintenanceFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintenanceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q193="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetMaintenanceInfoResult" nillable="true" type="q193:MaintenanceInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaintenanceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q194="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q194:MaintenanceFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaintenanceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMaintenanceInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkGroupOfEquipemntOrLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q195="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q195:MaintWorkGroupFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkGroupOfEquipemntOrLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q196="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetWorkGroupOfEquipemntOrLocationResult" nillable="true" type="q196:ArrayOfTypeValueInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelmaintenanceWorkOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q197="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q197:MaintenanceFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelmaintenanceWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancelmaintenanceWorkOrderResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaintWorkOrderScheduleDateTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q198="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q198:MaintenanceFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaintWorkOrderScheduleDateTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateMaintWorkOrderScheduleDateTimeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskGroupList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q199="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q199:MaintTaskGroupFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskGroupListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q200="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetTaskGroupListResult" nillable="true" type="q200:ArrayOfMaintTaskGroupInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskDetailsForTaskGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q201="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q201:MaintTaskGroupFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskDetailsForTaskGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q202="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetTaskDetailsForTaskGroupResult" nillable="true" type="q202:ArrayOfMaintTaskInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaintenanceTaskGroupInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q203="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q203:MaintTaskGroupFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaintenanceTaskGroupInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateMaintenanceTaskGroupInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskGroupIdentifier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q204="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q204:MaintTaskGroupFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskGroupIdentifierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTaskGroupIdentifierResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaintenanceTaskInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q205="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q205:MaintTaskGroupFilterInfo" />
+        <xs:element xmlns:q206="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="taskInfo" nillable="true" type="q206:TaskInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaintenanceTaskInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q207="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="UpdateMaintenanceTaskInfoResult" nillable="true" type="q207:TaskGroupIdentifier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintScheduleDetailInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q208="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q208:ScheduleFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaintScheduleDetailInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q209="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetMaintScheduleDetailInfoResult" nillable="true" type="q209:ScheduleDetailInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateMaintenanceScheduleDetailInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q210="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="schdDetailInfo" nillable="true" type="q210:ScheduleDetailInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateMaintenanceScheduleDetailInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUpdateMaintenanceScheduleDetailInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateMaintenanceSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q211="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q211:ScheduleFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateMaintenanceScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActivateMaintenanceScheduleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InActivateMaintenanceSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q212="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q212:ScheduleFilterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InActivateMaintenanceScheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InActivateMaintenanceScheduleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleWorkOrderDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q213="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q213:ScheduleWorkOrderFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduleWorkOrderDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q214="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetScheduleWorkOrderDetailsResult" nillable="true" type="q214:ScheduleWorkOrderDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoReScheduleWorkOrder">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoReScheduleWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoUpdateMaintenanceScheduleWorkOrder">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoUpdateMaintenanceScheduleWorkOrderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoUpdateScheduleBasedOnLastPerformanceDate">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoUpdateScheduleBasedOnLastPerformanceDateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMeasurementDocumentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q215="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q215:MeasurementDocumentFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMeasurementDocumentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q216="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetMeasurementDocumentInfoResult" nillable="true" type="q216:MeasurementDocumentInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMeasDocMeasuringPoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q217="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="filterInfo" nillable="true" type="q217:MeasurementDocumentFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMeasDocMeasuringPointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q218="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" minOccurs="0" name="GetMeasDocMeasuringPointsResult" nillable="true" type="q218:MeasurementDocumentInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,14 @@
+﻿var LanguageResource = {};
+LanguageResource.resMsg_Ok = "Ok";
+LanguageResource.resMsg_Error = "Error : ";
+LanguageResource.resMsg_Event = "Event";
+LanguageResource.resMsg_StartTime = "Start Time";
+LanguageResource.resMsg_EndTime = "End Time";
+LanguageResource.resMsg_WorkOrder = "Work Order";
+LanguageResource.resMsg_Name = "Name";
+LanguageResource.resMsg_Select = "Select";
+LanguageResource.resMsg_FailedToLoadResourceInfo = "Failed to load resource info";
+LanguageResource.resMsg_ResourceInfoNotExistsInSystem = "Resource info not exists in system";
+LanguageResource.resMsg_EquipmentDetailsAreNotExists = "Equipment details not exists";
+LanguageResource.resMsg_FailedToLoadResourceViewTimelineInfo = "Failed to load resorce view timeline info";
+LanguageResource.resMsg_EquipmentNotExists = "Equipment not exists";

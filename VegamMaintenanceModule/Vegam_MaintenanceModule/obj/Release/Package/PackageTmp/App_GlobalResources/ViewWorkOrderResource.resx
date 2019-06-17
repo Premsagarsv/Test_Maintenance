@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="actualEndDate" xml:space="preserve">
+    <value>Actual End Date</value>
+  </data>
+  <data name="actualStartDate" xml:space="preserve">
+    <value>Actual Start Date</value>
+  </data>
+  <data name="actualTime" xml:space="preserve">
+    <value>Actual Time (Min)</value>
+  </data>
+  <data name="assignedTo" xml:space="preserve">
+    <value>Assigned To</value>
+  </data>
+  <data name="capture" xml:space="preserve">
+    <value>Capture</value>
+  </data>
+  <data name="confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="end" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="endDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="equipmentClass" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="equipmentDetails" xml:space="preserve">
+    <value>Equipment Details</value>
+  </data>
+  <data name="equipmentName" xml:space="preserve">
+    <value>Equipment Name</value>
+  </data>
+  <data name="equipmentType" xml:space="preserve">
+    <value>Equipment Type</value>
+  </data>
+  <data name="estimatedTime" xml:space="preserve">
+    <value>Estimated Time (Min)</value>
+  </data>
+  <data name="files" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="general" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="images" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="installDate" xml:space="preserve">
+    <value>Installed Date</value>
+  </data>
+  <data name="location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="maintenanceName" xml:space="preserve">
+    <value>Maintenance Name</value>
+  </data>
+  <data name="maintenanceType" xml:space="preserve">
+    <value>Maintenance Type</value>
+  </data>
+  <data name="manufacturer" xml:space="preserve">
+    <value>Manufacturer</value>
+  </data>
+  <data name="modelName" xml:space="preserve">
+    <value>Model Name</value>
+  </data>
+  <data name="modelNumber" xml:space="preserve">
+    <value>Model Number</value>
+  </data>
+  <data name="parameterName" xml:space="preserve">
+    <value>Recording Parameter Name</value>
+  </data>
+  <data name="ppe" xml:space="preserve">
+    <value>PPE</value>
+  </data>
+  <data name="priority" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="purchaseDate" xml:space="preserve">
+    <value>Purchased Date</value>
+  </data>
+  <data name="remarks" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="reportedTo" xml:space="preserve">
+    <value>Reported To</value>
+  </data>
+  <data name="safetyInstruction" xml:space="preserve">
+    <value>Safety Instruction</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="scheduledDate" xml:space="preserve">
+    <value>Scheduled Date</value>
+  </data>
+  <data name="serialNumber" xml:space="preserve">
+    <value>Serial Number</value>
+  </data>
+  <data name="start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="startDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="startedBy" xml:space="preserve">
+    <value>Started By</value>
+  </data>
+  <data name="startTask" xml:space="preserve">
+    <value>Start Task</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="warrentyExpiry" xml:space="preserve">
+    <value>Warranty Expiry</value>
+  </data>
+  <data name="warrentyNumber" xml:space="preserve">
+    <value>Warranty Number</value>
+  </data>
+  <data name="warrentyStatus" xml:space="preserve">
+    <value>Warranty Status</value>
+  </data>
+  <data name="workInstructions" xml:space="preserve">
+    <value>Work Instructions</value>
+  </data>
+  <data name="manuals" xml:space="preserve">
+    <value>Manuals</value>
+  </data>
+  <data name="photosAndVideos" xml:space="preserve">
+    <value>Photos &amp; Videos</value>
+  </data>
+  <data name="specificationDocuments" xml:space="preserve">
+    <value>Specification Documents</value>
+  </data>
+  <data name="taskGroupNotFound" xml:space="preserve">
+    <value>Task Group Is Not Found</value>
+  </data>
+  <data name="documents" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="noRecordFound" xml:space="preserve">
+    <value>No record found</value>
+  </data>
+  <data name="materialCodeAndDesc" xml:space="preserve">
+    <value>Material Code And Description</value>
+  </data>
+  <data name="requiredQuantity" xml:space="preserve">
+    <value>Required Quantity</value>
+  </data>
+  <data name="spareParts" xml:space="preserve">
+    <value>Spare parts</value>
+  </data>
+  <data name="uom" xml:space="preserve">
+    <value>UOM</value>
+  </data>
+  <data name="usedQuantity" xml:space="preserve">
+    <value>Used Quantity</value>
+  </data>
+  <data name="from" xml:space="preserve">
+    <value>From :</value>
+  </data>
+  <data name="maintName" xml:space="preserve">
+    <value>M.Name</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>To :</value>
+  </data>
+  <data name="workOrder" xml:space="preserve">
+    <value>Work Order</value>
+  </data>
+  <data name="showAll" xml:space="preserve">
+    <value>Show All</value>
+  </data>
+  <data name="completeDate" xml:space="preserve">
+    <value>Completed Date</value>
+  </data>
+  <data name="all" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="maintenanceHistory" xml:space="preserve">
+    <value>Maintenance History</value>
+  </data>
+  <data name="measuringPointList" xml:space="preserve">
+    <value>Measuring Point List</value>
+  </data>
+  <data name="mpReadingHistory" xml:space="preserve">
+    <value>MP Reading History</value>
+  </data>
+  <data name="locationName" xml:space="preserve">
+    <value>Location Name</value>
+  </data>
+  <data name="SOPNotFound" xml:space="preserve">
+    <value>SOP not found</value>
+  </data>
+  <data name="actualDuration" xml:space="preserve">
+    <value>Time Spent</value>
+  </data>
+  <data name="breakdownDuration" xml:space="preserve">
+    <value>Breakdown Duration</value>
+  </data>
+  <data name="breakdownEndDate" xml:space="preserve">
+    <value>Breakdown End Time</value>
+  </data>
+  <data name="breakdownStartDate" xml:space="preserve">
+    <value>Breakdown Start Time </value>
+  </data>
+  <data name="laborTime" xml:space="preserve">
+    <value>Total Labor Time</value>
+  </data>
+  <data name="saveCloseWorkOrder" xml:space="preserve">
+    <value>Save &amp; Close Work Order</value>
+  </data>
+  <data name="workEndDate" xml:space="preserve">
+    <value>Work End Time</value>
+  </data>
+  <data name="workStartDate" xml:space="preserve">
+    <value>Work Start Time </value>
+  </data>
+  <data name="breakdown" xml:space="preserve">
+    <value>Break down ?</value>
+  </data>
+  <data name="reviewCloseWorkOrder" xml:space="preserve">
+    <value>Review &amp; Close Work Order</value>
+  </data>
+  <data name="closedBy" xml:space="preserve">
+    <value>Closed by</value>
+  </data>
+  <data name="closedOn" xml:space="preserve">
+    <value>Closed on</value>
+  </data>
+  <data name="workOrderSummary" xml:space="preserve">
+    <value>Work Order Summary</value>
+  </data>
+  <data name="warrentyDetails" xml:space="preserve">
+    <value>Warrenty Details</value>
+  </data>
+</root>

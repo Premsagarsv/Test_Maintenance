@@ -1,0 +1,1883 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" />
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service" />
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" />
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/DynamicGrid" />
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" />
+  <xs:element name="GetSensorTypeUomList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="filterForEdit" nillable="true" type="q1:MeasuringAttributeFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSensorTypeUomListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetSensorTypeUomListResult" nillable="true" type="q2:SensorTypeUOMList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateSensorTypeUOMInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="sensorTypeUOMInfo" nillable="true" type="q3:SensorTypeUOMInfo" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q4:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateSensorTypeUOMInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUpdateSensorTypeUOMInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSensorTypeInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sensorTypeID" type="xs:int" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSensorTypeInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetSensorTypeInfoResult" nillable="true" type="q5:SensorTypeUOMInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSensorType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sensorTypeID" type="xs:int" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSensorTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteSensorTypeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSensorTypeUOM">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uomID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSensorTypeUOMResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteSensorTypeUOMResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadMeasuringAttributeTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="attrFilter" nillable="true" type="q6:MeasuringAttributeFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadMeasuringAttributeTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadMeasuringAttributeTemplateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadAllConfiguredMeasuringAttribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="attrFilter" nillable="true" type="q7:MeasuringAttributeFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadAllConfiguredMeasuringAttributeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadAllConfiguredMeasuringAttributeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SyncMeasuringAttributeFromExcel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q8:BasicParam" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="attrFilter" nillable="true" type="q9:MeasuringAttributeFilter" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SyncMeasuringAttributeFromExcelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SyncMeasuringAttributeFromExcelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefectInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q10:BasicParam" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="defectInfoFilter" nillable="true" type="q11:DefectInfoFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefectInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetDefectInfoResult" nillable="true" type="q12:DefectListInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateDefectInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q13:BasicParam" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="defectInfo" nillable="true" type="q14:DefectInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateDefectInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateDefectInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDefect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q15:BasicParam" />
+        <xs:element minOccurs="0" name="defectID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDefectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDefectResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefectAgencyInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q16:BasicParam" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="defectAgencyFillter" nillable="true" type="q17:DefectAgencyFillter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefectAgencyInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetDefectAgencyInfoResult" nillable="true" type="q18:DefectAgencyInfoList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateDefectAgency">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q19:BasicParam" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="defectAgency" nillable="true" type="q20:DefectAgency" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateDefectAgencyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateDefectAgencyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDefectAgency">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q21:BasicParam" />
+        <xs:element minOccurs="0" name="defectAgencyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDefectAgencyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDefectAgencyResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefectSourceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q22:BasicParam" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="defectSourceFilter" nillable="true" type="q23:DefectSourceFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefectSourceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetDefectSourceInfoResult" nillable="true" type="q24:DefectSourceInfoList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateDefectSources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q25:BasicParam" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="defectSource" nillable="true" type="q26:DefectSource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateDefectSourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateDefectSourcesResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDefectSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q27:BasicParam" />
+        <xs:element minOccurs="0" name="defectSourceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDefectSourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDefectSourceResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDefectInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q28:BasicParam" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDefectInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadDefectInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadDefectInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q29:BasicParam" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="defectInfoFilter" nillable="true" type="q30:DefectInfoFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadDefectInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadDefectInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDefectSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q31:BasicParam" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDefectSourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadDefectSourceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadDefectSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q32:BasicParam" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="defectSourceFilter" nillable="true" type="q33:DefectSourceFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadDefectSourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadDefectSourceResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDefectAgency">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q34:BasicParam" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDefectAgencyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadDefectAgencyResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadDefectAgency">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q35:BasicParam" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="defectAgencyFilter" nillable="true" type="q36:DefectAgencyFillter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadDefectAgencyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadDefectAgencyResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQualityDecisionInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q37:BasicParam" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="qualityDecisionFilter" nillable="true" type="q38:QualityDecisionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQualityDecisionInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="GetQualityDecisionInfoResult" nillable="true" type="q39:QualityDecisionList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQualityDecisionForEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q40:BasicParam" />
+        <xs:element minOccurs="0" name="qualityDecisionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQualityDecisionForEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="GetQualityDecisionForEditResult" nillable="true" type="q41:QualityDecisionsFields" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateQualityDecisions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q42:BasicParam" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="qualityDecisionsFields" nillable="true" type="q43:QualityDecisionsFields" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateQualityDecisionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateQualityDecisionsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteQualityDecisionCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q44:BasicParam" />
+        <xs:element minOccurs="0" name="qualityDecisionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteQualityDecisionCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteQualityDecisionCodeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadQualityDecisionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q45:BasicParam" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadQualityDecisionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadQualityDecisionListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadQualityDecisionsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q46:BasicParam" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="qualityDecisionFilter" nillable="true" type="q47:QualityDecisionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadQualityDecisionsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadQualityDecisionsListResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="objectFilter" nillable="true" type="q48:ObjectInfoFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetObjectInfoResult" nillable="true" type="q49:ObjectInfoList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteObjectInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteObjectInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteObjectInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadObjectInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q50:BasicParam" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="objectInfo" nillable="true" type="q51:ObjectInfo" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadObjectInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadObjectInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadObjectInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q52:BasicParam" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="objectInfo" nillable="true" type="q53:ObjectInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadObjectInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadObjectInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicGridFieldInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="basicInfo" nillable="true" type="q54:DynamicGridFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicGridFieldInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="GetDynamicGridFieldInfoResult" nillable="true" type="q55:DynamicGridFeatureFieldInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicGridContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="gridfilter" nillable="true" type="q56:DynamicGridFilter" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="contentFilter" nillable="true" type="q57:DynamicGridContentFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDynamicGridContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="GetDynamicGridContentResult" nillable="true" type="q58:DynamicGridContentInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilterTypeValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="filter" nillable="true" type="q59:DynamicGridFilter" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="typeValueFilter" nillable="true" type="q60:DynamicGridTypeValueFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilterTypeValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="GetFilterTypeValuesResult" nillable="true" type="q61:ArrayOfTypeValueInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DynamicGridContentExcelDownload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="filter" nillable="true" type="q62:DynamicGridFilter" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="contentFilter" nillable="true" type="q63:DynamicGridContentFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DynamicGridContentExcelDownloadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DynamicGridContentExcelDownloadResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserViewFields">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="filter" nillable="true" type="q64:DynamicGridFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserViewFieldsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="GetUserViewFieldsResult" nillable="true" type="q65:ArrayOfUserViewFieldInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserUserView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="filter" nillable="true" type="q66:DynamicGridFilter" />
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="userViewInfo" nillable="true" type="q67:UserViewInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserUserViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InserUserViewResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="filter" nillable="true" type="q68:DynamicGridFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteUserViewResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepartmentsInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="companyDepartmentBasicInfo" nillable="true" type="q69:CompanyDepartmentBasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepartmentsInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetDepartmentsInfoResult" nillable="true" type="q70:ArrayOfDepartmentBasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepartmentDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="filter" nillable="true" type="q71:DepartmentFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepartmentDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetDepartmentDetailsResult" nillable="true" type="q72:DepartmentList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDepartment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="departmentinfo" nillable="true" type="q73:DepartmentInfo" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q74:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDepartmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertDepartmentResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDepartment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="departmentInfo" nillable="true" type="q75:DepartmentInfo" />
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q76:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateDepartmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateDepartmentResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDepartment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="departmentID" type="xs:int" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q77:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDepartmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDepartmentResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepartmentsInfoForExistingRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q78:BasicParam" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepartmentsInfoForExistingRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetDepartmentsInfoForExistingRolesResult" nillable="true" type="q79:ArrayOfDepartment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccessLevelForRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccessLevelForRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetAccessLevelForRoleResult" nillable="true" type="q80:ArrayOfAccessLevelInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRolesForCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="departmentID" type="xs:int" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRolesForCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetRolesForCompanyResult" nillable="true" type="q81:ArrayOfRoleInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRoleOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="roleList" nillable="true" type="q82:ArrayOfRole" />
+        <xs:element minOccurs="0" name="departmentID" type="xs:int" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRoleOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateRoleOrderResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="roleID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteRoleResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckRoleExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="roleName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="departmentID" type="xs:int" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckRoleExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckRoleExistsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="roleInfo" nillable="true" type="q83:RoleInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertRoleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRoleTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="roleTaskInfoList" nillable="true" type="q84:ArrayOfRoleTaskInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertRoleTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertRoleTaskResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTasks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="accessLevelID" type="xs:int" />
+        <xs:element minOccurs="0" name="roleID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTasksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetAllTasksResult" nillable="true" type="q85:ArrayOfRoleTaskInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRoleTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="roleID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRoleTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteRoleTaskResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepartments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="companyID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepartmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetDepartmentsResult" nillable="true" type="q86:ArrayOfDepartment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRolesforDept">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q87:BasicParam" />
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="departmentRolesFilter" nillable="true" type="q88:DepartmentRolesFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRolesforDeptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetRolesforDeptResult" nillable="true" type="q89:ArrayOfDepartmentRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTasksforRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="accessLevelID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTasksforRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetTasksforRoleResult" nillable="true" type="q90:ArrayOfTaskInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskCategries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q91:BasicParam" />
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="taskCategoryFilter" nillable="true" type="q92:TaskCategoryFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskCategriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetTaskCategriesResult" nillable="true" type="q93:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryTasks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q94:BasicParam" />
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="roleTasksFilter" nillable="true" type="q95:RoleTasksFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryTasksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetCategoryTasksResult" nillable="true" type="q96:ArrayOfRoleTaskInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateRoleTaskAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q97:BasicParam" />
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="roleTaskAccess" nillable="true" type="q98:RoleTaskAccess" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateRoleTaskAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateRoleTaskAccessResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyTechnologyList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="filterInfo" nillable="true" type="q99:CompanyTechnologyFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyTechnologyListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetCompanyTechnologyListResult" nillable="true" type="q100:CompanyTechnologyList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCompanyTechnology">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="CompanyTechnologyInfo" nillable="true" type="q101:CompanyTechnologyDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCompanyTechnologyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertCompanyTechnologyResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCompanyTechnology">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="CompanyTechnologyInfo" nillable="true" type="q102:CompanyTechnologyDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCompanyTechnologyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCompanyTechnologyResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCompanyTechnology">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="technologyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCompanyTechnologyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteCompanyTechnologyResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryTechnologyDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q103:BasicParam" />
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="categoryTechnologyFilter" nillable="true" type="q104:CategoryTechnologyFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryTechnologyDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetCategoryTechnologyDetailsResult" nillable="true" type="q105:CategoryTechnologyList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateCategoryTechnology">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q106:BasicParam" />
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="categoryTechnology" nillable="true" type="q107:CategoryTechnology" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateCategoryTechnologyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateCategoryTechnologyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCategoryTechnology">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q108:BasicParam" />
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="categoryTechnology" nillable="true" type="q109:CategoryTechnology" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCategoryTechnologyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteCategoryTechnologyResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLanguageDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLanguageDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetAllLanguageDetailsResult" nillable="true" type="q110:ArrayOfLanguage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateLanguageDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="language" nillable="true" type="q111:Language" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateLanguageDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateLanguageDetailsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguageInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="languageID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguageInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetLanguageInfoResult" nillable="true" type="q112:Language" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLanguageDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="languageID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLanguageDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteLanguageDetailsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCountry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q113:BasicParam" />
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="countryfilter" nillable="true" type="q114:CountryFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCountryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetAllCountryResult" nillable="true" type="q115:CountryDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRegionName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q116:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRegionNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetAllRegionNameResult" nillable="true" type="q117:ArrayOfCountryRegion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLanguageName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q118:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLanguageNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetAllLanguageNameResult" nillable="true" type="q119:ArrayOfLanguage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateCompanyCountry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q120:BasicParam" />
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="country" nillable="true" type="q121:Country" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateCompanyCountryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateCompanyCountryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q122:BasicParam" />
+        <xs:element minOccurs="0" name="countryID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetCountryInfoResult" nillable="true" type="q123:Country" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCompanyCountryDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q124:BasicParam" />
+        <xs:element minOccurs="0" name="countryID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCompanyCountryDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteCompanyCountryDetailsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRegion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q125:BasicParam" />
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="regionfilter" nillable="true" type="q126:RegionFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRegionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetAllRegionResult" nillable="true" type="q127:RegionDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateRegionName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q128:BasicParam" />
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="regionInfo" nillable="true" type="q129:Region" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateRegionNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateRegionNameResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionNameForEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q130:BasicParam" />
+        <xs:element minOccurs="0" name="regionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionNameForEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetRegionNameForEditResult" nillable="true" type="q131:Region" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRegionDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q132:BasicParam" />
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="regionInfo" nillable="true" type="q133:Region" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRegionDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteRegionDetailsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSites">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSitesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetAllSitesResult" nillable="true" type="q134:CompanySiteList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserDefaultSite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q135:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserDefaultSiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateUserDefaultSiteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDownTimeCategoryDepartments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q136:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDownTimeCategoryDepartmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="GetDownTimeCategoryDepartmentsResult" nillable="true" type="q137:ArrayOfDownTimeCategoryDepartment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyDownTimeInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q138:BasicParam" />
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="filter" nillable="true" type="q139:CompanyDownTimeFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyDownTimeInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="GetCompanyDownTimeInfoResult" nillable="true" type="q140:CompanyCategoryDownTimeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOrUpdateCompanyDownTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q141:BasicParam" />
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="downTime" nillable="true" type="q142:DownTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddOrUpdateCompanyDownTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddOrUpdateCompanyDownTimeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCompanyDownTimeParentHasChild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q143:BasicParam" />
+        <xs:element minOccurs="0" name="downTimeID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckCompanyDownTimeParentHasChildResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckCompanyDownTimeParentHasChildResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDownTimeUsedInAnyPline">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q144:BasicParam" />
+        <xs:element minOccurs="0" name="downTimeID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDownTimeUsedInAnyPlineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckDownTimeUsedInAnyPlineResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCompanyDownTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q145:BasicParam" />
+        <xs:element minOccurs="0" name="downTimeID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCompanyDownTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteCompanyDownTimeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDownTimeCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q146:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDownTimeCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="GetDownTimeCategoryResult" nillable="true" type="q147:ArrayOfDownTimeCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDownTimeCategoryForEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q148:BasicParam" />
+        <xs:element minOccurs="0" name="categoryID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDownTimeCategoryForEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="GetDownTimeCategoryForEditResult" nillable="true" type="q149:DownTimeCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdteDownTimeCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q150:BasicParam" />
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="downTimeCategory" nillable="true" type="q151:DownTimeCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdteDownTimeCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdteDownTimeCategoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDownTimeCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q152:BasicParam" />
+        <xs:element minOccurs="0" name="categoryID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDownTimeCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDownTimeCategoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDepartmentIDUsedInAnyPline">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q153:BasicParam" />
+        <xs:element minOccurs="0" name="categoryID" type="xs:int" />
+        <xs:element minOccurs="0" name="departmentID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDepartmentIDUsedInAnyPlineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckDepartmentIDUsedInAnyPlineResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateRegionUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q154:BasicParam" />
+        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="userInfo" nillable="true" type="q155:UserBasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateRegionUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateRegionUserInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBasicRegionUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBasicRegionUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetBasicRegionUserInfoResult" nillable="true" type="q156:UserBasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserSitesDepartmentRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q157:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserSitesDepartmentRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetUserSitesDepartmentRolesResult" nillable="true" type="q158:ArrayOfSiteRoleInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="departmentRolesInfo" nillable="true" type="q159:DepartmentRolesInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetRegionRolesResult" nillable="true" type="q160:ArrayOfPlantLevelRoles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetCountryResult" nillable="true" type="q161:ArrayOfCountryInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q162:BasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetSiteInformationResult" nillable="true" type="q163:ArrayOfSiteInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserSites">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="deleteSiteRole" nillable="true" type="q164:DeleteSiteRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserSitesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveUserSitesResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPasswordPolicyInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q165:BasicParam" />
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="passwordFilter" nillable="true" type="q166:PasswordFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPasswordPolicyInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q167="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetPasswordPolicyInfoResult" nillable="true" type="q167:PasswordPolicy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePasswordPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q168:BasicParam" />
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="passwordPolicy" nillable="true" type="q169:PasswordPolicy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePasswordPolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePasswordPolicyResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertBusinessUnit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="businessUnitBasicParam" nillable="true" type="q170:BusinessUnitBasicParam" />
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="businessUnit" nillable="true" type="q171:BusinessUnitDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertBusinessUnitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertBusinessUnitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBusinessUnit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="businessUnitBasicParam" nillable="true" type="q172:BusinessUnitBasicParam" />
+        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="businessUnit" nillable="true" type="q173:BusinessUnitDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBusinessUnitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBusinessUnitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBusinessUnit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="businessUnitBasicParam" nillable="true" type="q174:BusinessUnitBasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBusinessUnitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteBusinessUnitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBusinessUnitDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="businessUnitFilter" nillable="true" type="q175:BusinessUnitFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBusinessUnitDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetBusinessUnitDetailsResult" nillable="true" type="q176:BusinessUnitList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSubBusinessUnit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q177="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="businessUnitBasicParam" nillable="true" type="q177:BusinessUnitBasicParam" />
+        <xs:element xmlns:q178="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="subBusinessUnit" nillable="true" type="q178:SubBusinessUnit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertSubBusinessUnitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertSubBusinessUnitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSubBusinessUnit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="businessUnitBasicParam" nillable="true" type="q179:BusinessUnitBasicParam" />
+        <xs:element xmlns:q180="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="subBusinessUnit" nillable="true" type="q180:SubBusinessUnit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSubBusinessUnitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateSubBusinessUnitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSubBusinessUnit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="businessUnitBasicParam" nillable="true" type="q181:BusinessUnitBasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSubBusinessUnitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteSubBusinessUnitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubBusinessUnitDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="businessUnitFilter" nillable="true" type="q182:BusinessUnitFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubBusinessUnitDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q183="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetSubBusinessUnitDetailsResult" nillable="true" type="q183:SubBusinessUnitList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBusinessUnitList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q184="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="businessUnitBasicParam" nillable="true" type="q184:BusinessUnitBasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBusinessUnitListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q185="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetBusinessUnitListResult" nillable="true" type="q185:ArrayOfBusinessUnit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubBusinessUnitList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q186="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="businessUnitBasicParam" nillable="true" type="q186:BusinessUnitBasicParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubBusinessUnitListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q187="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetSubBusinessUnitListResult" nillable="true" type="q187:ArrayOfBusinessUnit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBartenderConfigurationDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q188="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q188:BasicParam" />
+        <xs:element xmlns:q189="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="filter" nillable="true" type="q189:BartenderServerInfoFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBartenderConfigurationDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q190="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="GetBartenderConfigurationDetailsResult" nillable="true" type="q190:BartederServerConfigurationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBartenderServerInfoForEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q191="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q191:BasicParam" />
+        <xs:element xmlns:q192="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="filter" nillable="true" type="q192:BartenderServerInfoFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBartenderServerInfoForEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q193="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="GetBartenderServerInfoForEditResult" nillable="true" type="q193:BartenderServerInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateBartenderServerInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q194="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q194:BasicParam" />
+        <xs:element xmlns:q195="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="filter" nillable="true" type="q195:BartenderServerInfoFilter" />
+        <xs:element xmlns:q196="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="bartenderServerInfo" nillable="true" type="q196:BartenderServerInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateBartenderServerInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateBartenderServerInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFailPrintAttemptAndReprintInterval">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q197="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q197:BasicParam" />
+        <xs:element xmlns:q198="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="filter" nillable="true" type="q198:BartenderServerInfoFilter" />
+        <xs:element xmlns:q199="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="failPrintInfo" nillable="true" type="q199:BartenderServerFailPrintInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFailPrintAttemptAndReprintIntervalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFailPrintAttemptAndReprintIntervalResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBartenderServerInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q200="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q200:BasicParam" />
+        <xs:element xmlns:q201="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="filter" nillable="true" type="q201:BartenderServerInfoFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBartenderServerInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteBartenderServerInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBartenderServerErrorLogInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q202="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q202:BasicParam" />
+        <xs:element xmlns:q203="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="filter" nillable="true" type="q203:BartenderServerErrorLogFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBartenderServerErrorLogInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q204="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="GetBartenderServerErrorLogInfoResult" nillable="true" type="q204:BartenderServerErrorDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateAttributeInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q205="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q205:BasicParam" />
+        <xs:element xmlns:q206="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="measuringAttributeInfo" nillable="true" type="q206:MeasuringAttributeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateAttributeInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUpdateAttributeInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSensorTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q207="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q207:BasicParam" />
+        <xs:element xmlns:q208="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="sensorTypeForEdit" nillable="true" type="q208:SensorTypeForFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSensorTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q209="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetSensorTypesResult" nillable="true" type="q209:SensorTypeList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMeasuringAttributeInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q210="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="attributeFilter" nillable="true" type="q210:MeasuringAttributeFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMeasuringAttributeInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q211="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetMeasuringAttributeInfoResult" nillable="true" type="q211:MeasuringAttributeList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConfiguredAttrInfoForEdit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q212="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="basicParam" nillable="true" type="q212:BasicParam" />
+        <xs:element minOccurs="0" name="measuringAttributeID" type="xs:int" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConfiguredAttrInfoForEditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q213="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="GetConfiguredAttrInfoForEditResult" nillable="true" type="q213:MeasuringAttributeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAttributeInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="measuringAttributeID" type="xs:int" />
+        <xs:element minOccurs="0" name="companyID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAttributeInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteAttributeInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

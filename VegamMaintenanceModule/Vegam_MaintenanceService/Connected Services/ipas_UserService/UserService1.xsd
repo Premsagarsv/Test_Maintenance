@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="PrinterArea">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Common_Area" />
+      <xs:enumeration value="Receiving_Area" />
+      <xs:enumeration value="Staging_Area" />
+      <xs:enumeration value="Manufacturing_Area" />
+      <xs:enumeration value="Dispatch_Area" />
+      <xs:enumeration value="Security_Area" />
+      <xs:enumeration value="Assembling_Area" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PrinterArea" nillable="true" type="tns:PrinterArea" />
+  <xs:complexType name="AutoCompleteSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayCount" type="xs:int" />
+      <xs:element minOccurs="0" name="IsHClassType" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SearchString" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AutoCompleteSearch" nillable="true" type="tns:AutoCompleteSearch" />
+  <xs:complexType name="ArrayOfSiteFeatureInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteFeatureInfo" nillable="true" type="tns:SiteFeatureInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteFeatureInfo" nillable="true" type="tns:ArrayOfSiteFeatureInfo" />
+  <xs:complexType name="SiteFeatureInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FeatureID" type="xs:int" />
+      <xs:element minOccurs="0" name="FeatureName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PageToLoad" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteFeatureInfo" nillable="true" type="tns:SiteFeatureInfo" />
+</xs:schema>

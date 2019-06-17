@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3ae86e4f-6e08-40c7-9b3b-59dfd91a00ec" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://nayan-pc:8085/iPAS_Service/UserService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserService2.wsdl" MetadataType="Wsdl" ID="0929cd4a-1640-44a6-9972-7384f470a194" SourceId="1" SourceUrl="http://nayan-pc:8085/iPAS_Service/UserService.svc?wsdl" />
+    <MetadataFile FileName="UserService10.xsd" MetadataType="Schema" ID="1d0647d7-de8b-4c75-8ce6-d3287003c1f6" SourceId="1" SourceUrl="http://nayan-pc:8085/iPAS_Service/UserService.svc?xsd=xsd8" />
+    <MetadataFile FileName="UserService2.disco" MetadataType="Disco" ID="73d444ab-af99-436f-b758-f315d56a4260" SourceId="1" SourceUrl="http://nayan-pc:8085/iPAS_Service/UserService.svc?disco" />
+    <MetadataFile FileName="UserService11.xsd" MetadataType="Schema" ID="8ecd7a12-1069-4e8e-be3e-7df45a03fa0c" SourceId="1" SourceUrl="http://nayan-pc:8085/iPAS_Service/UserService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserService12.xsd" MetadataType="Schema" ID="de201937-edf2-419f-a1c7-eef59395d22b" SourceId="1" SourceUrl="http://nayan-pc:8085/iPAS_Service/UserService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserService13.xsd" MetadataType="Schema" ID="b9ce47dc-b0e5-472c-8931-61f107996342" SourceId="1" SourceUrl="http://nayan-pc:8085/iPAS_Service/UserService.svc?xsd=xsd3" />
+    <MetadataFile FileName="UserService14.xsd" MetadataType="Schema" ID="849375c1-8ae8-469d-84ce-71ac1455d6f7" SourceId="1" SourceUrl="http://nayan-pc:8085/iPAS_Service/UserService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserService15.xsd" MetadataType="Schema" ID="4086bdb3-80d3-40aa-8337-ca6a89a88f92" SourceId="1" SourceUrl="http://nayan-pc:8085/iPAS_Service/UserService.svc?xsd=xsd5" />
+    <MetadataFile FileName="UserService16.xsd" MetadataType="Schema" ID="050abc49-52ab-47c7-a9ef-47b5b841686c" SourceId="1" SourceUrl="http://nayan-pc:8085/iPAS_Service/UserService.svc?xsd=xsd4" />
+    <MetadataFile FileName="UserService17.xsd" MetadataType="Schema" ID="47607288-7a6f-4fa3-9783-f3c6b56c8019" SourceId="1" SourceUrl="http://nayan-pc:8085/iPAS_Service/UserService.svc?xsd=xsd7" />
+    <MetadataFile FileName="UserService18.xsd" MetadataType="Schema" ID="399f62cc-2bcc-4c3a-bef0-db1ce48dd6bd" SourceId="1" SourceUrl="http://nayan-pc:8085/iPAS_Service/UserService.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

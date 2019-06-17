@@ -1,0 +1,2496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CompanyService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service" />
+      <xsd:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" />
+      <xsd:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" />
+      <xsd:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/DynamicGrid" />
+      <xsd:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" />
+      <xsd:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Site" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICompanyService_InsertUpdateAttributeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateAttributeInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertUpdateAttributeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateAttributeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSensorTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSensorTypes" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSensorTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSensorTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetMeasuringAttributeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeasuringAttributeInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetMeasuringAttributeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeasuringAttributeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetConfiguredAttrInfoForEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfiguredAttrInfoForEdit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetConfiguredAttrInfoForEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfiguredAttrInfoForEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteAttributeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAttributeInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteAttributeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAttributeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSensorTypeUomList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSensorTypeUomList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSensorTypeUomList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSensorTypeUomListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertUpdateSensorTypeUOMInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateSensorTypeUOMInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertUpdateSensorTypeUOMInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateSensorTypeUOMInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSensorTypeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSensorTypeInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSensorTypeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSensorTypeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteSensorType_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSensorType" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteSensorType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSensorTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteSensorTypeUOM_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSensorTypeUOM" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteSensorTypeUOM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSensorTypeUOMResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadMeasuringAttributeTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadMeasuringAttributeTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadMeasuringAttributeTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadMeasuringAttributeTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadAllConfiguredMeasuringAttribute_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAllConfiguredMeasuringAttribute" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadAllConfiguredMeasuringAttribute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAllConfiguredMeasuringAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SyncMeasuringAttributeFromExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:SyncMeasuringAttributeFromExcel" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SyncMeasuringAttributeFromExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SyncMeasuringAttributeFromExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDefectInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefectInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDefectInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefectInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateDefectInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateDefectInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateDefectInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateDefectInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteDefect_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDefect" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteDefect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDefectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDefectAgencyInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefectAgencyInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDefectAgencyInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefectAgencyInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateDefectAgency_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateDefectAgency" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateDefectAgency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateDefectAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteDefectAgency_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDefectAgency" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteDefectAgency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDefectAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDefectSourceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefectSourceInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDefectSourceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefectSourceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateDefectSources_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateDefectSources" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateDefectSources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateDefectSourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteDefectSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDefectSource" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteDefectSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDefectSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UploadDefectInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDefectInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UploadDefectInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDefectInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadDefectInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDefectInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadDefectInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDefectInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UploadDefectSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDefectSource" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UploadDefectSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDefectSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadDefectSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDefectSource" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadDefectSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDefectSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UploadDefectAgency_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDefectAgency" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UploadDefectAgency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDefectAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadDefectAgency_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDefectAgency" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadDefectAgency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDefectAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetQualityDecisionInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQualityDecisionInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetQualityDecisionInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQualityDecisionInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetQualityDecisionForEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQualityDecisionForEdit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetQualityDecisionForEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQualityDecisionForEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateQualityDecisions_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateQualityDecisions" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateQualityDecisions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateQualityDecisionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteQualityDecisionCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteQualityDecisionCode" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteQualityDecisionCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteQualityDecisionCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UploadQualityDecisionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadQualityDecisionList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UploadQualityDecisionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadQualityDecisionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadQualityDecisionsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadQualityDecisionsList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadQualityDecisionsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadQualityDecisionsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetObjectInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetObjectInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteObjectInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteObjectInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteObjectInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteObjectInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UploadObjectInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadObjectInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UploadObjectInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadObjectInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadObjectInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadObjectInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DownloadObjectInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadObjectInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDynamicGridFieldInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDynamicGridFieldInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDynamicGridFieldInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDynamicGridFieldInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDynamicGridContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDynamicGridContent" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDynamicGridContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDynamicGridContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetFilterTypeValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilterTypeValues" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetFilterTypeValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilterTypeValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DynamicGridContentExcelDownload_InputMessage">
+    <wsdl:part name="parameters" element="tns:DynamicGridContentExcelDownload" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DynamicGridContentExcelDownload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DynamicGridContentExcelDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetUserViewFields_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserViewFields" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetUserViewFields_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserViewFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InserUserView_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserUserView" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InserUserView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserUserViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteUserView_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserView" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteUserView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDepartmentsInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentsInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDepartmentsInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDepartmentDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDepartmentDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDepartment" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDepartment" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepartment" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDepartmentsInfoForExistingRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentsInfoForExistingRoles" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDepartmentsInfoForExistingRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentsInfoForExistingRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAccessLevelForRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessLevelForRole" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAccessLevelForRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessLevelForRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetRolesForCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesForCompany" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetRolesForCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesForCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateRoleOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRoleOrder" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateRoleOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRoleOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRole" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CheckRoleExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckRoleExists" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CheckRoleExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckRoleExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRole" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertRoleTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRoleTask" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertRoleTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRoleTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTasks" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteRoleTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleTask" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteRoleTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartments" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetRolesforDept_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesforDept" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetRolesforDept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesforDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetTasksforRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksforRole" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetTasksforRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksforRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetTaskCategries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskCategries" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetTaskCategries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskCategriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCategoryTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryTasks" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCategoryTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateRoleTaskAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateRoleTaskAccess" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateRoleTaskAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateRoleTaskAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyTechnologyList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyTechnologyList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyTechnologyList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyTechnologyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertCompanyTechnology_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCompanyTechnology" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertCompanyTechnology_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCompanyTechnologyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateCompanyTechnology_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompanyTechnology" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateCompanyTechnology_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompanyTechnologyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteCompanyTechnology_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompanyTechnology" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteCompanyTechnology_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompanyTechnologyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCategoryTechnologyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryTechnologyDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCategoryTechnologyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryTechnologyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateCategoryTechnology_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateCategoryTechnology" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateCategoryTechnology_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateCategoryTechnologyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteCategoryTechnology_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryTechnology" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteCategoryTechnology_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryTechnologyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllLanguageDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLanguageDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllLanguageDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLanguageDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateLanguageDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateLanguageDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateLanguageDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateLanguageDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetLanguageInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLanguageInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetLanguageInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLanguageInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteLanguageDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLanguageDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteLanguageDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLanguageDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountry" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllRegionName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRegionName" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllRegionName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRegionNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllLanguageName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLanguageName" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllLanguageName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLanguageNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateCompanyCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateCompanyCountry" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateCompanyCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateCompanyCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCountryInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCountryInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteCompanyCountryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompanyCountryDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteCompanyCountryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompanyCountryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllRegion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRegion" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllRegion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRegionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateRegionName_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateRegionName" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateRegionName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateRegionNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetRegionNameForEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegionNameForEdit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetRegionNameForEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegionNameForEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteRegionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRegionDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteRegionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRegionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllSites_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSites" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetAllSites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateUserDefaultSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserDefaultSite" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateUserDefaultSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserDefaultSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDownTimeCategoryDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDownTimeCategoryDepartments" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDownTimeCategoryDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDownTimeCategoryDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyDownTimeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyDownTimeInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanyDownTimeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyDownTimeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_AddOrUpdateCompanyDownTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateCompanyDownTime" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_AddOrUpdateCompanyDownTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateCompanyDownTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CheckCompanyDownTimeParentHasChild_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCompanyDownTimeParentHasChild" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CheckCompanyDownTimeParentHasChild_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCompanyDownTimeParentHasChildResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CheckDownTimeUsedInAnyPline_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDownTimeUsedInAnyPline" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CheckDownTimeUsedInAnyPline_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDownTimeUsedInAnyPlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteCompanyDownTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompanyDownTime" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteCompanyDownTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompanyDownTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDownTimeCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDownTimeCategory" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDownTimeCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDownTimeCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDownTimeCategoryForEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDownTimeCategoryForEdit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetDownTimeCategoryForEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDownTimeCategoryForEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdteDownTimeCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdteDownTimeCategory" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdteDownTimeCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdteDownTimeCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteDownTimeCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDownTimeCategory" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteDownTimeCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDownTimeCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CheckDepartmentIDUsedInAnyPline_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDepartmentIDUsedInAnyPline" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_CheckDepartmentIDUsedInAnyPline_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDepartmentIDUsedInAnyPlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateRegionUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateRegionUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateRegionUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateRegionUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetBasicRegionUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasicRegionUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetBasicRegionUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasicRegionUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetUserSitesDepartmentRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSitesDepartmentRoles" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetUserSitesDepartmentRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSitesDepartmentRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetRegionRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegionRoles" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetRegionRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegionRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountry" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSiteInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteInformation" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSiteInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_RemoveUserSites_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserSites" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_RemoveUserSites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserSitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetPasswordPolicyInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPasswordPolicyInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetPasswordPolicyInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPasswordPolicyInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SavePasswordPolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePasswordPolicy" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_SavePasswordPolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePasswordPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertBusinessUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBusinessUnit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertBusinessUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBusinessUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateBusinessUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBusinessUnit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateBusinessUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBusinessUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteBusinessUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBusinessUnit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteBusinessUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBusinessUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetBusinessUnitDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessUnitDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetBusinessUnitDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessUnitDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertSubBusinessUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSubBusinessUnit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertSubBusinessUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSubBusinessUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateSubBusinessUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSubBusinessUnit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateSubBusinessUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSubBusinessUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteSubBusinessUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSubBusinessUnit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteSubBusinessUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSubBusinessUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSubBusinessUnitDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubBusinessUnitDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSubBusinessUnitDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubBusinessUnitDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetBusinessUnitList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessUnitList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetBusinessUnitList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessUnitListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSubBusinessUnitList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubBusinessUnitList" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSubBusinessUnitList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubBusinessUnitListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetBartenderConfigurationDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBartenderConfigurationDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetBartenderConfigurationDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBartenderConfigurationDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetBartenderServerInfoForEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBartenderServerInfoForEdit" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetBartenderServerInfoForEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBartenderServerInfoForEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateBartenderServerInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateBartenderServerInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_InsertOrUpdateBartenderServerInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateBartenderServerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateFailPrintAttemptAndReprintInterval_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFailPrintAttemptAndReprintInterval" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_UpdateFailPrintAttemptAndReprintInterval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFailPrintAttemptAndReprintIntervalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteBartenderServerInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBartenderServerInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteBartenderServerInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBartenderServerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetBartenderServerErrorLogInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBartenderServerErrorLogInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetBartenderServerErrorLogInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBartenderServerErrorLogInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanySites_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanySites" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetCompanySites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanySitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetPrintServers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrintServers" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetPrintServers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrintServersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSitePrintServers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSitePrintServers" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_GetSitePrintServers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSitePrintServersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_AddOrUpdateSitePrintServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateSitePrintServer" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_AddOrUpdateSitePrintServer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateSitePrintServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteSitePrintServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSitePrintServer" />
+  </wsdl:message>
+  <wsdl:message name="ICompanyService_DeleteSitePrintServer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSitePrintServerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICompanyService">
+    <wsdl:operation name="InsertUpdateAttributeInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertUpdateAttributeInfo" message="tns:ICompanyService_InsertUpdateAttributeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertUpdateAttributeInfoResponse" message="tns:ICompanyService_InsertUpdateAttributeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetSensorTypes" message="tns:ICompanyService_GetSensorTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetSensorTypesResponse" message="tns:ICompanyService_GetSensorTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasuringAttributeInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetMeasuringAttributeInfo" message="tns:ICompanyService_GetMeasuringAttributeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetMeasuringAttributeInfoResponse" message="tns:ICompanyService_GetMeasuringAttributeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguredAttrInfoForEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetConfiguredAttrInfoForEdit" message="tns:ICompanyService_GetConfiguredAttrInfoForEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetConfiguredAttrInfoForEditResponse" message="tns:ICompanyService_GetConfiguredAttrInfoForEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttributeInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteAttributeInfo" message="tns:ICompanyService_DeleteAttributeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteAttributeInfoResponse" message="tns:ICompanyService_DeleteAttributeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorTypeUomList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetSensorTypeUomList" message="tns:ICompanyService_GetSensorTypeUomList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetSensorTypeUomListResponse" message="tns:ICompanyService_GetSensorTypeUomList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateSensorTypeUOMInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertUpdateSensorTypeUOMInfo" message="tns:ICompanyService_InsertUpdateSensorTypeUOMInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertUpdateSensorTypeUOMInfoResponse" message="tns:ICompanyService_InsertUpdateSensorTypeUOMInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorTypeInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetSensorTypeInfo" message="tns:ICompanyService_GetSensorTypeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetSensorTypeInfoResponse" message="tns:ICompanyService_GetSensorTypeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSensorType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteSensorType" message="tns:ICompanyService_DeleteSensorType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteSensorTypeResponse" message="tns:ICompanyService_DeleteSensorType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSensorTypeUOM">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteSensorTypeUOM" message="tns:ICompanyService_DeleteSensorTypeUOM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteSensorTypeUOMResponse" message="tns:ICompanyService_DeleteSensorTypeUOM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMeasuringAttributeTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DownloadMeasuringAttributeTemplate" message="tns:ICompanyService_DownloadMeasuringAttributeTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DownloadMeasuringAttributeTemplateResponse" message="tns:ICompanyService_DownloadMeasuringAttributeTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAllConfiguredMeasuringAttribute">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DownloadAllConfiguredMeasuringAttribute" message="tns:ICompanyService_DownloadAllConfiguredMeasuringAttribute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DownloadAllConfiguredMeasuringAttributeResponse" message="tns:ICompanyService_DownloadAllConfiguredMeasuringAttribute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncMeasuringAttributeFromExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/SyncMeasuringAttributeFromExcel" message="tns:ICompanyService_SyncMeasuringAttributeFromExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/SyncMeasuringAttributeFromExcelResponse" message="tns:ICompanyService_SyncMeasuringAttributeFromExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefectInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetDefectInfo" message="tns:ICompanyService_GetDefectInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetDefectInfoResponse" message="tns:ICompanyService_GetDefectInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateDefectInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateDefectInfo" message="tns:ICompanyService_InsertOrUpdateDefectInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateDefectInfoResponse" message="tns:ICompanyService_InsertOrUpdateDefectInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDefect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteDefect" message="tns:ICompanyService_DeleteDefect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteDefectResponse" message="tns:ICompanyService_DeleteDefect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefectAgencyInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetDefectAgencyInfo" message="tns:ICompanyService_GetDefectAgencyInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetDefectAgencyInfoResponse" message="tns:ICompanyService_GetDefectAgencyInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateDefectAgency">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateDefectAgency" message="tns:ICompanyService_InsertOrUpdateDefectAgency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateDefectAgencyResponse" message="tns:ICompanyService_InsertOrUpdateDefectAgency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDefectAgency">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteDefectAgency" message="tns:ICompanyService_DeleteDefectAgency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteDefectAgencyResponse" message="tns:ICompanyService_DeleteDefectAgency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefectSourceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetDefectSourceInfo" message="tns:ICompanyService_GetDefectSourceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetDefectSourceInfoResponse" message="tns:ICompanyService_GetDefectSourceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateDefectSources">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateDefectSources" message="tns:ICompanyService_InsertOrUpdateDefectSources_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateDefectSourcesResponse" message="tns:ICompanyService_InsertOrUpdateDefectSources_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDefectSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteDefectSource" message="tns:ICompanyService_DeleteDefectSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteDefectSourceResponse" message="tns:ICompanyService_DeleteDefectSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDefectInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UploadDefectInfo" message="tns:ICompanyService_UploadDefectInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UploadDefectInfoResponse" message="tns:ICompanyService_UploadDefectInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDefectInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DownloadDefectInfo" message="tns:ICompanyService_DownloadDefectInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DownloadDefectInfoResponse" message="tns:ICompanyService_DownloadDefectInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDefectSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UploadDefectSource" message="tns:ICompanyService_UploadDefectSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UploadDefectSourceResponse" message="tns:ICompanyService_UploadDefectSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDefectSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DownloadDefectSource" message="tns:ICompanyService_DownloadDefectSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DownloadDefectSourceResponse" message="tns:ICompanyService_DownloadDefectSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDefectAgency">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UploadDefectAgency" message="tns:ICompanyService_UploadDefectAgency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UploadDefectAgencyResponse" message="tns:ICompanyService_UploadDefectAgency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDefectAgency">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DownloadDefectAgency" message="tns:ICompanyService_DownloadDefectAgency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DownloadDefectAgencyResponse" message="tns:ICompanyService_DownloadDefectAgency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQualityDecisionInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetQualityDecisionInfo" message="tns:ICompanyService_GetQualityDecisionInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetQualityDecisionInfoResponse" message="tns:ICompanyService_GetQualityDecisionInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQualityDecisionForEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetQualityDecisionForEdit" message="tns:ICompanyService_GetQualityDecisionForEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetQualityDecisionForEditResponse" message="tns:ICompanyService_GetQualityDecisionForEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateQualityDecisions">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateQualityDecisions" message="tns:ICompanyService_InsertOrUpdateQualityDecisions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateQualityDecisionsResponse" message="tns:ICompanyService_InsertOrUpdateQualityDecisions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQualityDecisionCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteQualityDecisionCode" message="tns:ICompanyService_DeleteQualityDecisionCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteQualityDecisionCodeResponse" message="tns:ICompanyService_DeleteQualityDecisionCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadQualityDecisionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UploadQualityDecisionList" message="tns:ICompanyService_UploadQualityDecisionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UploadQualityDecisionListResponse" message="tns:ICompanyService_UploadQualityDecisionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadQualityDecisionsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DownloadQualityDecisionsList" message="tns:ICompanyService_DownloadQualityDecisionsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DownloadQualityDecisionsListResponse" message="tns:ICompanyService_DownloadQualityDecisionsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetObjectInfo" message="tns:ICompanyService_GetObjectInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetObjectInfoResponse" message="tns:ICompanyService_GetObjectInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObjectInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteObjectInfo" message="tns:ICompanyService_DeleteObjectInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteObjectInfoResponse" message="tns:ICompanyService_DeleteObjectInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadObjectInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UploadObjectInfo" message="tns:ICompanyService_UploadObjectInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UploadObjectInfoResponse" message="tns:ICompanyService_UploadObjectInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadObjectInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DownloadObjectInfo" message="tns:ICompanyService_DownloadObjectInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DownloadObjectInfoResponse" message="tns:ICompanyService_DownloadObjectInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDynamicGridFieldInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetDynamicGridFieldInfo" message="tns:ICompanyService_GetDynamicGridFieldInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetDynamicGridFieldInfoResponse" message="tns:ICompanyService_GetDynamicGridFieldInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDynamicGridContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetDynamicGridContent" message="tns:ICompanyService_GetDynamicGridContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetDynamicGridContentResponse" message="tns:ICompanyService_GetDynamicGridContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilterTypeValues">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetFilterTypeValues" message="tns:ICompanyService_GetFilterTypeValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetFilterTypeValuesResponse" message="tns:ICompanyService_GetFilterTypeValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DynamicGridContentExcelDownload">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DynamicGridContentExcelDownload" message="tns:ICompanyService_DynamicGridContentExcelDownload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DynamicGridContentExcelDownloadResponse" message="tns:ICompanyService_DynamicGridContentExcelDownload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserViewFields">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetUserViewFields" message="tns:ICompanyService_GetUserViewFields_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetUserViewFieldsResponse" message="tns:ICompanyService_GetUserViewFields_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserUserView">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InserUserView" message="tns:ICompanyService_InserUserView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InserUserViewResponse" message="tns:ICompanyService_InserUserView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserView">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteUserView" message="tns:ICompanyService_DeleteUserView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteUserViewResponse" message="tns:ICompanyService_DeleteUserView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentsInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetDepartmentsInfo" message="tns:ICompanyService_GetDepartmentsInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetDepartmentsInfoResponse" message="tns:ICompanyService_GetDepartmentsInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetDepartmentDetails" message="tns:ICompanyService_GetDepartmentDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetDepartmentDetailsResponse" message="tns:ICompanyService_GetDepartmentDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertDepartment" message="tns:ICompanyService_InsertDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertDepartmentResponse" message="tns:ICompanyService_InsertDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UpdateDepartment" message="tns:ICompanyService_UpdateDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UpdateDepartmentResponse" message="tns:ICompanyService_UpdateDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteDepartment" message="tns:ICompanyService_DeleteDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteDepartmentResponse" message="tns:ICompanyService_DeleteDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentsInfoForExistingRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetDepartmentsInfoForExistingRoles" message="tns:ICompanyService_GetDepartmentsInfoForExistingRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetDepartmentsInfoForExistingRolesResponse" message="tns:ICompanyService_GetDepartmentsInfoForExistingRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessLevelForRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetAccessLevelForRole" message="tns:ICompanyService_GetAccessLevelForRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetAccessLevelForRoleResponse" message="tns:ICompanyService_GetAccessLevelForRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetRolesForCompany" message="tns:ICompanyService_GetRolesForCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetRolesForCompanyResponse" message="tns:ICompanyService_GetRolesForCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRoleOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UpdateRoleOrder" message="tns:ICompanyService_UpdateRoleOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UpdateRoleOrderResponse" message="tns:ICompanyService_UpdateRoleOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteRole" message="tns:ICompanyService_DeleteRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteRoleResponse" message="tns:ICompanyService_DeleteRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckRoleExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/CheckRoleExists" message="tns:ICompanyService_CheckRoleExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/CheckRoleExistsResponse" message="tns:ICompanyService_CheckRoleExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertRole" message="tns:ICompanyService_InsertRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertRoleResponse" message="tns:ICompanyService_InsertRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRoleTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertRoleTask" message="tns:ICompanyService_InsertRoleTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertRoleTaskResponse" message="tns:ICompanyService_InsertRoleTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetAllTasks" message="tns:ICompanyService_GetAllTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetAllTasksResponse" message="tns:ICompanyService_GetAllTasks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoleTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteRoleTask" message="tns:ICompanyService_DeleteRoleTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteRoleTaskResponse" message="tns:ICompanyService_DeleteRoleTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetDepartments" message="tns:ICompanyService_GetDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetDepartmentsResponse" message="tns:ICompanyService_GetDepartments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesforDept">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetRolesforDept" message="tns:ICompanyService_GetRolesforDept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetRolesforDeptResponse" message="tns:ICompanyService_GetRolesforDept_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksforRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetTasksforRole" message="tns:ICompanyService_GetTasksforRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetTasksforRoleResponse" message="tns:ICompanyService_GetTasksforRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskCategries">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetTaskCategries" message="tns:ICompanyService_GetTaskCategries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetTaskCategriesResponse" message="tns:ICompanyService_GetTaskCategries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCategoryTasks" message="tns:ICompanyService_GetCategoryTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCategoryTasksResponse" message="tns:ICompanyService_GetCategoryTasks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateRoleTaskAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateRoleTaskAccess" message="tns:ICompanyService_InsertOrUpdateRoleTaskAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateRoleTaskAccessResponse" message="tns:ICompanyService_InsertOrUpdateRoleTaskAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyTechnologyList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyTechnologyList" message="tns:ICompanyService_GetCompanyTechnologyList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyTechnologyListResponse" message="tns:ICompanyService_GetCompanyTechnologyList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompanyTechnology">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertCompanyTechnology" message="tns:ICompanyService_InsertCompanyTechnology_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertCompanyTechnologyResponse" message="tns:ICompanyService_InsertCompanyTechnology_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompanyTechnology">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UpdateCompanyTechnology" message="tns:ICompanyService_UpdateCompanyTechnology_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UpdateCompanyTechnologyResponse" message="tns:ICompanyService_UpdateCompanyTechnology_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompanyTechnology">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteCompanyTechnology" message="tns:ICompanyService_DeleteCompanyTechnology_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteCompanyTechnologyResponse" message="tns:ICompanyService_DeleteCompanyTechnology_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryTechnologyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCategoryTechnologyDetails" message="tns:ICompanyService_GetCategoryTechnologyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCategoryTechnologyDetailsResponse" message="tns:ICompanyService_GetCategoryTechnologyDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateCategoryTechnology">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateCategoryTechnology" message="tns:ICompanyService_InsertOrUpdateCategoryTechnology_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateCategoryTechnologyResponse" message="tns:ICompanyService_InsertOrUpdateCategoryTechnology_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategoryTechnology">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteCategoryTechnology" message="tns:ICompanyService_DeleteCategoryTechnology_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteCategoryTechnologyResponse" message="tns:ICompanyService_DeleteCategoryTechnology_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLanguageDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetAllLanguageDetails" message="tns:ICompanyService_GetAllLanguageDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetAllLanguageDetailsResponse" message="tns:ICompanyService_GetAllLanguageDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateLanguageDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateLanguageDetails" message="tns:ICompanyService_InsertOrUpdateLanguageDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateLanguageDetailsResponse" message="tns:ICompanyService_InsertOrUpdateLanguageDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguageInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetLanguageInfo" message="tns:ICompanyService_GetLanguageInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetLanguageInfoResponse" message="tns:ICompanyService_GetLanguageInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLanguageDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteLanguageDetails" message="tns:ICompanyService_DeleteLanguageDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteLanguageDetailsResponse" message="tns:ICompanyService_DeleteLanguageDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetAllCountry" message="tns:ICompanyService_GetAllCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetAllCountryResponse" message="tns:ICompanyService_GetAllCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegionName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetAllRegionName" message="tns:ICompanyService_GetAllRegionName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetAllRegionNameResponse" message="tns:ICompanyService_GetAllRegionName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLanguageName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetAllLanguageName" message="tns:ICompanyService_GetAllLanguageName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetAllLanguageNameResponse" message="tns:ICompanyService_GetAllLanguageName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateCompanyCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateCompanyCountry" message="tns:ICompanyService_InsertOrUpdateCompanyCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateCompanyCountryResponse" message="tns:ICompanyService_InsertOrUpdateCompanyCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCountryInfo" message="tns:ICompanyService_GetCountryInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCountryInfoResponse" message="tns:ICompanyService_GetCountryInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompanyCountryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteCompanyCountryDetails" message="tns:ICompanyService_DeleteCompanyCountryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteCompanyCountryDetailsResponse" message="tns:ICompanyService_DeleteCompanyCountryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetAllRegion" message="tns:ICompanyService_GetAllRegion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetAllRegionResponse" message="tns:ICompanyService_GetAllRegion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateRegionName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateRegionName" message="tns:ICompanyService_InsertOrUpdateRegionName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateRegionNameResponse" message="tns:ICompanyService_InsertOrUpdateRegionName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionNameForEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetRegionNameForEdit" message="tns:ICompanyService_GetRegionNameForEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetRegionNameForEditResponse" message="tns:ICompanyService_GetRegionNameForEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRegionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteRegionDetails" message="tns:ICompanyService_DeleteRegionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteRegionDetailsResponse" message="tns:ICompanyService_DeleteRegionDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSites">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetAllSites" message="tns:ICompanyService_GetAllSites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetAllSitesResponse" message="tns:ICompanyService_GetAllSites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDefaultSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UpdateUserDefaultSite" message="tns:ICompanyService_UpdateUserDefaultSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UpdateUserDefaultSiteResponse" message="tns:ICompanyService_UpdateUserDefaultSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDownTimeCategoryDepartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetDownTimeCategoryDepartments" message="tns:ICompanyService_GetDownTimeCategoryDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetDownTimeCategoryDepartmentsResponse" message="tns:ICompanyService_GetDownTimeCategoryDepartments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyDownTimeInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyDownTimeInfo" message="tns:ICompanyService_GetCompanyDownTimeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCompanyDownTimeInfoResponse" message="tns:ICompanyService_GetCompanyDownTimeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateCompanyDownTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/AddOrUpdateCompanyDownTime" message="tns:ICompanyService_AddOrUpdateCompanyDownTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/AddOrUpdateCompanyDownTimeResponse" message="tns:ICompanyService_AddOrUpdateCompanyDownTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCompanyDownTimeParentHasChild">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/CheckCompanyDownTimeParentHasChild" message="tns:ICompanyService_CheckCompanyDownTimeParentHasChild_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/CheckCompanyDownTimeParentHasChildResponse" message="tns:ICompanyService_CheckCompanyDownTimeParentHasChild_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDownTimeUsedInAnyPline">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/CheckDownTimeUsedInAnyPline" message="tns:ICompanyService_CheckDownTimeUsedInAnyPline_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/CheckDownTimeUsedInAnyPlineResponse" message="tns:ICompanyService_CheckDownTimeUsedInAnyPline_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompanyDownTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteCompanyDownTime" message="tns:ICompanyService_DeleteCompanyDownTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteCompanyDownTimeResponse" message="tns:ICompanyService_DeleteCompanyDownTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDownTimeCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetDownTimeCategory" message="tns:ICompanyService_GetDownTimeCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetDownTimeCategoryResponse" message="tns:ICompanyService_GetDownTimeCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDownTimeCategoryForEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetDownTimeCategoryForEdit" message="tns:ICompanyService_GetDownTimeCategoryForEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetDownTimeCategoryForEditResponse" message="tns:ICompanyService_GetDownTimeCategoryForEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdteDownTimeCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdteDownTimeCategory" message="tns:ICompanyService_InsertOrUpdteDownTimeCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdteDownTimeCategoryResponse" message="tns:ICompanyService_InsertOrUpdteDownTimeCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDownTimeCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteDownTimeCategory" message="tns:ICompanyService_DeleteDownTimeCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteDownTimeCategoryResponse" message="tns:ICompanyService_DeleteDownTimeCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDepartmentIDUsedInAnyPline">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/CheckDepartmentIDUsedInAnyPline" message="tns:ICompanyService_CheckDepartmentIDUsedInAnyPline_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/CheckDepartmentIDUsedInAnyPlineResponse" message="tns:ICompanyService_CheckDepartmentIDUsedInAnyPline_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateRegionUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateRegionUserInfo" message="tns:ICompanyService_InsertOrUpdateRegionUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateRegionUserInfoResponse" message="tns:ICompanyService_InsertOrUpdateRegionUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBasicRegionUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetBasicRegionUserInfo" message="tns:ICompanyService_GetBasicRegionUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetBasicRegionUserInfoResponse" message="tns:ICompanyService_GetBasicRegionUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSitesDepartmentRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetUserSitesDepartmentRoles" message="tns:ICompanyService_GetUserSitesDepartmentRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetUserSitesDepartmentRolesResponse" message="tns:ICompanyService_GetUserSitesDepartmentRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetRegionRoles" message="tns:ICompanyService_GetRegionRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetRegionRolesResponse" message="tns:ICompanyService_GetRegionRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCountry" message="tns:ICompanyService_GetCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCountryResponse" message="tns:ICompanyService_GetCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetSiteInformation" message="tns:ICompanyService_GetSiteInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetSiteInformationResponse" message="tns:ICompanyService_GetSiteInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserSites">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/RemoveUserSites" message="tns:ICompanyService_RemoveUserSites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/RemoveUserSitesResponse" message="tns:ICompanyService_RemoveUserSites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPasswordPolicyInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetPasswordPolicyInfo" message="tns:ICompanyService_GetPasswordPolicyInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetPasswordPolicyInfoResponse" message="tns:ICompanyService_GetPasswordPolicyInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePasswordPolicy">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/SavePasswordPolicy" message="tns:ICompanyService_SavePasswordPolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/SavePasswordPolicyResponse" message="tns:ICompanyService_SavePasswordPolicy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBusinessUnit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertBusinessUnit" message="tns:ICompanyService_InsertBusinessUnit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertBusinessUnitResponse" message="tns:ICompanyService_InsertBusinessUnit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBusinessUnit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UpdateBusinessUnit" message="tns:ICompanyService_UpdateBusinessUnit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UpdateBusinessUnitResponse" message="tns:ICompanyService_UpdateBusinessUnit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBusinessUnit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteBusinessUnit" message="tns:ICompanyService_DeleteBusinessUnit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteBusinessUnitResponse" message="tns:ICompanyService_DeleteBusinessUnit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessUnitDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetBusinessUnitDetails" message="tns:ICompanyService_GetBusinessUnitDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetBusinessUnitDetailsResponse" message="tns:ICompanyService_GetBusinessUnitDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubBusinessUnit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertSubBusinessUnit" message="tns:ICompanyService_InsertSubBusinessUnit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertSubBusinessUnitResponse" message="tns:ICompanyService_InsertSubBusinessUnit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubBusinessUnit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UpdateSubBusinessUnit" message="tns:ICompanyService_UpdateSubBusinessUnit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UpdateSubBusinessUnitResponse" message="tns:ICompanyService_UpdateSubBusinessUnit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSubBusinessUnit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteSubBusinessUnit" message="tns:ICompanyService_DeleteSubBusinessUnit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteSubBusinessUnitResponse" message="tns:ICompanyService_DeleteSubBusinessUnit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubBusinessUnitDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetSubBusinessUnitDetails" message="tns:ICompanyService_GetSubBusinessUnitDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetSubBusinessUnitDetailsResponse" message="tns:ICompanyService_GetSubBusinessUnitDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessUnitList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetBusinessUnitList" message="tns:ICompanyService_GetBusinessUnitList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetBusinessUnitListResponse" message="tns:ICompanyService_GetBusinessUnitList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubBusinessUnitList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetSubBusinessUnitList" message="tns:ICompanyService_GetSubBusinessUnitList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetSubBusinessUnitListResponse" message="tns:ICompanyService_GetSubBusinessUnitList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBartenderConfigurationDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetBartenderConfigurationDetails" message="tns:ICompanyService_GetBartenderConfigurationDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetBartenderConfigurationDetailsResponse" message="tns:ICompanyService_GetBartenderConfigurationDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBartenderServerInfoForEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetBartenderServerInfoForEdit" message="tns:ICompanyService_GetBartenderServerInfoForEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetBartenderServerInfoForEditResponse" message="tns:ICompanyService_GetBartenderServerInfoForEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateBartenderServerInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateBartenderServerInfo" message="tns:ICompanyService_InsertOrUpdateBartenderServerInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/InsertOrUpdateBartenderServerInfoResponse" message="tns:ICompanyService_InsertOrUpdateBartenderServerInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFailPrintAttemptAndReprintInterval">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/UpdateFailPrintAttemptAndReprintInterval" message="tns:ICompanyService_UpdateFailPrintAttemptAndReprintInterval_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/UpdateFailPrintAttemptAndReprintIntervalResponse" message="tns:ICompanyService_UpdateFailPrintAttemptAndReprintInterval_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBartenderServerInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteBartenderServerInfo" message="tns:ICompanyService_DeleteBartenderServerInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteBartenderServerInfoResponse" message="tns:ICompanyService_DeleteBartenderServerInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBartenderServerErrorLogInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetBartenderServerErrorLogInfo" message="tns:ICompanyService_GetBartenderServerErrorLogInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetBartenderServerErrorLogInfoResponse" message="tns:ICompanyService_GetBartenderServerErrorLogInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanySites">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetCompanySites" message="tns:ICompanyService_GetCompanySites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetCompanySitesResponse" message="tns:ICompanyService_GetCompanySites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintServers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetPrintServers" message="tns:ICompanyService_GetPrintServers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetPrintServersResponse" message="tns:ICompanyService_GetPrintServers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSitePrintServers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/GetSitePrintServers" message="tns:ICompanyService_GetSitePrintServers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/GetSitePrintServersResponse" message="tns:ICompanyService_GetSitePrintServers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateSitePrintServer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/AddOrUpdateSitePrintServer" message="tns:ICompanyService_AddOrUpdateSitePrintServer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/AddOrUpdateSitePrintServerResponse" message="tns:ICompanyService_AddOrUpdateSitePrintServer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSitePrintServer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanyService/DeleteSitePrintServer" message="tns:ICompanyService_DeleteSitePrintServer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanyService/DeleteSitePrintServerResponse" message="tns:ICompanyService_DeleteSitePrintServer_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICompanyService" type="tns:ICompanyService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertUpdateAttributeInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertUpdateAttributeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorTypes">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetSensorTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasuringAttributeInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetMeasuringAttributeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguredAttrInfoForEdit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetConfiguredAttrInfoForEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttributeInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteAttributeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorTypeUomList">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetSensorTypeUomList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateSensorTypeUOMInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertUpdateSensorTypeUOMInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorTypeInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetSensorTypeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSensorType">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteSensorType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSensorTypeUOM">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteSensorTypeUOM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMeasuringAttributeTemplate">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DownloadMeasuringAttributeTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAllConfiguredMeasuringAttribute">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DownloadAllConfiguredMeasuringAttribute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncMeasuringAttributeFromExcel">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/SyncMeasuringAttributeFromExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefectInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetDefectInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateDefectInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertOrUpdateDefectInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDefect">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteDefect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefectAgencyInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetDefectAgencyInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateDefectAgency">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertOrUpdateDefectAgency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDefectAgency">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteDefectAgency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefectSourceInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetDefectSourceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateDefectSources">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertOrUpdateDefectSources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDefectSource">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteDefectSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDefectInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/UploadDefectInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDefectInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DownloadDefectInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDefectSource">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/UploadDefectSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDefectSource">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DownloadDefectSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDefectAgency">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/UploadDefectAgency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDefectAgency">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DownloadDefectAgency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQualityDecisionInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetQualityDecisionInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQualityDecisionForEdit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetQualityDecisionForEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateQualityDecisions">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertOrUpdateQualityDecisions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQualityDecisionCode">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteQualityDecisionCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadQualityDecisionList">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/UploadQualityDecisionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadQualityDecisionsList">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DownloadQualityDecisionsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjectInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetObjectInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteObjectInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteObjectInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadObjectInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/UploadObjectInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadObjectInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DownloadObjectInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDynamicGridFieldInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetDynamicGridFieldInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDynamicGridContent">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetDynamicGridContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilterTypeValues">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetFilterTypeValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DynamicGridContentExcelDownload">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DynamicGridContentExcelDownload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserViewFields">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetUserViewFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserUserView">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InserUserView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserView">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteUserView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentsInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetDepartmentsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentDetails">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetDepartmentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDepartment">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepartment">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/UpdateDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartment">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentsInfoForExistingRoles">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetDepartmentsInfoForExistingRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessLevelForRole">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetAccessLevelForRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForCompany">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetRolesForCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRoleOrder">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/UpdateRoleOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckRoleExists">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/CheckRoleExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRole">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRoleTask">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertRoleTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTasks">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetAllTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoleTask">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteRoleTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartments">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetDepartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesforDept">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetRolesforDept" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksforRole">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetTasksforRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskCategries">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetTaskCategries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryTasks">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetCategoryTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateRoleTaskAccess">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertOrUpdateRoleTaskAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyTechnologyList">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetCompanyTechnologyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompanyTechnology">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertCompanyTechnology" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompanyTechnology">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/UpdateCompanyTechnology" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompanyTechnology">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteCompanyTechnology" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryTechnologyDetails">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetCategoryTechnologyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateCategoryTechnology">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertOrUpdateCategoryTechnology" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategoryTechnology">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteCategoryTechnology" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLanguageDetails">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetAllLanguageDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateLanguageDetails">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertOrUpdateLanguageDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLanguageInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetLanguageInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLanguageDetails">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteLanguageDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCountry">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetAllCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegionName">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetAllRegionName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLanguageName">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetAllLanguageName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateCompanyCountry">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertOrUpdateCompanyCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetCountryInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompanyCountryDetails">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteCompanyCountryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegion">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetAllRegion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateRegionName">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertOrUpdateRegionName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionNameForEdit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetRegionNameForEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRegionDetails">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteRegionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSites">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetAllSites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDefaultSite">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/UpdateUserDefaultSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDownTimeCategoryDepartments">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetDownTimeCategoryDepartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyDownTimeInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetCompanyDownTimeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateCompanyDownTime">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/AddOrUpdateCompanyDownTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCompanyDownTimeParentHasChild">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/CheckCompanyDownTimeParentHasChild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDownTimeUsedInAnyPline">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/CheckDownTimeUsedInAnyPline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompanyDownTime">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteCompanyDownTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDownTimeCategory">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetDownTimeCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDownTimeCategoryForEdit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetDownTimeCategoryForEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdteDownTimeCategory">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertOrUpdteDownTimeCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDownTimeCategory">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteDownTimeCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDepartmentIDUsedInAnyPline">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/CheckDepartmentIDUsedInAnyPline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateRegionUserInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertOrUpdateRegionUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasicRegionUserInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetBasicRegionUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSitesDepartmentRoles">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetUserSitesDepartmentRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegionRoles">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetRegionRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountry">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteInformation">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetSiteInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserSites">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/RemoveUserSites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPasswordPolicyInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetPasswordPolicyInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePasswordPolicy">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/SavePasswordPolicy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBusinessUnit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertBusinessUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBusinessUnit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/UpdateBusinessUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBusinessUnit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteBusinessUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessUnitDetails">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetBusinessUnitDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSubBusinessUnit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertSubBusinessUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubBusinessUnit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/UpdateSubBusinessUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSubBusinessUnit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteSubBusinessUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubBusinessUnitDetails">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetSubBusinessUnitDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessUnitList">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetBusinessUnitList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubBusinessUnitList">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetSubBusinessUnitList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBartenderConfigurationDetails">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetBartenderConfigurationDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBartenderServerInfoForEdit">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetBartenderServerInfoForEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateBartenderServerInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/InsertOrUpdateBartenderServerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFailPrintAttemptAndReprintInterval">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/UpdateFailPrintAttemptAndReprintInterval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBartenderServerInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteBartenderServerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBartenderServerErrorLogInfo">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetBartenderServerErrorLogInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanySites">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetCompanySites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintServers">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetPrintServers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSitePrintServers">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/GetSitePrintServers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateSitePrintServer">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/AddOrUpdateSitePrintServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSitePrintServer">
+      <soap:operation soapAction="http://tempuri.org/ICompanyService/DeleteSitePrintServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CompanyService">
+    <wsdl:port name="BasicHttpBinding_ICompanyService" binding="tns:BasicHttpBinding_ICompanyService">
+      <soap:address location="http://localhost:1590/CompanyService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

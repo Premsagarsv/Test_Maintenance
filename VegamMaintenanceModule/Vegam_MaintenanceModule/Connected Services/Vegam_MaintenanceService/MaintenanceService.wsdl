@@ -1,0 +1,2454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MaintenanceService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9093/MaintenanceService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9093/MaintenanceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9093/MaintenanceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" />
+      <xsd:import schemaLocation="http://localhost:9093/MaintenanceService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:9093/MaintenanceService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DynamicGrid" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMaintenanceService_InsertSelectedMeasuringPoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSelectedMeasuringPoint" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertSelectedMeasuringPoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSelectedMeasuringPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteSelectedMeasuringPoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSelectedMeasuringPoint" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteSelectedMeasuringPoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSelectedMeasuringPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetSparePartMaterialDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSparePartMaterialDetails" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetSparePartMaterialDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSparePartMaterialDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMaintSparePartDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaintSparePartDetails" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMaintSparePartDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaintSparePartDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_SaveMaintSparePartInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMaintSparePartInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_SaveMaintSparePartInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMaintSparePartInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteMaintSparePartInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaintSparePartInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteMaintSparePartInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaintSparePartInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAttachmentDetailsForSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentDetailsForSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAttachmentDetailsForSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentDetailsForScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAttachmentDetailsForWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentDetailsForWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAttachmentDetailsForWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentDetailsForWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetUserNameForAutoComplete_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserNameForAutoComplete" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetUserNameForAutoComplete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserNameForAutoCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEditWorkGroupInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEditWorkGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEditWorkGroupInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEditWorkGroupInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertOrUpdateWorkGroupInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateWorkGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertOrUpdateWorkGroupInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateWorkGroupInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteWorkGroupUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWorkGroupUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteWorkGroupUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWorkGroupUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadWorkGroupExcelTemplateInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadWorkGroupExcelTemplateInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadWorkGroupExcelTemplateInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadWorkGroupExcelTemplateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadAllWorkGroupInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAllWorkGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadAllWorkGroupInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAllWorkGroupInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UploadExcelWorkGroupInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadExcelWorkGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UploadExcelWorkGroupInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadExcelWorkGroupInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetUserWorkGroupInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserWorkGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetUserWorkGroupInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserWorkGroupInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetResourceViewWorkOrderInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceViewWorkOrderInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetResourceViewWorkOrderInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceViewWorkOrderInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetWorkOrderBasicInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderBasicInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetWorkOrderBasicInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderBasicInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetWorkOrderEquipmentInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderEquipmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetWorkOrderEquipmentInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderEquipmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetWorkOrderEquipmentHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderEquipmentHistory" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetWorkOrderEquipmentHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderEquipmentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetWorkOrderTaskInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderTaskInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetWorkOrderTaskInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderTaskInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_StartWorkOrderTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartWorkOrderTask" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_StartWorkOrderTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartWorkOrderTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_EndWorkOrderTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:EndWorkOrderTask" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_EndWorkOrderTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EndWorkOrderTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_SaveTaskParameterValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTaskParameterValue" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_SaveTaskParameterValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTaskParameterValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertWorkOrderTaskImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertWorkOrderTaskImage" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertWorkOrderTaskImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertWorkOrderTaskImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetWorkOrderSpareParts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderSpareParts" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetWorkOrderSpareParts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkOrderSparePartsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_SaveWorkOrderSparePartInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveWorkOrderSparePartInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_SaveWorkOrderSparePartInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveWorkOrderSparePartInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_CloseWorkOrderInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseWorkOrderInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_CloseWorkOrderInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseWorkOrderInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllToolsInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllToolsInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllToolsInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllToolsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertOrUpdateToolInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateToolInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertOrUpdateToolInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateToolInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteToolsInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteToolsInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteToolsInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteToolsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadSparePartsTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadSparePartsTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadSparePartsTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadSparePartsTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadSparePartsListExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadSparePartsListExcel" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadSparePartsListExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadSparePartsListExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UploadSparePartsinfoExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadSparePartsinfoExcel" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UploadSparePartsinfoExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadSparePartsinfoExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetNotificationList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationList" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetNotificationList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetNotificationInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetNotificationInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertUpdateNotificationInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateNotificationInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertUpdateNotificationInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateNotificationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteNotificationInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotificationInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteNotificationInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotificationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEquipmentListForDropDown_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentListForDropDown" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEquipmentListForDropDown_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentListForDropDownResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAttachmentDetailsForNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentDetailsForNotification" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAttachmentDetailsForNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentDetailsForNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetNextNotificationSequenceID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextNotificationSequenceID" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetNextNotificationSequenceID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextNotificationSequenceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_AcceptNotificationInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptNotificationInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_AcceptNotificationInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptNotificationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_CloseNotificationInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseNotificationInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_CloseNotificationInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseNotificationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMaintenanceFeatureInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaintenanceFeatureInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMaintenanceFeatureInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaintenanceFeatureInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetSiteDateTimeFormatInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteDateTimeFormatInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetSiteDateTimeFormatInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteDateTimeFormatInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetSiteCurrentDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteCurrentDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetSiteCurrentDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteCurrentDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEnumInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnumInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEnumInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnumInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GenerateRandomCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomCode" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GenerateRandomCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateRandomCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertOrUpdateUserPreference_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateUserPreference" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertOrUpdateUserPreference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateUserPreferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllFunctionalLocInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFunctionalLocInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllFunctionalLocInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFunctionalLocInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllFunctionalLocList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFunctionalLocList" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllFunctionalLocList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFunctionalLocListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetFLocationEditInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFLocationEditInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetFLocationEditInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFLocationEditInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertOrUpdateFunctionalLocInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateFunctionalLocInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertOrUpdateFunctionalLocInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateFunctionalLocInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteFunctionalLocInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFunctionalLocInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteFunctionalLocInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFunctionalLocInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetFunctionalLocListForHierarchicalDropDown_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFunctionalLocListForHierarchicalDropDown" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetFunctionalLocListForHierarchicalDropDown_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFunctionalLocListForHierarchicalDropDownResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetParentLocationDropDown_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentLocationDropDown" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetParentLocationDropDown_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentLocationDropDownResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetUserWorkGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserWorkGroups" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetUserWorkGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserWorkGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllFuncLocForSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFuncLocForSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllFuncLocForSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFuncLocForScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadFunctionalLocationInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFunctionalLocationInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadFunctionalLocationInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFunctionalLocationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadFunctionalLocationTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFunctionalLocationTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadFunctionalLocationTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFunctionalLocationTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UploadFunctionalLocationInfoExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFunctionalLocationInfoExcel" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UploadFunctionalLocationInfoExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFunctionalLocationInfoExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllEquipmentInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEquipmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllEquipmentInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEquipmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEquipmentInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEquipmentInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEquipmentEditInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentEditInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEquipmentEditInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentEditInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertOrUpdateEquipmentInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateEquipmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertOrUpdateEquipmentInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateEquipmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteEquipmentInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEquipmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteEquipmentInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEquipmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetResourceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetResourceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteEquipmentSupportInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEquipmentSupportInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteEquipmentSupportInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEquipmentSupportInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllEquipmentModelList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEquipmentModelList" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllEquipmentModelList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEquipmentModelListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetParentEquipmentListDropDown_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentEquipmentListDropDown" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetParentEquipmentListDropDown_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentEquipmentListDropDownResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllEquipmentLocationInfoSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEquipmentLocationInfoSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllEquipmentLocationInfoSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEquipmentLocationInfoScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadEquipmentTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadEquipmentTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadEquipmentTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadEquipmentTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadEquipmentInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadEquipmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadEquipmentInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadEquipmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UploadEquipmentInfoExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadEquipmentInfoExcel" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UploadEquipmentInfoExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadEquipmentInfoExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertOrUpdateEquipmentModelInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateEquipmentModelInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertOrUpdateEquipmentModelInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateEquipmentModelInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEquipmentModelList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentModelList" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEquipmentModelList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentModelListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEquipmentModelInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentModelInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetEquipmentModelInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentModelInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteEquipmentModelInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEquipmentModelInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteEquipmentModelInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEquipmentModelInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetSensorTypeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSensorTypeInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetSensorTypeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSensorTypeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetSensorUnitInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSensorUnitInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetSensorUnitInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSensorUnitInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMeasuringPointList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeasuringPointList" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMeasuringPointList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeasuringPointListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetSelectedMeasuringPointInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSelectedMeasuringPointInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetSelectedMeasuringPointInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSelectedMeasuringPointInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMeasuringPointDropDownDataInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeasuringPointDropDownDataInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMeasuringPointDropDownDataInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeasuringPointDropDownDataInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertUpdateMeasuringPointInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateMeasuringPointInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertUpdateMeasuringPointInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateMeasuringPointInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteMeasuringPointInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMeasuringPointInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteMeasuringPointInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMeasuringPointInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadMeasuringPointListTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadMeasuringPointListTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadMeasuringPointListTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadMeasuringPointListTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadMeasuringPointListExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadMeasuringPointListExcel" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadMeasuringPointListExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadMeasuringPointListExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UploadMeasuringPointListExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadMeasuringPointListExcel" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UploadMeasuringPointListExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadMeasuringPointListExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllDocumentsAndImagesInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDocumentsAndImagesInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllDocumentsAndImagesInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDocumentsAndImagesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertDocumentsAndImagesInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDocumentsAndImagesInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertDocumentsAndImagesInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDocumentsAndImagesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteDocumentsAndImagesInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDocumentsAndImagesInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteDocumentsAndImagesInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDocumentsAndImagesInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMaintMasterData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaintMasterData" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMaintMasterData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaintMasterDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllMaintMasterDropDownDataInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMaintMasterDropDownDataInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetAllMaintMasterDropDownDataInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMaintMasterDropDownDataInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertUpdateMasterData_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateMasterData" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertUpdateMasterData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateMasterDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteMasterData_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMasterData" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteMasterData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMasterDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetTaskGroupInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetTaskGroupInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskGroupInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_SaveTaskGroupInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTaskGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_SaveTaskGroupInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTaskGroupInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteTaskGroupInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTaskGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteTaskGroupInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTaskGroupInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_ApproveGroupTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveGroupTask" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_ApproveGroupTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveGroupTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetTaskInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetTaskInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_SaveTaskInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTaskInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_SaveTaskInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTaskInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteTaskInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTaskInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteTaskInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTaskInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_SaveTaskSequenceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTaskSequenceInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_SaveTaskSequenceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTaskSequenceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetPPIDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPPIDetails" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetPPIDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPPIDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetToolsDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolsDetails" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetToolsDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolsDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadSOPTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadSOPTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DownloadSOPTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadSOPTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UploadTaskGroupZip_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadTaskGroupZip" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UploadTaskGroupZip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadTaskGroupZipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertUpdateMaintenanceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateMaintenanceInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertUpdateMaintenanceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateMaintenanceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMaintenanceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaintenanceInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMaintenanceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaintenanceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteMaintenanceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaintenanceInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_DeleteMaintenanceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaintenanceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetWorkGroupOfEquipemntOrLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkGroupOfEquipemntOrLocation" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetWorkGroupOfEquipemntOrLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkGroupOfEquipemntOrLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_CancelmaintenanceWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelmaintenanceWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_CancelmaintenanceWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelmaintenanceWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UpdateMaintWorkOrderScheduleDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaintWorkOrderScheduleDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UpdateMaintWorkOrderScheduleDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaintWorkOrderScheduleDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetTaskGroupList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskGroupList" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetTaskGroupList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskGroupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetTaskDetailsForTaskGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskDetailsForTaskGroup" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetTaskDetailsForTaskGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskDetailsForTaskGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UpdateMaintenanceTaskGroupInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaintenanceTaskGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UpdateMaintenanceTaskGroupInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaintenanceTaskGroupInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetTaskGroupIdentifier_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskGroupIdentifier" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetTaskGroupIdentifier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskGroupIdentifierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UpdateMaintenanceTaskInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaintenanceTaskInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_UpdateMaintenanceTaskInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaintenanceTaskInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMaintScheduleDetailInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaintScheduleDetailInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMaintScheduleDetailInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaintScheduleDetailInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertUpdateMaintenanceScheduleDetailInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateMaintenanceScheduleDetailInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InsertUpdateMaintenanceScheduleDetailInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdateMaintenanceScheduleDetailInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_ActivateMaintenanceSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateMaintenanceSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_ActivateMaintenanceSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateMaintenanceScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InActivateMaintenanceSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:InActivateMaintenanceSchedule" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_InActivateMaintenanceSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InActivateMaintenanceScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetScheduleWorkOrderDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScheduleWorkOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetScheduleWorkOrderDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScheduleWorkOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_AutoReScheduleWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutoReScheduleWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_AutoReScheduleWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutoReScheduleWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_AutoUpdateMaintenanceScheduleWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutoUpdateMaintenanceScheduleWorkOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_AutoUpdateMaintenanceScheduleWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutoUpdateMaintenanceScheduleWorkOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_AutoUpdateScheduleBasedOnLastPerformanceDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutoUpdateScheduleBasedOnLastPerformanceDate" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_AutoUpdateScheduleBasedOnLastPerformanceDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutoUpdateScheduleBasedOnLastPerformanceDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMeasurementDocumentInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeasurementDocumentInfo" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMeasurementDocumentInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeasurementDocumentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMeasDocMeasuringPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeasDocMeasuringPoints" />
+  </wsdl:message>
+  <wsdl:message name="IMaintenanceService_GetMeasDocMeasuringPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeasDocMeasuringPointsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMaintenanceService">
+    <wsdl:operation name="InsertSelectedMeasuringPoint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertSelectedMeasuringPoint" message="tns:IMaintenanceService_InsertSelectedMeasuringPoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertSelectedMeasuringPointResponse" message="tns:IMaintenanceService_InsertSelectedMeasuringPoint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSelectedMeasuringPoint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteSelectedMeasuringPoint" message="tns:IMaintenanceService_DeleteSelectedMeasuringPoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteSelectedMeasuringPointResponse" message="tns:IMaintenanceService_DeleteSelectedMeasuringPoint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSparePartMaterialDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetSparePartMaterialDetails" message="tns:IMaintenanceService_GetSparePartMaterialDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetSparePartMaterialDetailsResponse" message="tns:IMaintenanceService_GetSparePartMaterialDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaintSparePartDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetMaintSparePartDetails" message="tns:IMaintenanceService_GetMaintSparePartDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetMaintSparePartDetailsResponse" message="tns:IMaintenanceService_GetMaintSparePartDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMaintSparePartInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/SaveMaintSparePartInfo" message="tns:IMaintenanceService_SaveMaintSparePartInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/SaveMaintSparePartInfoResponse" message="tns:IMaintenanceService_SaveMaintSparePartInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaintSparePartInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteMaintSparePartInfo" message="tns:IMaintenanceService_DeleteMaintSparePartInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteMaintSparePartInfoResponse" message="tns:IMaintenanceService_DeleteMaintSparePartInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentDetailsForSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetAttachmentDetailsForSchedule" message="tns:IMaintenanceService_GetAttachmentDetailsForSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetAttachmentDetailsForScheduleResponse" message="tns:IMaintenanceService_GetAttachmentDetailsForSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentDetailsForWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetAttachmentDetailsForWorkOrder" message="tns:IMaintenanceService_GetAttachmentDetailsForWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetAttachmentDetailsForWorkOrderResponse" message="tns:IMaintenanceService_GetAttachmentDetailsForWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameForAutoComplete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetUserNameForAutoComplete" message="tns:IMaintenanceService_GetUserNameForAutoComplete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetUserNameForAutoCompleteResponse" message="tns:IMaintenanceService_GetUserNameForAutoComplete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEditWorkGroupInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetEditWorkGroupInfo" message="tns:IMaintenanceService_GetEditWorkGroupInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetEditWorkGroupInfoResponse" message="tns:IMaintenanceService_GetEditWorkGroupInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateWorkGroupInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertOrUpdateWorkGroupInfo" message="tns:IMaintenanceService_InsertOrUpdateWorkGroupInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertOrUpdateWorkGroupInfoResponse" message="tns:IMaintenanceService_InsertOrUpdateWorkGroupInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkGroupUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteWorkGroupUserInfo" message="tns:IMaintenanceService_DeleteWorkGroupUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteWorkGroupUserInfoResponse" message="tns:IMaintenanceService_DeleteWorkGroupUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadWorkGroupExcelTemplateInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadWorkGroupExcelTemplateInfo" message="tns:IMaintenanceService_DownloadWorkGroupExcelTemplateInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadWorkGroupExcelTemplateInfoResponse" message="tns:IMaintenanceService_DownloadWorkGroupExcelTemplateInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAllWorkGroupInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadAllWorkGroupInfo" message="tns:IMaintenanceService_DownloadAllWorkGroupInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadAllWorkGroupInfoResponse" message="tns:IMaintenanceService_DownloadAllWorkGroupInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadExcelWorkGroupInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/UploadExcelWorkGroupInfo" message="tns:IMaintenanceService_UploadExcelWorkGroupInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/UploadExcelWorkGroupInfoResponse" message="tns:IMaintenanceService_UploadExcelWorkGroupInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserWorkGroupInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetUserWorkGroupInfo" message="tns:IMaintenanceService_GetUserWorkGroupInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetUserWorkGroupInfoResponse" message="tns:IMaintenanceService_GetUserWorkGroupInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceViewWorkOrderInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetResourceViewWorkOrderInfo" message="tns:IMaintenanceService_GetResourceViewWorkOrderInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetResourceViewWorkOrderInfoResponse" message="tns:IMaintenanceService_GetResourceViewWorkOrderInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderBasicInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetWorkOrderBasicInfo" message="tns:IMaintenanceService_GetWorkOrderBasicInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetWorkOrderBasicInfoResponse" message="tns:IMaintenanceService_GetWorkOrderBasicInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderEquipmentInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetWorkOrderEquipmentInfo" message="tns:IMaintenanceService_GetWorkOrderEquipmentInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetWorkOrderEquipmentInfoResponse" message="tns:IMaintenanceService_GetWorkOrderEquipmentInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderEquipmentHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetWorkOrderEquipmentHistory" message="tns:IMaintenanceService_GetWorkOrderEquipmentHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetWorkOrderEquipmentHistoryResponse" message="tns:IMaintenanceService_GetWorkOrderEquipmentHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderTaskInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetWorkOrderTaskInfo" message="tns:IMaintenanceService_GetWorkOrderTaskInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetWorkOrderTaskInfoResponse" message="tns:IMaintenanceService_GetWorkOrderTaskInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartWorkOrderTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/StartWorkOrderTask" message="tns:IMaintenanceService_StartWorkOrderTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/StartWorkOrderTaskResponse" message="tns:IMaintenanceService_StartWorkOrderTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EndWorkOrderTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/EndWorkOrderTask" message="tns:IMaintenanceService_EndWorkOrderTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/EndWorkOrderTaskResponse" message="tns:IMaintenanceService_EndWorkOrderTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTaskParameterValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/SaveTaskParameterValue" message="tns:IMaintenanceService_SaveTaskParameterValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/SaveTaskParameterValueResponse" message="tns:IMaintenanceService_SaveTaskParameterValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertWorkOrderTaskImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertWorkOrderTaskImage" message="tns:IMaintenanceService_InsertWorkOrderTaskImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertWorkOrderTaskImageResponse" message="tns:IMaintenanceService_InsertWorkOrderTaskImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderSpareParts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetWorkOrderSpareParts" message="tns:IMaintenanceService_GetWorkOrderSpareParts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetWorkOrderSparePartsResponse" message="tns:IMaintenanceService_GetWorkOrderSpareParts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveWorkOrderSparePartInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/SaveWorkOrderSparePartInfo" message="tns:IMaintenanceService_SaveWorkOrderSparePartInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/SaveWorkOrderSparePartInfoResponse" message="tns:IMaintenanceService_SaveWorkOrderSparePartInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseWorkOrderInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/CloseWorkOrderInfo" message="tns:IMaintenanceService_CloseWorkOrderInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/CloseWorkOrderInfoResponse" message="tns:IMaintenanceService_CloseWorkOrderInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllToolsInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllToolsInfo" message="tns:IMaintenanceService_GetAllToolsInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllToolsInfoResponse" message="tns:IMaintenanceService_GetAllToolsInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateToolInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertOrUpdateToolInfo" message="tns:IMaintenanceService_InsertOrUpdateToolInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertOrUpdateToolInfoResponse" message="tns:IMaintenanceService_InsertOrUpdateToolInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteToolsInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteToolsInfo" message="tns:IMaintenanceService_DeleteToolsInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteToolsInfoResponse" message="tns:IMaintenanceService_DeleteToolsInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSparePartsTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadSparePartsTemplate" message="tns:IMaintenanceService_DownloadSparePartsTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadSparePartsTemplateResponse" message="tns:IMaintenanceService_DownloadSparePartsTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSparePartsListExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadSparePartsListExcel" message="tns:IMaintenanceService_DownloadSparePartsListExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadSparePartsListExcelResponse" message="tns:IMaintenanceService_DownloadSparePartsListExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSparePartsinfoExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/UploadSparePartsinfoExcel" message="tns:IMaintenanceService_UploadSparePartsinfoExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/UploadSparePartsinfoExcelResponse" message="tns:IMaintenanceService_UploadSparePartsinfoExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetNotificationList" message="tns:IMaintenanceService_GetNotificationList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetNotificationListResponse" message="tns:IMaintenanceService_GetNotificationList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetNotificationInfo" message="tns:IMaintenanceService_GetNotificationInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetNotificationInfoResponse" message="tns:IMaintenanceService_GetNotificationInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateNotificationInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertUpdateNotificationInfo" message="tns:IMaintenanceService_InsertUpdateNotificationInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertUpdateNotificationInfoResponse" message="tns:IMaintenanceService_InsertUpdateNotificationInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotificationInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteNotificationInfo" message="tns:IMaintenanceService_DeleteNotificationInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteNotificationInfoResponse" message="tns:IMaintenanceService_DeleteNotificationInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentListForDropDown">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetEquipmentListForDropDown" message="tns:IMaintenanceService_GetEquipmentListForDropDown_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetEquipmentListForDropDownResponse" message="tns:IMaintenanceService_GetEquipmentListForDropDown_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentDetailsForNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetAttachmentDetailsForNotification" message="tns:IMaintenanceService_GetAttachmentDetailsForNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetAttachmentDetailsForNotificationResponse" message="tns:IMaintenanceService_GetAttachmentDetailsForNotification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextNotificationSequenceID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetNextNotificationSequenceID" message="tns:IMaintenanceService_GetNextNotificationSequenceID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetNextNotificationSequenceIDResponse" message="tns:IMaintenanceService_GetNextNotificationSequenceID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptNotificationInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/AcceptNotificationInfo" message="tns:IMaintenanceService_AcceptNotificationInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/AcceptNotificationInfoResponse" message="tns:IMaintenanceService_AcceptNotificationInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseNotificationInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/CloseNotificationInfo" message="tns:IMaintenanceService_CloseNotificationInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/CloseNotificationInfoResponse" message="tns:IMaintenanceService_CloseNotificationInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaintenanceFeatureInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetMaintenanceFeatureInfo" message="tns:IMaintenanceService_GetMaintenanceFeatureInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetMaintenanceFeatureInfoResponse" message="tns:IMaintenanceService_GetMaintenanceFeatureInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteDateTimeFormatInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetSiteDateTimeFormatInfo" message="tns:IMaintenanceService_GetSiteDateTimeFormatInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetSiteDateTimeFormatInfoResponse" message="tns:IMaintenanceService_GetSiteDateTimeFormatInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteCurrentDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetSiteCurrentDateTime" message="tns:IMaintenanceService_GetSiteCurrentDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetSiteCurrentDateTimeResponse" message="tns:IMaintenanceService_GetSiteCurrentDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnumInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetEnumInfoList" message="tns:IMaintenanceService_GetEnumInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetEnumInfoListResponse" message="tns:IMaintenanceService_GetEnumInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GenerateRandomCode" message="tns:IMaintenanceService_GenerateRandomCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GenerateRandomCodeResponse" message="tns:IMaintenanceService_GenerateRandomCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateUserPreference">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertOrUpdateUserPreference" message="tns:IMaintenanceService_InsertOrUpdateUserPreference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertOrUpdateUserPreferenceResponse" message="tns:IMaintenanceService_InsertOrUpdateUserPreference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFunctionalLocInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllFunctionalLocInfo" message="tns:IMaintenanceService_GetAllFunctionalLocInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllFunctionalLocInfoResponse" message="tns:IMaintenanceService_GetAllFunctionalLocInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFunctionalLocList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllFunctionalLocList" message="tns:IMaintenanceService_GetAllFunctionalLocList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllFunctionalLocListResponse" message="tns:IMaintenanceService_GetAllFunctionalLocList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFLocationEditInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetFLocationEditInfo" message="tns:IMaintenanceService_GetFLocationEditInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetFLocationEditInfoResponse" message="tns:IMaintenanceService_GetFLocationEditInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateFunctionalLocInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertOrUpdateFunctionalLocInfo" message="tns:IMaintenanceService_InsertOrUpdateFunctionalLocInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertOrUpdateFunctionalLocInfoResponse" message="tns:IMaintenanceService_InsertOrUpdateFunctionalLocInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFunctionalLocInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteFunctionalLocInfo" message="tns:IMaintenanceService_DeleteFunctionalLocInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteFunctionalLocInfoResponse" message="tns:IMaintenanceService_DeleteFunctionalLocInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionalLocListForHierarchicalDropDown">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetFunctionalLocListForHierarchicalDropDown" message="tns:IMaintenanceService_GetFunctionalLocListForHierarchicalDropDown_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetFunctionalLocListForHierarchicalDropDownResponse" message="tns:IMaintenanceService_GetFunctionalLocListForHierarchicalDropDown_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParentLocationDropDown">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetParentLocationDropDown" message="tns:IMaintenanceService_GetParentLocationDropDown_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetParentLocationDropDownResponse" message="tns:IMaintenanceService_GetParentLocationDropDown_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserWorkGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetUserWorkGroups" message="tns:IMaintenanceService_GetUserWorkGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetUserWorkGroupsResponse" message="tns:IMaintenanceService_GetUserWorkGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFuncLocForSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllFuncLocForSchedule" message="tns:IMaintenanceService_GetAllFuncLocForSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllFuncLocForScheduleResponse" message="tns:IMaintenanceService_GetAllFuncLocForSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFunctionalLocationInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadFunctionalLocationInfo" message="tns:IMaintenanceService_DownloadFunctionalLocationInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadFunctionalLocationInfoResponse" message="tns:IMaintenanceService_DownloadFunctionalLocationInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFunctionalLocationTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadFunctionalLocationTemplate" message="tns:IMaintenanceService_DownloadFunctionalLocationTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadFunctionalLocationTemplateResponse" message="tns:IMaintenanceService_DownloadFunctionalLocationTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFunctionalLocationInfoExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/UploadFunctionalLocationInfoExcel" message="tns:IMaintenanceService_UploadFunctionalLocationInfoExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/UploadFunctionalLocationInfoExcelResponse" message="tns:IMaintenanceService_UploadFunctionalLocationInfoExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEquipmentInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllEquipmentInfo" message="tns:IMaintenanceService_GetAllEquipmentInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllEquipmentInfoResponse" message="tns:IMaintenanceService_GetAllEquipmentInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetEquipmentInfoList" message="tns:IMaintenanceService_GetEquipmentInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetEquipmentInfoListResponse" message="tns:IMaintenanceService_GetEquipmentInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentEditInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetEquipmentEditInfo" message="tns:IMaintenanceService_GetEquipmentEditInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetEquipmentEditInfoResponse" message="tns:IMaintenanceService_GetEquipmentEditInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateEquipmentInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertOrUpdateEquipmentInfo" message="tns:IMaintenanceService_InsertOrUpdateEquipmentInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertOrUpdateEquipmentInfoResponse" message="tns:IMaintenanceService_InsertOrUpdateEquipmentInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEquipmentInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteEquipmentInfo" message="tns:IMaintenanceService_DeleteEquipmentInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteEquipmentInfoResponse" message="tns:IMaintenanceService_DeleteEquipmentInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetResourceInfo" message="tns:IMaintenanceService_GetResourceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetResourceInfoResponse" message="tns:IMaintenanceService_GetResourceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEquipmentSupportInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteEquipmentSupportInfo" message="tns:IMaintenanceService_DeleteEquipmentSupportInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteEquipmentSupportInfoResponse" message="tns:IMaintenanceService_DeleteEquipmentSupportInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEquipmentModelList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllEquipmentModelList" message="tns:IMaintenanceService_GetAllEquipmentModelList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllEquipmentModelListResponse" message="tns:IMaintenanceService_GetAllEquipmentModelList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParentEquipmentListDropDown">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetParentEquipmentListDropDown" message="tns:IMaintenanceService_GetParentEquipmentListDropDown_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetParentEquipmentListDropDownResponse" message="tns:IMaintenanceService_GetParentEquipmentListDropDown_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEquipmentLocationInfoSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllEquipmentLocationInfoSchedule" message="tns:IMaintenanceService_GetAllEquipmentLocationInfoSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllEquipmentLocationInfoScheduleResponse" message="tns:IMaintenanceService_GetAllEquipmentLocationInfoSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadEquipmentTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadEquipmentTemplate" message="tns:IMaintenanceService_DownloadEquipmentTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadEquipmentTemplateResponse" message="tns:IMaintenanceService_DownloadEquipmentTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadEquipmentInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadEquipmentInfo" message="tns:IMaintenanceService_DownloadEquipmentInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadEquipmentInfoResponse" message="tns:IMaintenanceService_DownloadEquipmentInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadEquipmentInfoExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/UploadEquipmentInfoExcel" message="tns:IMaintenanceService_UploadEquipmentInfoExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/UploadEquipmentInfoExcelResponse" message="tns:IMaintenanceService_UploadEquipmentInfoExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateEquipmentModelInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertOrUpdateEquipmentModelInfo" message="tns:IMaintenanceService_InsertOrUpdateEquipmentModelInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertOrUpdateEquipmentModelInfoResponse" message="tns:IMaintenanceService_InsertOrUpdateEquipmentModelInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentModelList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetEquipmentModelList" message="tns:IMaintenanceService_GetEquipmentModelList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetEquipmentModelListResponse" message="tns:IMaintenanceService_GetEquipmentModelList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentModelInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetEquipmentModelInfo" message="tns:IMaintenanceService_GetEquipmentModelInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetEquipmentModelInfoResponse" message="tns:IMaintenanceService_GetEquipmentModelInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEquipmentModelInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteEquipmentModelInfo" message="tns:IMaintenanceService_DeleteEquipmentModelInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteEquipmentModelInfoResponse" message="tns:IMaintenanceService_DeleteEquipmentModelInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorTypeInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetSensorTypeInfo" message="tns:IMaintenanceService_GetSensorTypeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetSensorTypeInfoResponse" message="tns:IMaintenanceService_GetSensorTypeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorUnitInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetSensorUnitInfo" message="tns:IMaintenanceService_GetSensorUnitInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetSensorUnitInfoResponse" message="tns:IMaintenanceService_GetSensorUnitInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasuringPointList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetMeasuringPointList" message="tns:IMaintenanceService_GetMeasuringPointList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetMeasuringPointListResponse" message="tns:IMaintenanceService_GetMeasuringPointList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectedMeasuringPointInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetSelectedMeasuringPointInfo" message="tns:IMaintenanceService_GetSelectedMeasuringPointInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetSelectedMeasuringPointInfoResponse" message="tns:IMaintenanceService_GetSelectedMeasuringPointInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasuringPointDropDownDataInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetMeasuringPointDropDownDataInfo" message="tns:IMaintenanceService_GetMeasuringPointDropDownDataInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetMeasuringPointDropDownDataInfoResponse" message="tns:IMaintenanceService_GetMeasuringPointDropDownDataInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateMeasuringPointInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertUpdateMeasuringPointInfo" message="tns:IMaintenanceService_InsertUpdateMeasuringPointInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertUpdateMeasuringPointInfoResponse" message="tns:IMaintenanceService_InsertUpdateMeasuringPointInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMeasuringPointInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteMeasuringPointInfo" message="tns:IMaintenanceService_DeleteMeasuringPointInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteMeasuringPointInfoResponse" message="tns:IMaintenanceService_DeleteMeasuringPointInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMeasuringPointListTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadMeasuringPointListTemplate" message="tns:IMaintenanceService_DownloadMeasuringPointListTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadMeasuringPointListTemplateResponse" message="tns:IMaintenanceService_DownloadMeasuringPointListTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMeasuringPointListExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadMeasuringPointListExcel" message="tns:IMaintenanceService_DownloadMeasuringPointListExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadMeasuringPointListExcelResponse" message="tns:IMaintenanceService_DownloadMeasuringPointListExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadMeasuringPointListExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/UploadMeasuringPointListExcel" message="tns:IMaintenanceService_UploadMeasuringPointListExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/UploadMeasuringPointListExcelResponse" message="tns:IMaintenanceService_UploadMeasuringPointListExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDocumentsAndImagesInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllDocumentsAndImagesInfo" message="tns:IMaintenanceService_GetAllDocumentsAndImagesInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllDocumentsAndImagesInfoResponse" message="tns:IMaintenanceService_GetAllDocumentsAndImagesInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDocumentsAndImagesInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertDocumentsAndImagesInfo" message="tns:IMaintenanceService_InsertDocumentsAndImagesInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertDocumentsAndImagesInfoResponse" message="tns:IMaintenanceService_InsertDocumentsAndImagesInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocumentsAndImagesInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteDocumentsAndImagesInfo" message="tns:IMaintenanceService_DeleteDocumentsAndImagesInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteDocumentsAndImagesInfoResponse" message="tns:IMaintenanceService_DeleteDocumentsAndImagesInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaintMasterData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetMaintMasterData" message="tns:IMaintenanceService_GetMaintMasterData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetMaintMasterDataResponse" message="tns:IMaintenanceService_GetMaintMasterData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMaintMasterDropDownDataInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllMaintMasterDropDownDataInfo" message="tns:IMaintenanceService_GetAllMaintMasterDropDownDataInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetAllMaintMasterDropDownDataInfoResponse" message="tns:IMaintenanceService_GetAllMaintMasterDropDownDataInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateMasterData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertUpdateMasterData" message="tns:IMaintenanceService_InsertUpdateMasterData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertUpdateMasterDataResponse" message="tns:IMaintenanceService_InsertUpdateMasterData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMasterData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteMasterData" message="tns:IMaintenanceService_DeleteMasterData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteMasterDataResponse" message="tns:IMaintenanceService_DeleteMasterData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskGroupInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetTaskGroupInfo" message="tns:IMaintenanceService_GetTaskGroupInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetTaskGroupInfoResponse" message="tns:IMaintenanceService_GetTaskGroupInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTaskGroupInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/SaveTaskGroupInfo" message="tns:IMaintenanceService_SaveTaskGroupInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/SaveTaskGroupInfoResponse" message="tns:IMaintenanceService_SaveTaskGroupInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTaskGroupInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteTaskGroupInfo" message="tns:IMaintenanceService_DeleteTaskGroupInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteTaskGroupInfoResponse" message="tns:IMaintenanceService_DeleteTaskGroupInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveGroupTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/ApproveGroupTask" message="tns:IMaintenanceService_ApproveGroupTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/ApproveGroupTaskResponse" message="tns:IMaintenanceService_ApproveGroupTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetTaskInfo" message="tns:IMaintenanceService_GetTaskInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetTaskInfoResponse" message="tns:IMaintenanceService_GetTaskInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTaskInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/SaveTaskInfo" message="tns:IMaintenanceService_SaveTaskInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/SaveTaskInfoResponse" message="tns:IMaintenanceService_SaveTaskInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTaskInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteTaskInfo" message="tns:IMaintenanceService_DeleteTaskInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteTaskInfoResponse" message="tns:IMaintenanceService_DeleteTaskInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTaskSequenceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/SaveTaskSequenceInfo" message="tns:IMaintenanceService_SaveTaskSequenceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/SaveTaskSequenceInfoResponse" message="tns:IMaintenanceService_SaveTaskSequenceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPIDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetPPIDetails" message="tns:IMaintenanceService_GetPPIDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetPPIDetailsResponse" message="tns:IMaintenanceService_GetPPIDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToolsDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetToolsDetails" message="tns:IMaintenanceService_GetToolsDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetToolsDetailsResponse" message="tns:IMaintenanceService_GetToolsDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSOPTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadSOPTemplate" message="tns:IMaintenanceService_DownloadSOPTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DownloadSOPTemplateResponse" message="tns:IMaintenanceService_DownloadSOPTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadTaskGroupZip">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/UploadTaskGroupZip" message="tns:IMaintenanceService_UploadTaskGroupZip_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/UploadTaskGroupZipResponse" message="tns:IMaintenanceService_UploadTaskGroupZip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateMaintenanceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertUpdateMaintenanceInfo" message="tns:IMaintenanceService_InsertUpdateMaintenanceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertUpdateMaintenanceInfoResponse" message="tns:IMaintenanceService_InsertUpdateMaintenanceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaintenanceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetMaintenanceInfo" message="tns:IMaintenanceService_GetMaintenanceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetMaintenanceInfoResponse" message="tns:IMaintenanceService_GetMaintenanceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaintenanceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteMaintenanceInfo" message="tns:IMaintenanceService_DeleteMaintenanceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/DeleteMaintenanceInfoResponse" message="tns:IMaintenanceService_DeleteMaintenanceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkGroupOfEquipemntOrLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetWorkGroupOfEquipemntOrLocation" message="tns:IMaintenanceService_GetWorkGroupOfEquipemntOrLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetWorkGroupOfEquipemntOrLocationResponse" message="tns:IMaintenanceService_GetWorkGroupOfEquipemntOrLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelmaintenanceWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/CancelmaintenanceWorkOrder" message="tns:IMaintenanceService_CancelmaintenanceWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/CancelmaintenanceWorkOrderResponse" message="tns:IMaintenanceService_CancelmaintenanceWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaintWorkOrderScheduleDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/UpdateMaintWorkOrderScheduleDateTime" message="tns:IMaintenanceService_UpdateMaintWorkOrderScheduleDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/UpdateMaintWorkOrderScheduleDateTimeResponse" message="tns:IMaintenanceService_UpdateMaintWorkOrderScheduleDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskGroupList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetTaskGroupList" message="tns:IMaintenanceService_GetTaskGroupList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetTaskGroupListResponse" message="tns:IMaintenanceService_GetTaskGroupList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskDetailsForTaskGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetTaskDetailsForTaskGroup" message="tns:IMaintenanceService_GetTaskDetailsForTaskGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetTaskDetailsForTaskGroupResponse" message="tns:IMaintenanceService_GetTaskDetailsForTaskGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaintenanceTaskGroupInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/UpdateMaintenanceTaskGroupInfo" message="tns:IMaintenanceService_UpdateMaintenanceTaskGroupInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/UpdateMaintenanceTaskGroupInfoResponse" message="tns:IMaintenanceService_UpdateMaintenanceTaskGroupInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskGroupIdentifier">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetTaskGroupIdentifier" message="tns:IMaintenanceService_GetTaskGroupIdentifier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetTaskGroupIdentifierResponse" message="tns:IMaintenanceService_GetTaskGroupIdentifier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaintenanceTaskInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/UpdateMaintenanceTaskInfo" message="tns:IMaintenanceService_UpdateMaintenanceTaskInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/UpdateMaintenanceTaskInfoResponse" message="tns:IMaintenanceService_UpdateMaintenanceTaskInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaintScheduleDetailInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetMaintScheduleDetailInfo" message="tns:IMaintenanceService_GetMaintScheduleDetailInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetMaintScheduleDetailInfoResponse" message="tns:IMaintenanceService_GetMaintScheduleDetailInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateMaintenanceScheduleDetailInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InsertUpdateMaintenanceScheduleDetailInfo" message="tns:IMaintenanceService_InsertUpdateMaintenanceScheduleDetailInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InsertUpdateMaintenanceScheduleDetailInfoResponse" message="tns:IMaintenanceService_InsertUpdateMaintenanceScheduleDetailInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateMaintenanceSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/ActivateMaintenanceSchedule" message="tns:IMaintenanceService_ActivateMaintenanceSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/ActivateMaintenanceScheduleResponse" message="tns:IMaintenanceService_ActivateMaintenanceSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InActivateMaintenanceSchedule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/InActivateMaintenanceSchedule" message="tns:IMaintenanceService_InActivateMaintenanceSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/InActivateMaintenanceScheduleResponse" message="tns:IMaintenanceService_InActivateMaintenanceSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleWorkOrderDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetScheduleWorkOrderDetails" message="tns:IMaintenanceService_GetScheduleWorkOrderDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetScheduleWorkOrderDetailsResponse" message="tns:IMaintenanceService_GetScheduleWorkOrderDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoReScheduleWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/AutoReScheduleWorkOrder" message="tns:IMaintenanceService_AutoReScheduleWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/AutoReScheduleWorkOrderResponse" message="tns:IMaintenanceService_AutoReScheduleWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoUpdateMaintenanceScheduleWorkOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/AutoUpdateMaintenanceScheduleWorkOrder" message="tns:IMaintenanceService_AutoUpdateMaintenanceScheduleWorkOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/AutoUpdateMaintenanceScheduleWorkOrderResponse" message="tns:IMaintenanceService_AutoUpdateMaintenanceScheduleWorkOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoUpdateScheduleBasedOnLastPerformanceDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/AutoUpdateScheduleBasedOnLastPerformanceDate" message="tns:IMaintenanceService_AutoUpdateScheduleBasedOnLastPerformanceDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/AutoUpdateScheduleBasedOnLastPerformanceDateResponse" message="tns:IMaintenanceService_AutoUpdateScheduleBasedOnLastPerformanceDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurementDocumentInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetMeasurementDocumentInfo" message="tns:IMaintenanceService_GetMeasurementDocumentInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetMeasurementDocumentInfoResponse" message="tns:IMaintenanceService_GetMeasurementDocumentInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasDocMeasuringPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaintenanceService/GetMeasDocMeasuringPoints" message="tns:IMaintenanceService_GetMeasDocMeasuringPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaintenanceService/GetMeasDocMeasuringPointsResponse" message="tns:IMaintenanceService_GetMeasDocMeasuringPoints_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMaintenanceService" type="tns:IMaintenanceService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertSelectedMeasuringPoint">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertSelectedMeasuringPoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSelectedMeasuringPoint">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteSelectedMeasuringPoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSparePartMaterialDetails">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetSparePartMaterialDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaintSparePartDetails">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetMaintSparePartDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMaintSparePartInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/SaveMaintSparePartInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaintSparePartInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteMaintSparePartInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentDetailsForSchedule">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetAttachmentDetailsForSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentDetailsForWorkOrder">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetAttachmentDetailsForWorkOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameForAutoComplete">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetUserNameForAutoComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEditWorkGroupInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetEditWorkGroupInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateWorkGroupInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertOrUpdateWorkGroupInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWorkGroupUserInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteWorkGroupUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadWorkGroupExcelTemplateInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DownloadWorkGroupExcelTemplateInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAllWorkGroupInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DownloadAllWorkGroupInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadExcelWorkGroupInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/UploadExcelWorkGroupInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserWorkGroupInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetUserWorkGroupInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceViewWorkOrderInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetResourceViewWorkOrderInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderBasicInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetWorkOrderBasicInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderEquipmentInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetWorkOrderEquipmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderEquipmentHistory">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetWorkOrderEquipmentHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderTaskInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetWorkOrderTaskInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartWorkOrderTask">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/StartWorkOrderTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndWorkOrderTask">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/EndWorkOrderTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTaskParameterValue">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/SaveTaskParameterValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertWorkOrderTaskImage">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertWorkOrderTaskImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkOrderSpareParts">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetWorkOrderSpareParts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveWorkOrderSparePartInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/SaveWorkOrderSparePartInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseWorkOrderInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/CloseWorkOrderInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllToolsInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetAllToolsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateToolInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertOrUpdateToolInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteToolsInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteToolsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSparePartsTemplate">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DownloadSparePartsTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSparePartsListExcel">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DownloadSparePartsListExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSparePartsinfoExcel">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/UploadSparePartsinfoExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationList">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetNotificationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetNotificationInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateNotificationInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertUpdateNotificationInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotificationInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteNotificationInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentListForDropDown">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetEquipmentListForDropDown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentDetailsForNotification">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetAttachmentDetailsForNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextNotificationSequenceID">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetNextNotificationSequenceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptNotificationInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/AcceptNotificationInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseNotificationInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/CloseNotificationInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaintenanceFeatureInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetMaintenanceFeatureInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteDateTimeFormatInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetSiteDateTimeFormatInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteCurrentDateTime">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetSiteCurrentDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnumInfoList">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetEnumInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomCode">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GenerateRandomCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateUserPreference">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertOrUpdateUserPreference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFunctionalLocInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetAllFunctionalLocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFunctionalLocList">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetAllFunctionalLocList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFLocationEditInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetFLocationEditInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateFunctionalLocInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertOrUpdateFunctionalLocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFunctionalLocInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteFunctionalLocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFunctionalLocListForHierarchicalDropDown">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetFunctionalLocListForHierarchicalDropDown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParentLocationDropDown">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetParentLocationDropDown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserWorkGroups">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetUserWorkGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFuncLocForSchedule">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetAllFuncLocForSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFunctionalLocationInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DownloadFunctionalLocationInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFunctionalLocationTemplate">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DownloadFunctionalLocationTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFunctionalLocationInfoExcel">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/UploadFunctionalLocationInfoExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEquipmentInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetAllEquipmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentInfoList">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetEquipmentInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentEditInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetEquipmentEditInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateEquipmentInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertOrUpdateEquipmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEquipmentInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteEquipmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetResourceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEquipmentSupportInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteEquipmentSupportInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEquipmentModelList">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetAllEquipmentModelList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParentEquipmentListDropDown">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetParentEquipmentListDropDown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEquipmentLocationInfoSchedule">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetAllEquipmentLocationInfoSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadEquipmentTemplate">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DownloadEquipmentTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadEquipmentInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DownloadEquipmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadEquipmentInfoExcel">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/UploadEquipmentInfoExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateEquipmentModelInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertOrUpdateEquipmentModelInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentModelList">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetEquipmentModelList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentModelInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetEquipmentModelInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEquipmentModelInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteEquipmentModelInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorTypeInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetSensorTypeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorUnitInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetSensorUnitInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasuringPointList">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetMeasuringPointList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectedMeasuringPointInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetSelectedMeasuringPointInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasuringPointDropDownDataInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetMeasuringPointDropDownDataInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateMeasuringPointInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertUpdateMeasuringPointInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMeasuringPointInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteMeasuringPointInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMeasuringPointListTemplate">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DownloadMeasuringPointListTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMeasuringPointListExcel">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DownloadMeasuringPointListExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadMeasuringPointListExcel">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/UploadMeasuringPointListExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDocumentsAndImagesInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetAllDocumentsAndImagesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDocumentsAndImagesInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertDocumentsAndImagesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocumentsAndImagesInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteDocumentsAndImagesInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaintMasterData">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetMaintMasterData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMaintMasterDropDownDataInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetAllMaintMasterDropDownDataInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateMasterData">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertUpdateMasterData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMasterData">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteMasterData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskGroupInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetTaskGroupInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTaskGroupInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/SaveTaskGroupInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTaskGroupInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteTaskGroupInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveGroupTask">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/ApproveGroupTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetTaskInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTaskInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/SaveTaskInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTaskInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteTaskInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTaskSequenceInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/SaveTaskSequenceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPIDetails">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetPPIDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToolsDetails">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetToolsDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSOPTemplate">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DownloadSOPTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadTaskGroupZip">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/UploadTaskGroupZip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateMaintenanceInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertUpdateMaintenanceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaintenanceInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetMaintenanceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaintenanceInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/DeleteMaintenanceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkGroupOfEquipemntOrLocation">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetWorkGroupOfEquipemntOrLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelmaintenanceWorkOrder">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/CancelmaintenanceWorkOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaintWorkOrderScheduleDateTime">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/UpdateMaintWorkOrderScheduleDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskGroupList">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetTaskGroupList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskDetailsForTaskGroup">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetTaskDetailsForTaskGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaintenanceTaskGroupInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/UpdateMaintenanceTaskGroupInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskGroupIdentifier">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetTaskGroupIdentifier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaintenanceTaskInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/UpdateMaintenanceTaskInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaintScheduleDetailInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetMaintScheduleDetailInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateMaintenanceScheduleDetailInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InsertUpdateMaintenanceScheduleDetailInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateMaintenanceSchedule">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/ActivateMaintenanceSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InActivateMaintenanceSchedule">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/InActivateMaintenanceSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleWorkOrderDetails">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetScheduleWorkOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoReScheduleWorkOrder">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/AutoReScheduleWorkOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoUpdateMaintenanceScheduleWorkOrder">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/AutoUpdateMaintenanceScheduleWorkOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutoUpdateScheduleBasedOnLastPerformanceDate">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/AutoUpdateScheduleBasedOnLastPerformanceDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurementDocumentInfo">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetMeasurementDocumentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasDocMeasuringPoints">
+      <soap:operation soapAction="http://tempuri.org/IMaintenanceService/GetMeasDocMeasuringPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MaintenanceService">
+    <wsdl:port name="BasicHttpBinding_IMaintenanceService" binding="tns:BasicHttpBinding_IMaintenanceService">
+      <soap:address location="http://localhost:9093/MaintenanceService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

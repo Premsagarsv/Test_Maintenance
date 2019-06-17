@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service" />
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" />
+  <xs:complexType name="MeasuringAttributeInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SensorType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttributeBasicInfo" nillable="true" type="tns:MeasuringAttributeBasicInfo" />
+          <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+          <xs:element minOccurs="0" name="IsSensorTypeMapped" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MeasuringAttributeDescriptionList" nillable="true" type="tns:ArrayOfMeasuringAttributeBasicInfo" />
+          <xs:element minOccurs="0" name="MeasuringAttributeID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MeasuringAttributeInfo" nillable="true" type="tns:MeasuringAttributeInfo" />
+  <xs:complexType name="SensorType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SensorTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="SensorTypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SensorType" nillable="true" type="tns:SensorType" />
+  <xs:complexType name="MeasuringAttributeBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="LanguageID" type="xs:int" />
+      <xs:element minOccurs="0" name="LanguageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeasuringAttributeDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeasuringAttributeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeasuringAttributeBasicInfo" nillable="true" type="tns:MeasuringAttributeBasicInfo" />
+  <xs:complexType name="ArrayOfMeasuringAttributeBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MeasuringAttributeBasicInfo" nillable="true" type="tns:MeasuringAttributeBasicInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMeasuringAttributeBasicInfo" nillable="true" type="tns:ArrayOfMeasuringAttributeBasicInfo" />
+  <xs:complexType name="SensorTypeForFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="SearchSensorType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SensorTypeForFilter" nillable="true" type="tns:SensorTypeForFilter" />
+  <xs:complexType name="SensorTypeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SensorTypesList" nillable="true" type="tns:ArrayOfSensorType" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SensorTypeList" nillable="true" type="tns:SensorTypeList" />
+  <xs:complexType name="ArrayOfSensorType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SensorType" nillable="true" type="tns:SensorType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSensorType" nillable="true" type="tns:ArrayOfSensorType" />
+  <xs:complexType name="MeasuringAttributeFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/iPAS_Service" base="q1:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttributeSorting" nillable="true" type="tns:AttributeSorting" />
+          <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+          <xs:element minOccurs="0" name="MeasuringAttributeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="SensorTypeID" type="xs:int" />
+          <xs:element minOccurs="0" name="SensorTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShowSiteAttributesOnly" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MeasuringAttributeFilter" nillable="true" type="tns:MeasuringAttributeFilter" />
+  <xs:simpleType name="AttributeSorting">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AttributeName_asc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AttributeName_desc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TransducerType_asc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TransducerType_desc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AttributeSorting" nillable="true" type="tns:AttributeSorting" />
+  <xs:complexType name="MeasuringAttributeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MeasuringAttributeInfo" nillable="true" type="tns:ArrayOfMeasuringAttributeInfo" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeasuringAttributeList" nillable="true" type="tns:MeasuringAttributeList" />
+  <xs:complexType name="ArrayOfMeasuringAttributeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MeasuringAttributeInfo" nillable="true" type="tns:MeasuringAttributeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMeasuringAttributeInfo" nillable="true" type="tns:ArrayOfMeasuringAttributeInfo" />
+  <xs:complexType name="SensorTypeUOMList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SensorTypeUOMsList" nillable="true" type="tns:ArrayOfSensorTypeUOMInfo" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SensorTypeUOMList" nillable="true" type="tns:SensorTypeUOMList" />
+  <xs:complexType name="ArrayOfSensorTypeUOMInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SensorTypeUOMInfo" nillable="true" type="tns:SensorTypeUOMInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSensorTypeUOMInfo" nillable="true" type="tns:ArrayOfSensorTypeUOMInfo" />
+  <xs:complexType name="SensorTypeUOMInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="SensorTypeInfo" nillable="true" type="tns:SensorType" />
+      <xs:element minOccurs="0" name="SensorUOMList" nillable="true" type="tns:ArrayOfSensorTypeUOM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SensorTypeUOMInfo" nillable="true" type="tns:SensorTypeUOMInfo" />
+  <xs:complexType name="ArrayOfSensorTypeUOM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SensorTypeUOM" nillable="true" type="tns:SensorTypeUOM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSensorTypeUOM" nillable="true" type="tns:ArrayOfSensorTypeUOM" />
+  <xs:complexType name="SensorTypeUOM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TransducerUOMID" type="xs:int" />
+      <xs:element minOccurs="0" name="TransducerUOMName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransducerUOMSymbol" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SensorTypeUOM" nillable="true" type="tns:SensorTypeUOM" />
+  <xs:complexType name="DefectInfoFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyDefectDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefectID" type="xs:int" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="SearchDefect" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SortField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DefectInfoFilter" nillable="true" type="tns:DefectInfoFilter" />
+  <xs:complexType name="CompanyDefectDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyDefectDetail" nillable="true" type="tns:CompanyDefectDetail" />
+  <xs:complexType name="DefectListInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefectInfoList" nillable="true" type="tns:ArrayOfDefectInfo" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DefectListInfo" nillable="true" type="tns:DefectListInfo" />
+  <xs:complexType name="ArrayOfDefectInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DefectInfo" nillable="true" type="tns:DefectInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDefectInfo" nillable="true" type="tns:ArrayOfDefectInfo" />
+  <xs:complexType name="DefectInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyDefectDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefectCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefectDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefectID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DefectInfo" nillable="true" type="tns:DefectInfo" />
+  <xs:complexType name="DefectAgencyFillter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyDefectDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefectAgencyID" type="xs:int" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="SearchAgency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SortField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DefectAgencyFillter" nillable="true" type="tns:DefectAgencyFillter" />
+  <xs:complexType name="DefectAgencyInfoList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefectAgencyList" nillable="true" type="tns:ArrayOfDefectAgency" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DefectAgencyInfoList" nillable="true" type="tns:DefectAgencyInfoList" />
+  <xs:complexType name="ArrayOfDefectAgency">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DefectAgency" nillable="true" type="tns:DefectAgency" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDefectAgency" nillable="true" type="tns:ArrayOfDefectAgency" />
+  <xs:complexType name="DefectAgency">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyDefectDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AgencyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefectAgencyID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DefectAgency" nillable="true" type="tns:DefectAgency" />
+  <xs:complexType name="DefectSourceFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyDefectDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefectSourceID" type="xs:int" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="SearchSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SortField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DefectSourceFilter" nillable="true" type="tns:DefectSourceFilter" />
+  <xs:complexType name="DefectSourceInfoList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefectSourceList" nillable="true" type="tns:ArrayOfDefectSource" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DefectSourceInfoList" nillable="true" type="tns:DefectSourceInfoList" />
+  <xs:complexType name="ArrayOfDefectSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DefectSource" nillable="true" type="tns:DefectSource" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDefectSource" nillable="true" type="tns:ArrayOfDefectSource" />
+  <xs:complexType name="DefectSource">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CompanyDefectDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefectSourceID" type="xs:int" />
+          <xs:element minOccurs="0" name="SourceCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DefectSource" nillable="true" type="tns:DefectSource" />
+  <xs:complexType name="ObjectInfoFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ObjectSearch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectInfoFilter" nillable="true" type="tns:ObjectInfoFilter" />
+  <xs:complexType name="ObjectInfoList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ObjecFieldsInfo" nillable="true" type="tns:ArrayOfObjectInfo" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectInfoList" nillable="true" type="tns:ObjectInfoList" />
+  <xs:complexType name="ArrayOfObjectInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ObjectInfo" nillable="true" type="tns:ObjectInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfObjectInfo" nillable="true" type="tns:ArrayOfObjectInfo" />
+  <xs:complexType name="ObjectInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ObjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="ObjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectInfo" nillable="true" type="tns:ObjectInfo" />
+  <xs:complexType name="CompanyDepartmentBasicInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/iPAS_Service" base="q2:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+          <xs:element minOccurs="0" name="ConsiderGlobalDepartment" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ConsiderRegionalDepartment" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompanyDepartmentBasicInfo" nillable="true" type="tns:CompanyDepartmentBasicInfo" />
+  <xs:complexType name="ArrayOfDepartmentBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DepartmentBasicInfo" nillable="true" type="tns:DepartmentBasicInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartmentBasicInfo" nillable="true" type="tns:ArrayOfDepartmentBasicInfo" />
+  <xs:complexType name="DepartmentBasicInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Department">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessLevelID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepartmentBasicInfo" nillable="true" type="tns:DepartmentBasicInfo" />
+  <xs:complexType name="Department">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepartmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Department" nillable="true" type="tns:Department" />
+  <xs:complexType name="DepartmentFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPlantLevel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SortField" nillable="true" type="tns:DepartmentTypeSort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartmentFilter" nillable="true" type="tns:DepartmentFilter" />
+  <xs:simpleType name="DepartmentTypeSort">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DepartmentName_asc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DepartmentName_desc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ParentDepartment_asc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ParentDepartment_desc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AccessLevel_asc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AccessLevel_desc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DepartmentTypeSort" nillable="true" type="tns:DepartmentTypeSort" />
+  <xs:complexType name="DepartmentList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Department" nillable="true" type="tns:ArrayOfDepartmentInfo" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartmentList" nillable="true" type="tns:DepartmentList" />
+  <xs:complexType name="ArrayOfDepartmentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DepartmentInfo" nillable="true" type="tns:DepartmentInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartmentInfo" nillable="true" type="tns:ArrayOfDepartmentInfo" />
+  <xs:complexType name="DepartmentInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Department">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="AccessLevel" type="q3:AccessLevel" />
+          <xs:element minOccurs="0" name="AccessLevelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+          <xs:element minOccurs="0" name="DepartmentDescInfoList" nillable="true" type="tns:ArrayOfDepartmentDescInfo" />
+          <xs:element minOccurs="0" name="ParentDepartmentID" type="xs:int" />
+          <xs:element minOccurs="0" name="ParentDepartmentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdatedBy" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepartmentInfo" nillable="true" type="tns:DepartmentInfo" />
+  <xs:complexType name="ArrayOfDepartmentDescInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DepartmentDescInfo" nillable="true" type="tns:DepartmentDescInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartmentDescInfo" nillable="true" type="tns:ArrayOfDepartmentDescInfo" />
+  <xs:complexType name="DepartmentDescInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepartmentDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LanguageID" type="xs:int" />
+      <xs:element minOccurs="0" name="LanguageName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartmentDescInfo" nillable="true" type="tns:DepartmentDescInfo" />
+  <xs:complexType name="ArrayOfDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Department" nillable="true" type="tns:Department" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartment" nillable="true" type="tns:ArrayOfDepartment" />
+  <xs:complexType name="ArrayOfAccessLevelInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccessLevelInfo" nillable="true" type="tns:AccessLevelInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccessLevelInfo" nillable="true" type="tns:ArrayOfAccessLevelInfo" />
+  <xs:complexType name="AccessLevelInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="AccessLevelName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccessLevelInfo" nillable="true" type="tns:AccessLevelInfo" />
+  <xs:complexType name="ArrayOfRoleInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoleInfo" nillable="true" type="tns:RoleInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoleInfo" nillable="true" type="tns:ArrayOfRoleInfo" />
+  <xs:complexType name="RoleInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Role">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+          <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+          <xs:element minOccurs="0" name="DepartmentID" type="xs:int" />
+          <xs:element minOccurs="0" name="IsAdmin" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RoleInfo" nillable="true" type="tns:RoleInfo" />
+  <xs:complexType name="Role">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleID" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="ArrayOfRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Role" nillable="true" type="tns:Role" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRole" nillable="true" type="tns:ArrayOfRole" />
+  <xs:complexType name="ArrayOfRoleTaskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoleTaskInfo" nillable="true" type="tns:RoleTaskInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoleTaskInfo" nillable="true" type="tns:ArrayOfRoleTaskInfo" />
+  <xs:complexType name="RoleTaskInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TaskInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+          <xs:element minOccurs="0" name="IsMasterData" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleID" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskCategory" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RoleTaskInfo" nillable="true" type="tns:RoleTaskInfo" />
+  <xs:complexType name="TaskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdNum" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskID" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskInfo" nillable="true" type="tns:TaskInfo" />
+  <xs:complexType name="DepartmentRolesFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepartmentID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartmentRolesFilter" nillable="true" type="tns:DepartmentRolesFilter" />
+  <xs:complexType name="ArrayOfDepartmentRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DepartmentRole" nillable="true" type="tns:DepartmentRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartmentRole" nillable="true" type="tns:ArrayOfDepartmentRole" />
+  <xs:complexType name="DepartmentRole">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Role">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessLevel" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepartmentRole" nillable="true" type="tns:DepartmentRole" />
+  <xs:complexType name="ArrayOfTaskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskInfo" nillable="true" type="tns:TaskInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskInfo" nillable="true" type="tns:ArrayOfTaskInfo" />
+  <xs:complexType name="TaskCategoryFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskModule" type="tns:TaskModule" />
+      <xs:element minOccurs="0" name="UserPermissionLevel" nillable="true" type="tns:UserPermissionLevel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskCategoryFilter" nillable="true" type="tns:TaskCategoryFilter" />
+  <xs:simpleType name="TaskModule">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MasterData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InBound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Staging">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Manufacture">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dispatch">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TaskModule" nillable="true" type="tns:TaskModule" />
+  <xs:simpleType name="UserPermissionLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Region">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">82</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Plant">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserPermissionLevel" nillable="true" type="tns:UserPermissionLevel" />
+  <xs:complexType name="RoleTasksFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleID" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskModule" type="tns:TaskModule" />
+      <xs:element minOccurs="0" name="UserPermissionLevel" nillable="true" type="tns:UserPermissionLevel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoleTasksFilter" nillable="true" type="tns:RoleTasksFilter" />
+  <xs:complexType name="RoleTaskAccess">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RoleTasksFilter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaskID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RoleTaskAccess" nillable="true" type="tns:RoleTaskAccess" />
+  <xs:complexType name="CompanyTechnologyFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryTechnologyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryTechnologyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="TechnologyID" type="xs:int" />
+      <xs:element minOccurs="0" name="TechnologyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechnologyNotes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyTechnologyFilter" nillable="true" type="tns:CompanyTechnologyFilter" />
+  <xs:complexType name="CompanyTechnologyList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TechnologyList" nillable="true" type="tns:ArrayOfCompanyTechnologyDetail" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyTechnologyList" nillable="true" type="tns:CompanyTechnologyList" />
+  <xs:complexType name="ArrayOfCompanyTechnologyDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyTechnologyDetail" nillable="true" type="tns:CompanyTechnologyDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompanyTechnologyDetail" nillable="true" type="tns:ArrayOfCompanyTechnologyDetail" />
+  <xs:complexType name="CompanyTechnologyDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryTechnologyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryTechnologyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubBusinessUnitID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubBusinessUnitName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechnologyID" type="xs:int" />
+      <xs:element minOccurs="0" name="TechnologyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechnologyNotes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyTechnologyDetail" nillable="true" type="tns:CompanyTechnologyDetail" />
+  <xs:complexType name="CategoryTechnologyFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryTechnologyFilter" nillable="true" type="tns:CategoryTechnologyFilter" />
+  <xs:complexType name="CategoryTechnologyList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryTechnologylist" nillable="true" type="tns:ArrayOfCategoryTechnology" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryTechnologyList" nillable="true" type="tns:CategoryTechnologyList" />
+  <xs:complexType name="ArrayOfCategoryTechnology">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoryTechnology" nillable="true" type="tns:CategoryTechnology" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategoryTechnology" nillable="true" type="tns:ArrayOfCategoryTechnology" />
+  <xs:complexType name="CategoryTechnology">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryTechnology" nillable="true" type="tns:CategoryTechnology" />
+  <xs:complexType name="ArrayOfLanguage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Language" nillable="true" type="tns:Language" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLanguage" nillable="true" type="tns:ArrayOfLanguage" />
+  <xs:complexType name="Language">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LanguageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LanguageID" type="xs:int" />
+      <xs:element minOccurs="0" name="LanguageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LanguageValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Language" nillable="true" type="tns:Language" />
+  <xs:complexType name="CountryFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="PageStartIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="RegionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountryFilter" nillable="true" type="tns:CountryFilter" />
+  <xs:complexType name="CountryDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryList" nillable="true" type="tns:ArrayOfCountry" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountryDetails" nillable="true" type="tns:CountryDetails" />
+  <xs:complexType name="ArrayOfCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Country" nillable="true" type="tns:Country" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountry" nillable="true" type="tns:ArrayOfCountry" />
+  <xs:complexType name="Country">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LanguageID" type="xs:int" />
+      <xs:element minOccurs="0" name="LanguageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionID" type="xs:int" />
+      <xs:element minOccurs="0" name="RegionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Country" nillable="true" type="tns:Country" />
+  <xs:complexType name="ArrayOfCountryRegion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CountryRegion" nillable="true" type="tns:CountryRegion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountryRegion" nillable="true" type="tns:ArrayOfCountryRegion" />
+  <xs:complexType name="CountryRegion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RegionID" type="xs:int" />
+      <xs:element minOccurs="0" name="RegionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountryRegion" nillable="true" type="tns:CountryRegion" />
+  <xs:complexType name="RegionFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="PageStartIndex" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegionFilter" nillable="true" type="tns:RegionFilter" />
+  <xs:complexType name="RegionDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RegionList" nillable="true" type="tns:ArrayOfRegion" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegionDetails" nillable="true" type="tns:RegionDetails" />
+  <xs:complexType name="ArrayOfRegion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Region" nillable="true" type="tns:Region" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegion" nillable="true" type="tns:ArrayOfRegion" />
+  <xs:complexType name="Region">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="RegionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionID" type="xs:int" />
+      <xs:element minOccurs="0" name="RegionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Region" nillable="true" type="tns:Region" />
+  <xs:complexType name="DepartmentRolesInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" base="q4:BasicInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+          <xs:element minOccurs="0" name="DepartmentID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DepartmentRolesInfo" nillable="true" type="tns:DepartmentRolesInfo" />
+  <xs:complexType name="ArrayOfCountryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CountryInfo" nillable="true" type="tns:CountryInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountryInfo" nillable="true" type="tns:ArrayOfCountryInfo" />
+  <xs:complexType name="CountryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountryInfo" nillable="true" type="tns:CountryInfo" />
+  <xs:complexType name="PasswordFilter">
+    <xs:sequence>
+      <xs:element name="ConsiderGlobalPwdIfNotInSite" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PasswordFilter" nillable="true" type="tns:PasswordFilter" />
+  <xs:complexType name="PasswordPolicy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompNewPwdWithOldPwd" type="xs:int" />
+      <xs:element minOccurs="0" name="EnableUserCredential" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MinPwdlength" type="xs:int" />
+      <xs:element minOccurs="0" name="PwdChangeDuration" type="xs:int" />
+      <xs:element minOccurs="0" name="PwdContainDigit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PwdContainLetter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PwdContainSplCharacter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserLockCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PasswordPolicy" nillable="true" type="tns:PasswordPolicy" />
+  <xs:complexType name="BusinessUnitBasicParam">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/iPAS_Service" base="q5:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BusinessUnitID" type="xs:int" />
+          <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BusinessUnitBasicParam" nillable="true" type="tns:BusinessUnitBasicParam" />
+  <xs:complexType name="BusinessUnitDetails">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BusinessUnit">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BusinessUnitDetails" nillable="true" type="tns:BusinessUnitDetails" />
+  <xs:complexType name="BusinessUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessUnitID" type="xs:int" />
+      <xs:element minOccurs="0" name="BusinessUnitName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusinessUnit" nillable="true" type="tns:BusinessUnit" />
+  <xs:complexType name="BusinessUnitFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BusinessUnitBasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="SearchByField" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SortField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BusinessUnitFilter" nillable="true" type="tns:BusinessUnitFilter" />
+  <xs:complexType name="BusinessUnitList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GetBusinessUnitList" nillable="true" type="tns:ArrayOfBusinessUnitDetails" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusinessUnitList" nillable="true" type="tns:BusinessUnitList" />
+  <xs:complexType name="ArrayOfBusinessUnitDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessUnitDetails" nillable="true" type="tns:BusinessUnitDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusinessUnitDetails" nillable="true" type="tns:ArrayOfBusinessUnitDetails" />
+  <xs:complexType name="SubBusinessUnit">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BusinessUnitDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SubBusinessUnitID" type="xs:int" />
+          <xs:element minOccurs="0" name="SubBusinessUnitName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SubBusinessUnit" nillable="true" type="tns:SubBusinessUnit" />
+  <xs:complexType name="SubBusinessUnitList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GetSubBusinessUnitList" nillable="true" type="tns:ArrayOfSubBusinessUnit" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubBusinessUnitList" nillable="true" type="tns:SubBusinessUnitList" />
+  <xs:complexType name="ArrayOfSubBusinessUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubBusinessUnit" nillable="true" type="tns:SubBusinessUnit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubBusinessUnit" nillable="true" type="tns:ArrayOfSubBusinessUnit" />
+  <xs:complexType name="ArrayOfBusinessUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessUnit" nillable="true" type="tns:BusinessUnit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusinessUnit" nillable="true" type="tns:ArrayOfBusinessUnit" />
+</xs:schema>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="QualityDecisionFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="SearchQualityCodeOrDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SortType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QualityDecisionFilter" nillable="true" type="tns:QualityDecisionFilter" />
+  <xs:complexType name="QualityDecisionList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QualityList" nillable="true" type="tns:ArrayOfQualityDecisionsFields" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QualityDecisionList" nillable="true" type="tns:QualityDecisionList" />
+  <xs:complexType name="ArrayOfQualityDecisionsFields">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QualityDecisionsFields" nillable="true" type="tns:QualityDecisionsFields" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQualityDecisionsFields" nillable="true" type="tns:ArrayOfQualityDecisionsFields" />
+  <xs:complexType name="QualityDecisionsFields">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="QualityDecisionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QualityDecisionDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QualityDecisionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QualityDecisionsFields" nillable="true" type="tns:QualityDecisionsFields" />
+  <xs:complexType name="ArrayOfDownTimeCategoryDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DownTimeCategoryDepartment" nillable="true" type="tns:DownTimeCategoryDepartment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDownTimeCategoryDepartment" nillable="true" type="tns:ArrayOfDownTimeCategoryDepartment" />
+  <xs:complexType name="DownTimeCategoryDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DepartmentNameList" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DownTimeCategoryDepartment" nillable="true" type="tns:DownTimeCategoryDepartment" />
+  <xs:complexType name="CompanyDownTimeFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="DownTimeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DownTimeType" nillable="true" type="tns:DownTimeType" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyDownTimeFilter" nillable="true" type="tns:CompanyDownTimeFilter" />
+  <xs:simpleType name="DownTimeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Planned_DownTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UnPlannedDownTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">85</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DownTimeType" nillable="true" type="tns:DownTimeType" />
+  <xs:complexType name="CompanyCategoryDownTimeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyDownTimeCategoryList" nillable="true" type="tns:ArrayOfCompanyCategoryDownTime" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyCategoryDownTimeInfo" nillable="true" type="tns:CompanyCategoryDownTimeInfo" />
+  <xs:complexType name="ArrayOfCompanyCategoryDownTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyCategoryDownTime" nillable="true" type="tns:CompanyCategoryDownTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompanyCategoryDownTime" nillable="true" type="tns:ArrayOfCompanyCategoryDownTime" />
+  <xs:complexType name="CompanyCategoryDownTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyDownTimeList" nillable="true" type="tns:ArrayOfDownTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyCategoryDownTime" nillable="true" type="tns:CompanyCategoryDownTime" />
+  <xs:complexType name="ArrayOfDownTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DownTime" nillable="true" type="tns:DownTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDownTime" nillable="true" type="tns:ArrayOfDownTime" />
+  <xs:complexType name="DownTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="DownTimeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DownTimeDescriptionList" nillable="true" type="tns:ArrayOfDownTimeDescription" />
+      <xs:element minOccurs="0" name="DownTimeID" type="xs:int" />
+      <xs:element minOccurs="0" name="DownTimeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DownTimeParentID" type="xs:int" />
+      <xs:element minOccurs="0" name="DownTimeType" nillable="true" type="tns:DownTimeType" />
+      <xs:element minOccurs="0" name="OEEIrrelevant" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OeeCategory" nillable="true" type="tns:OEECategory" />
+      <xs:element minOccurs="0" name="SpecialDowntimeType" nillable="true" type="tns:SpecialDowntimeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DownTime" nillable="true" type="tns:DownTime" />
+  <xs:complexType name="ArrayOfDownTimeDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DownTimeDescription" nillable="true" type="tns:DownTimeDescription" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDownTimeDescription" nillable="true" type="tns:ArrayOfDownTimeDescription" />
+  <xs:complexType name="DownTimeDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DownTimeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LanguageID" type="xs:int" />
+      <xs:element minOccurs="0" name="LanguageName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DownTimeDescription" nillable="true" type="tns:DownTimeDescription" />
+  <xs:simpleType name="OEECategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Availability_Index">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Performance_Index">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OEECategory" nillable="true" type="tns:OEECategory" />
+  <xs:simpleType name="SpecialDowntimeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ChangeOver">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">67</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TPM">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Holiday">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">72</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PreparationTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RushOrder">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">82</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EndOfShift">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LackOfResource">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">76</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">85</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoDemand">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">79</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SpecialDowntimeType" nillable="true" type="tns:SpecialDowntimeType" />
+  <xs:complexType name="ArrayOfDownTimeCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DownTimeCategory" nillable="true" type="tns:DownTimeCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDownTimeCategory" nillable="true" type="tns:ArrayOfDownTimeCategory" />
+  <xs:complexType name="DownTimeCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryDescriptionList" nillable="true" type="tns:ArrayOfDownTimeDescription" />
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DepartmentIDList" nillable="true" type="q2:ArrayOfint" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DepartmentList" nillable="true" type="q3:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DownTimeCategory" nillable="true" type="tns:DownTimeCategory" />
+  <xs:complexType name="BartenderServerInfoFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="ServerID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BartenderServerInfoFilter" nillable="true" type="tns:BartenderServerInfoFilter" />
+  <xs:complexType name="BartederServerConfigurationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NoOfMaxFailPrintAttempts" type="xs:int" />
+      <xs:element minOccurs="0" name="RetryFailPrintInterval" type="xs:int" />
+      <xs:element minOccurs="0" name="ServerList" nillable="true" type="tns:ArrayOfBartenderServerInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BartederServerConfigurationInfo" nillable="true" type="tns:BartederServerConfigurationInfo" />
+  <xs:complexType name="ArrayOfBartenderServerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BartenderServerInfo" nillable="true" type="tns:BartenderServerInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBartenderServerInfo" nillable="true" type="tns:ArrayOfBartenderServerInfo" />
+  <xs:complexType name="BartenderServerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsLoadBalacer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPrintServer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PortNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ServerID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BartenderServerInfo" nillable="true" type="tns:BartenderServerInfo" />
+  <xs:complexType name="BartenderServerFailPrintInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldType" type="tns:FailedPrintFieldType" />
+      <xs:element minOccurs="0" name="FieldValue" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BartenderServerFailPrintInfo" nillable="true" type="tns:BartenderServerFailPrintInfo" />
+  <xs:simpleType name="FailedPrintFieldType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FailPrintAttempt">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RetryPrintInterval">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FailedPrintFieldType" nillable="true" type="tns:FailedPrintFieldType" />
+  <xs:complexType name="BartenderServerErrorLogFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="ServerID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BartenderServerErrorLogFilter" nillable="true" type="tns:BartenderServerErrorLogFilter" />
+  <xs:complexType name="BartenderServerErrorDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BartenderServerErrorLogList" nillable="true" type="tns:ArrayOfBartenderServerErrorLog" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BartenderServerErrorDetails" nillable="true" type="tns:BartenderServerErrorDetails" />
+  <xs:complexType name="ArrayOfBartenderServerErrorLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BartenderServerErrorLog" nillable="true" type="tns:BartenderServerErrorLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBartenderServerErrorLog" nillable="true" type="tns:ArrayOfBartenderServerErrorLog" />
+  <xs:complexType name="BartenderServerErrorLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorDate" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorTime" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BartenderServerErrorLog" nillable="true" type="tns:BartenderServerErrorLog" />
+</xs:schema>

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DynamicGrid" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DynamicGrid" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:1590/CompanyService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="DynamicGridFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FeatureAdditionalInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FeatureID" type="xs:int" />
+      <xs:element minOccurs="0" name="ObjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="PlineID" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserViewID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicGridFilter" nillable="true" type="tns:DynamicGridFilter" />
+  <xs:complexType name="DynamicGridFeatureFieldInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldInfoList" nillable="true" type="tns:ArrayOfDynamicGridFieldInfo" />
+      <xs:element minOccurs="0" name="ObjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="PageToLoad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlineID" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeValueInfoList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+      <xs:element minOccurs="0" name="UserDefaultViewID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserViewInfoList" nillable="true" type="tns:ArrayOfUserViewBasicInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicGridFeatureFieldInfo" nillable="true" type="tns:DynamicGridFeatureFieldInfo" />
+  <xs:complexType name="ArrayOfDynamicGridFieldInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DynamicGridFieldInfo" nillable="true" type="tns:DynamicGridFieldInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDynamicGridFieldInfo" nillable="true" type="tns:ArrayOfDynamicGridFieldInfo" />
+  <xs:complexType name="DynamicGridFieldInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataRenderType" type="tns:DataRenderType" />
+      <xs:element minOccurs="0" name="DefaultGroupSortingFieldIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="EnableGroupSelection" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableGroupSorting" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableGrouping" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableSorting" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FieldID" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldSelectionType" type="tns:FieldSelectionType" />
+      <xs:element minOccurs="0" name="FilterControlDataType" type="tns:FilterControlDataType" />
+      <xs:element minOccurs="0" name="FilterControlRenderType" type="tns:FilterControlRenderType" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FilterDefaultValueList" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="GroupSortingExcludeFilterFieldIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasCustomAttribute" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasCustomDataBind" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFixedFilter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUserViewFilterField" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserViewDisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="UserViewGroupByOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="UserViewSortType" type="tns:SortType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicGridFieldInfo" nillable="true" type="tns:DynamicGridFieldInfo" />
+  <xs:simpleType name="DataRenderType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Text">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SiteDate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SiteTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EnumType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Image">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Custom">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">67</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YesOrNo">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">89</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SiteDateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataRenderType" nillable="true" type="tns:DataRenderType" />
+  <xs:simpleType name="FieldSelectionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Optional">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">79</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OptionalDefaultViewDisplay">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mandatory">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Custom">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">67</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SQLFilter">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SQLDefaultOrder">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FieldSelectionType" nillable="true" type="tns:FieldSelectionType" />
+  <xs:simpleType name="FilterControlDataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Text">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Number">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FilterControlDataType" nillable="true" type="tns:FilterControlDataType" />
+  <xs:simpleType name="FilterControlRenderType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Text">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Range">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">82</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DateRange">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Custom">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">67</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CustomMultiSelect">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EnumType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EnumTypeMultiSelect">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FilterControlRenderType" nillable="true" type="tns:FilterControlRenderType" />
+  <xs:simpleType name="SortType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Ascending">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Descending">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortType" nillable="true" type="tns:SortType" />
+  <xs:complexType name="ArrayOfTypeValueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TypeValueInfo" nillable="true" type="tns:TypeValueInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTypeValueInfo" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+  <xs:complexType name="TypeValueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TypeValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TypeValueInfo" nillable="true" type="tns:TypeValueInfo" />
+  <xs:complexType name="ArrayOfUserViewBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserViewBasicInfo" nillable="true" type="tns:UserViewBasicInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserViewBasicInfo" nillable="true" type="tns:ArrayOfUserViewBasicInfo" />
+  <xs:complexType name="UserViewBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="IsSharedView" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ViewID" type="xs:int" />
+      <xs:element minOccurs="0" name="ViewName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserViewBasicInfo" nillable="true" type="tns:UserViewBasicInfo" />
+  <xs:complexType name="DynamicGridContentFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExcelSheetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GridFilteredFieldInfoValueList" nillable="true" type="tns:ArrayOfDynamicGridFilterValueInfo" />
+      <xs:element minOccurs="0" name="GridSelectedFieldInfoList" nillable="true" type="tns:ArrayOfDynamicGridSelectedFieldInfo" />
+      <xs:element minOccurs="0" name="GroupedFirstFieldID" type="xs:int" />
+      <xs:element minOccurs="0" name="GroupedSecondFieldID" type="xs:int" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SelectedFieldIDListOrder" nillable="true" type="q2:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicGridContentFilter" nillable="true" type="tns:DynamicGridContentFilter" />
+  <xs:complexType name="ArrayOfDynamicGridFilterValueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DynamicGridFilterValueInfo" nillable="true" type="tns:DynamicGridFilterValueInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDynamicGridFilterValueInfo" nillable="true" type="tns:ArrayOfDynamicGridFilterValueInfo" />
+  <xs:complexType name="DynamicGridFilterValueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FilterValueList" nillable="true" type="q3:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicGridFilterValueInfo" nillable="true" type="tns:DynamicGridFilterValueInfo" />
+  <xs:complexType name="ArrayOfDynamicGridSelectedFieldInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DynamicGridSelectedFieldInfo" nillable="true" type="tns:DynamicGridSelectedFieldInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDynamicGridSelectedFieldInfo" nillable="true" type="tns:ArrayOfDynamicGridSelectedFieldInfo" />
+  <xs:complexType name="DynamicGridSelectedFieldInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldID" type="xs:int" />
+      <xs:element minOccurs="0" name="SortType" type="tns:SortType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicGridSelectedFieldInfo" nillable="true" type="tns:DynamicGridSelectedFieldInfo" />
+  <xs:complexType name="DynamicGridContentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DynamicGridRowInfoList" nillable="true" type="tns:ArrayOfDynamicGridRowContentInfo" />
+      <xs:element minOccurs="0" name="LastRowIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicGridContentInfo" nillable="true" type="tns:DynamicGridContentInfo" />
+  <xs:complexType name="ArrayOfDynamicGridRowContentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DynamicGridRowContentInfo" nillable="true" type="tns:DynamicGridRowContentInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDynamicGridRowContentInfo" nillable="true" type="tns:ArrayOfDynamicGridRowContentInfo" />
+  <xs:complexType name="DynamicGridRowContentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldValueList" nillable="true" type="tns:ArrayOfDynamicGridFieldValueInfo" />
+      <xs:element minOccurs="0" name="GroupTotalRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="IsGroupRow" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicGridRowContentInfo" nillable="true" type="tns:DynamicGridRowContentInfo" />
+  <xs:complexType name="ArrayOfDynamicGridFieldValueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DynamicGridFieldValueInfo" nillable="true" type="tns:DynamicGridFieldValueInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDynamicGridFieldValueInfo" nillable="true" type="tns:ArrayOfDynamicGridFieldValueInfo" />
+  <xs:complexType name="DynamicGridFieldValueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldID" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicGridFieldValueInfo" nillable="true" type="tns:DynamicGridFieldValueInfo" />
+  <xs:complexType name="DynamicGridTypeValueFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RenderType" type="tns:FilterControlRenderType" />
+      <xs:element minOccurs="0" name="TypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicGridTypeValueFilter" nillable="true" type="tns:DynamicGridTypeValueFilter" />
+  <xs:complexType name="ArrayOfUserViewFieldInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserViewFieldInfo" nillable="true" type="tns:UserViewFieldInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserViewFieldInfo" nillable="true" type="tns:ArrayOfUserViewFieldInfo" />
+  <xs:complexType name="UserViewFieldInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldID" type="xs:int" />
+      <xs:element minOccurs="0" name="GroupByOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="IsFilter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SortType" type="tns:SortType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserViewFieldInfo" nillable="true" type="tns:UserViewFieldInfo" />
+  <xs:complexType name="UserViewInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsSharedView" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserViewFieldInfoList" nillable="true" type="tns:ArrayOfUserViewFieldInfo" />
+      <xs:element minOccurs="0" name="ViewID" type="xs:int" />
+      <xs:element minOccurs="0" name="ViewName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserViewInfo" nillable="true" type="tns:UserViewInfo" />
+</xs:schema>

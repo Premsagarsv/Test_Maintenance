@@ -1,0 +1,39 @@
+.table th {
+    color: white !important;
+    background: #4884b8;
+    font-weight: 500 !important;
+}
+
+.bg-graylight {
+    color: white !important;
+    background: #4884b8 !important;
+    font-weight: 500 !important;
+}
+
+.table {
+    font-size: 13px;
+}
+.table th input {
+    color: #373a3c;
+}
+/*Crystal border lines in calendar page*/
+.pro-plan .custom-table #tbDynamicGrid td {
+    border-right: .2px solid #f7f5f5;
+}
+.label-databasetab .col-xs-9 #divTasks .custom-table-gradient i {
+    color: #f0ad4e !important;
+}
+.ui-widget-header{
+    background:#4884b8   
+}
+.ui-timepicker-title {
+    color:white
+}
+.modal-header{
+    padding-top:2px;
+    padding-bottom:0
+}
+.modal-footer{
+    padding-top:2px;
+    padding-bottom:2px;
+}

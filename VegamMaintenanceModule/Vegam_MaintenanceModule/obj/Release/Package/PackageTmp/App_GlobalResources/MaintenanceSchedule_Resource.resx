@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="assignWorkGroup" xml:space="preserve">
+    <value>Assign To</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="maintenanceInfo" xml:space="preserve">
+    <value>Maintenance Information</value>
+  </data>
+  <data name="maintenanceName" xml:space="preserve">
+    <value>Maintenance Name</value>
+  </data>
+  <data name="maintenanceType" xml:space="preserve">
+    <value>Maintenance Type</value>
+  </data>
+  <data name="maintTypeInformation" xml:space="preserve">
+    <value>Maintenance Types Information</value>
+  </data>
+  <data name="priority" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="schedule" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="scheduleDate" xml:space="preserve">
+    <value>Schedule Date</value>
+  </data>
+  <data name="selectEquipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="selectFLocation" xml:space="preserve">
+    <value>Func. Loc.</value>
+  </data>
+  <data name="workInstruction" xml:space="preserve">
+    <value>Work Instruction</value>
+  </data>
+  <data name="addEditMaintType" xml:space="preserve">
+    <value>Add/Edit Maintenance Type</value>
+  </data>
+  <data name="clickHereToViewMaintTypes" xml:space="preserve">
+    <value>Click here to view maintenance types</value>
+  </data>
+  <data name="defineSearchCriteria" xml:space="preserve">
+    <value>Define Search Criteria</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="showAll" xml:space="preserve">
+    <value>ShowAll</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="listofMaintTypes" xml:space="preserve">
+    <value>List Of Maintenance Types</value>
+  </data>
+  <data name="action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="addMaintWorkOrder" xml:space="preserve">
+    <value>Add Maintenance Work Order</value>
+  </data>
+  <data name="clickHereToAddMaintType" xml:space="preserve">
+    <value>Click here to add maintenance type</value>
+  </data>
+  <data name="estimatedTimeMin" xml:space="preserve">
+    <value>Estimated Time(mins)</value>
+  </data>
+  <data name="noTaskGroupSelected" xml:space="preserve">
+    <value>No SOP Selected</value>
+  </data>
+  <data name="searchToLoadMoreTaskGroup" xml:space="preserve">
+    <value>Please search to load more SOP</value>
+  </data>
+  <data name="select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="selectTaskGroup" xml:space="preserve">
+    <value>Select SOP</value>
+  </data>
+  <data name="taskGroup" xml:space="preserve">
+    <value>SOP Name</value>
+  </data>
+  <data name="taskName" xml:space="preserve">
+    <value>Operation Name</value>
+  </data>
+  <data name="addMore" xml:space="preserve">
+    <value>[ Add More ]</value>
+  </data>
+  <data name="enableToEnterRemark" xml:space="preserve">
+    <value>Enable to enter remark</value>
+  </data>
+  <data name="enableToTakePicture" xml:space="preserve">
+    <value>Enable to take Picture</value>
+  </data>
+  <data name="estimatedTime" xml:space="preserve">
+    <value>Estimated Time</value>
+  </data>
+  <data name="fileAndImageUpload" xml:space="preserve">
+    <value>File &amp; Images</value>
+  </data>
+  <data name="isMandatory" xml:space="preserve">
+    <value>Is Mandatory</value>
+  </data>
+  <data name="parameterName" xml:space="preserve">
+    <value>Parameter Name</value>
+  </data>
+  <data name="parameterType" xml:space="preserve">
+    <value>Parameter Type</value>
+  </data>
+  <data name="ppe" xml:space="preserve">
+    <value>PPE</value>
+  </data>
+  <data name="ppeImages" xml:space="preserve">
+    <value>PPE Images</value>
+  </data>
+  <data name="ppeNotFound" xml:space="preserve">
+    <value>PPE not found</value>
+  </data>
+  <data name="safetyInstruction" xml:space="preserve">
+    <value>Safety Instruction</value>
+  </data>
+  <data name="selectionCode" xml:space="preserve">
+    <value>Selection Code</value>
+  </data>
+  <data name="tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="toolsImages" xml:space="preserve">
+    <value>Tools Images</value>
+  </data>
+  <data name="toolsNotFound" xml:space="preserve">
+    <value>Tools Not Found</value>
+  </data>
+  <data name="clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="noRecordFound" xml:space="preserve">
+    <value>No record found</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="actionParameter" xml:space="preserve">
+    <value>Record Parameters</value>
+  </data>
+  <data name="addWorkInstrToMaintWork" xml:space="preserve">
+    <value>Add work instructions to maintenance work</value>
+  </data>
+  <data name="showTaskDetails" xml:space="preserve">
+    <value>Show Task Details</value>
+  </data>
+  <data name="taskGroupType" xml:space="preserve">
+    <value>SOP Type</value>
+  </data>
+  <data name="basicInformation" xml:space="preserve">
+    <value>Basic Information</value>
+  </data>
+  <data name="pleaseSaveAfterModification" xml:space="preserve">
+    <value>*Please save after any modification</value>
+  </data>
+  <data name="selectWorkGroup" xml:space="preserve">
+    <value>(Select work group)</value>
+  </data>
+  <data name="release" xml:space="preserve">
+    <value>Release</value>
+  </data>
+  <data name="scheduling" xml:space="preserve">
+    <value>Scheduling</value>
+  </data>
+  <data name="maintenanceCode" xml:space="preserve">
+    <value>Maintenance Type Code</value>
+  </data>
+  <data name="addBasicInformation" xml:space="preserve">
+    <value>Add Basic Information</value>
+  </data>
+  <data name="clickHereToSelectEquipmentOrFlocation" xml:space="preserve">
+    <value>Click here to select equipment or functional location</value>
+  </data>
+  <data name="equipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="fLocationOrEquipment" xml:space="preserve">
+    <value>Func. Loc. / Equip.</value>
+  </data>
+  <data name="equipmentInformation" xml:space="preserve">
+    <value>Choose Equipment </value>
+  </data>
+  <data name="listOfEquipment" xml:space="preserve">
+    <value>List of Equipments</value>
+  </data>
+  <data name="equipmentType" xml:space="preserve">
+    <value>Equipment Type</value>
+  </data>
+  <data name="fLocation" xml:space="preserve">
+    <value>Func. Loc.</value>
+  </data>
+  <data name="fLocationInformation" xml:space="preserve">
+    <value>Choose Func. Loc.</value>
+  </data>
+  <data name="listofFLocation" xml:space="preserve">
+    <value>List Of Func. Loc.</value>
+  </data>
+  <data name="addAttachment" xml:space="preserve">
+    <value>Add attachments</value>
+  </data>
+  <data name="addSparePartInformation" xml:space="preserve">
+    <value>Add Spare Parts Information</value>
+  </data>
+  <data name="attachments" xml:space="preserve">
+    <value>Attachments</value>
+  </data>
+  <data name="materialCodeAndDesc" xml:space="preserve">
+    <value>Material Code And Description</value>
+  </data>
+  <data name="quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="spareParts" xml:space="preserve">
+    <value>Spare Parts</value>
+  </data>
+  <data name="uom" xml:space="preserve">
+    <value>UOM</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="addInstructionManually" xml:space="preserve">
+    <value>Add Instructions Manually</value>
+  </data>
+  <data name="importInstructionFromSOP" xml:space="preserve">
+    <value>Import Instructions from SOP</value>
+  </data>
+  <data name="canceledWorkOrder" xml:space="preserve">
+    <value>This work order is cancelled</value>
+  </data>
+  <data name="notifiactionBasicInformation" xml:space="preserve">
+    <value>You are creating/editing work order for the below notification:</value>
+  </data>
+  <data name="notificationBy" xml:space="preserve">
+    <value>Notification By</value>
+  </data>
+  <data name="notificationCreatedOn" xml:space="preserve">
+    <value>Created On</value>
+  </data>
+  <data name="notificationEquipmentOrLocation" xml:space="preserve">
+    <value>Equipment/FL Name</value>
+  </data>
+  <data name="notificationName" xml:space="preserve">
+    <value>Notification Name</value>
+  </data>
+  <data name="notificationPriority" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="notificationType" xml:space="preserve">
+    <value>Notification Type</value>
+  </data>
+  <data name="notificationDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="cancelWorkOrder" xml:space="preserve">
+    <value>Cancel Work order</value>
+  </data>
+  <data name="shortText" xml:space="preserve">
+    <value>(Short Text)</value>
+  </data>
+  <data name="notificationNumber" xml:space="preserve">
+    <value>Notification Number</value>
+  </data>
+  <data name="workOrderNumber" xml:space="preserve">
+    <value>Work Order Number :</value>
+  </data>
+  <data name="instruction" xml:space="preserve">
+    <value>Instruction</value>
+  </data>
+</root>

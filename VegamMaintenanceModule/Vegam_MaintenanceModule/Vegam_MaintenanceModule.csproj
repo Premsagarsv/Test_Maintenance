@@ -1,0 +1,1519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{321A8394-0083-46BD-86CC-39693B96AD0A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vegam_MaintenanceModule</RootNamespace>
+    <AssemblyName>Vegam_MaintenanceModule</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="iPAS_Base">
+      <HintPath>..\DLL\iPAS_Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\DLL\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\DLL\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\DLL\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\DLL\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\DLL\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\DLL\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\DLL\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="VegamIOTDataSources">
+      <HintPath>..\DLL\VegamIOTDataSources.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService.wsdl" />
+    <None Include="Connected Services\ipas_CompanyService\CompanyService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService2.wsdl" />
+    <None Include="Connected Services\ipas_CompanyService\CompanyService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService2.disco" />
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.CompanySites.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.DefaultSiteUpdateInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.PrintServerBasicInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.SitePrintServerList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ipas_CompanyService\CompanyService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService.disco" />
+    <None Include="Connected Services\ipas_CompanyService\CompanyService.disco" />
+    <None Include="Connected Services\ipas_SiteService\SiteService2.disco" />
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.AdditionalSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.CompanyRegion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.ConnectionInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.ConnectionTypeSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.CountryInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.IPASModuleSettingInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.ManageSiteList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.OrderTypeInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.PlantCodeInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.PlantLevelTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.PlantSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.PlantTechnologyList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.SiteInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.TimeZoneInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_SiteService\Vegam_MaintenanceModule.ipas_SiteService.UserBasicInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ipas_SiteService\SiteService.wsdl" />
+    <None Include="Connected Services\ipas_SiteService\SiteService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService2.wsdl" />
+    <None Include="Connected Services\ipas_SiteService\SiteService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\SiteService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService.wsdl" />
+    <None Include="Connected Services\ipas_UserService\UserService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService2.wsdl" />
+    <None Include="Connected Services\ipas_UserService\UserService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ipas_SiteService\configuration91.svcinfo" />
+    <None Include="Connected Services\ipas_SiteService\configuration.svcinfo" />
+    <None Include="Connected Services\ipas_SiteService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService.disco" />
+    <None Include="Connected Services\Vegam_MaintenanceService\MaintenanceService.disco" />
+    <None Include="Connected Services\Vegam_MaintenanceService\configuration91.svcinfo" />
+    <None Include="Connected Services\Vegam_MaintenanceService\configuration.svcinfo" />
+    <None Include="Connected Services\Vegam_MaintenanceService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ipas_UserService\UserService2.disco" />
+    <Content Include="MaintenanceIndex.aspx" />
+    <Content Include="MaintenanceMasterIndex.aspx" />
+    <Content Include="ManufactureIndex.aspx" />
+    <Content Include="Preventive\AddDocumentsAndImages.aspx" />
+    <Content Include="Preventive\AddEquipmentInfo.aspx" />
+    <Content Include="Preventive\AddEquipmentModel.aspx" />
+    <Content Include="Preventive\AddFunctionalLocation.aspx" />
+    <Content Include="Preventive\AddMeasuringPoint.aspx" />
+    <Content Include="Preventive\AddNotificationInfo.aspx" />
+    <Content Include="Preventive\ConfigureSpareParts.aspx" />
+    <Content Include="Preventive\CreateSchedule.aspx" />
+    <Content Include="Preventive\CreateWorkGroup.aspx" />
+    <Content Include="Preventive\EquipmentList.aspx" />
+    <Content Include="Preventive\EquipmentModelList.aspx" />
+    <Content Include="Preventive\FunctionalLocationList.aspx" />
+    <Content Include="Preventive\MaintenanceInfo.aspx" />
+    <Content Include="Preventive\MaintenanceSchedule.aspx" />
+    <Content Include="Preventive\ManageMeasurementDocument.aspx" />
+    <Content Include="Preventive\ManageNotification.aspx" />
+    <Content Include="Preventive\ManageSchedule.aspx" />
+    <Content Include="Preventive\ManageWorkOrder.aspx" />
+    <Content Include="Preventive\MeasurementDocument.aspx" />
+    <Content Include="Preventive\MeasuringPointList.aspx" />
+    <Content Include="Preventive\TaskGroupInfo.aspx" />
+    <Content Include="Preventive\TaskGroupList.aspx" />
+    <Content Include="Preventive\ToolsInfo.aspx" />
+    <Content Include="Preventive\ViewWorkOrderInfo.aspx" />
+    <Content Include="Preventive\WorkOrderCalendar.aspx" />
+    <Content Include="Preventive\WorkOrderDayView.aspx" />
+    <Content Include="Preventive\WorkOrderOrderView.aspx" />
+    <Content Include="Preventive\WorkOrderResourceView.aspx" />
+    <Content Include="ScriptResources\CreateScheduleScriptResource.js" />
+    <Content Include="ScriptResources\DocumentsAndImagesInfoScriptResource.js" />
+    <Content Include="ScriptResources\DynamicGridScriptResource.js" />
+    <Content Include="ScriptResources\EquipmentInfoScriptResource.js" />
+    <Content Include="ScriptResources\EquipmentModelScriptResource.js" />
+    <Content Include="ScriptResources\FunctionalLocationScriptResource.js" />
+    <Content Include="ScriptResources\JQueryCalendarScriptResource.js" />
+    <Content Include="ScriptResources\MaintenanceInfoScriptResource.js" />
+    <Content Include="ScriptResources\MaintenanceScheduleScriptResource.js" />
+    <Content Include="ScriptResources\ManageScheduleScriptResource.js" />
+    <Content Include="ScriptResources\ManageWorkOrderScriptResource.js" />
+    <Content Include="ScriptResources\MeasurementDocumentScriptResource.js" />
+    <Content Include="ScriptResources\MeasuringPointScriptResource.js" />
+    <Content Include="ScriptResources\NotificationScriptResource.js" />
+    <Content Include="ScriptResources\SparePartsScriptResource.js" />
+    <Content Include="ScriptResources\TaskGroupScriptResource.js" />
+    <Content Include="ScriptResources\ToolsScriptResource.js" />
+    <Content Include="ScriptResources\ViewWorkOrderInfoScriptResource.js" />
+    <Content Include="ScriptResources\WorkGroupInfoScriptResource.js" />
+    <Content Include="ScriptResources\WorkOrderCalendarScriptResource.js" />
+    <Content Include="ScriptResources\WorkOrderDayViewCalendarScriptResource.js" />
+    <Content Include="ScriptResources\WorkOrderOrderViewCalendarScriptResource.js" />
+    <Content Include="ScriptResources\WorkOrderResourceViewCalendarScriptResource.js" />
+    <Content Include="Scripts\iPAS_Pager.js" />
+    <Content Include="Scripts\iPAS_Spinner_bs4.js" />
+    <Content Include="Scripts\jquery.timepicker.js" />
+    <Content Include="Scripts\JsBarcode.code39.min.js" />
+    <Content Include="Scripts\jstree.js" />
+    <Content Include="Scripts\MaintenanceScheduleScriptResource.js" />
+    <Content Include="Scripts\pdfmake.min.js" />
+    <Content Include="Scripts\vakata-jstree.js" />
+    <Content Include="Scripts\vegam-multiselect-dropdown.js" />
+    <Content Include="Scripts\Vegam_AddDocumentsAndImages.js" />
+    <Content Include="Scripts\Vegam_AddEquipmentInfo.js" />
+    <Content Include="Scripts\Vegam_AddEquipmentModel.js" />
+    <Content Include="Scripts\Vegam_AddFunctionalLocation.js" />
+    <Content Include="Scripts\Vegam_AddMeasuringPoint.js" />
+    <Content Include="Scripts\Vegam_AddNotification.js" />
+    <Content Include="Scripts\Vegam_ConfigureSpareParts.js" />
+    <Content Include="Scripts\Vegam_CreateSchedule.js" />
+    <Content Include="Scripts\Vegam_CreateWorkGroup.js" />
+    <Content Include="Scripts\Vegam_DynamicGridControlScript_v26.js" />
+    <Content Include="Scripts\Vegam_EquipmentInfoList.js" />
+    <Content Include="Scripts\Vegam_EquipmentModelList.js" />
+    <Content Include="Scripts\Vegam_FunctionalLocationList.js" />
+    <Content Include="Scripts\Vegam_MaintenanceInfo.js" />
+    <Content Include="Scripts\Vegam_MaintenanceSchedule.js" />
+    <Content Include="Scripts\Vegam_ManageMeasurementDocument.js" />
+    <Content Include="Scripts\Vegam_ManageNotification.js" />
+    <Content Include="Scripts\Vegam_ManageSchedule.js" />
+    <Content Include="Scripts\Vegam_ManageWorkOrder.js" />
+    <Content Include="Scripts\Vegam_MeasurementDocument.js" />
+    <Content Include="Scripts\Vegam_MeasuringPointList.js" />
+    <Content Include="Scripts\Vegam_TaskGroupInfo.js" />
+    <Content Include="Scripts\Vegam_TaskGroupList.js" />
+    <Content Include="Scripts\Vegam_ToolsInfo.js" />
+    <Content Include="Scripts\Vegam_ViewWorkOrderInfo.js" />
+    <Content Include="Scripts\Vegam_WorkOrderCalendar.js" />
+    <Content Include="Scripts\Vegam_WorkOrderDayView.js" />
+    <Content Include="Scripts\Vegam_WorkOrderOrderView.js" />
+    <Content Include="Scripts\Vegam_WorkOrderResourceView.js" />
+    <Content Include="Styles\dhtmlxscheduler.css" />
+    <Content Include="Styles\Images\Maint_calender.png" />
+    <Content Include="Styles\Images\Maint_Cancelled.png" />
+    <Content Include="Styles\Images\Maint_Closed.png" />
+    <Content Include="Styles\Images\Maint_Completed.png" />
+    <Content Include="Styles\Images\Maint_InProgress.png" />
+    <Content Include="Styles\Images\Maint_Overdue.png" />
+    <Content Include="Styles\Images\Maint_Scheduled.png" />
+    <Content Include="Styles\Images\notification.png" />
+    <Content Include="Styles\Images\preventive_checklist.png" />
+    <Content Include="Styles\Images\preventive_workorder.png" />
+    <Content Include="Styles\Images\Spare_parts.png" />
+    <Content Include="Styles\proplan_v7.css" />
+    <Content Include="Styles\select2.css" />
+    <Content Include="Styles\tables_v3.css" />
+    <Content Include="Styles\themes\default-dark\32px.png" />
+    <Content Include="Styles\themes\default-dark\40px.png" />
+    <Content Include="Styles\themes\default-dark\style.css" />
+    <Content Include="Styles\themes\default-dark\throbber.gif" />
+    <Content Include="Styles\themes\default\32px.png" />
+    <Content Include="Styles\themes\default\40px.png" />
+    <Content Include="Styles\themes\default\style.css" />
+    <Content Include="Styles\themes\default\throbber.gif" />
+    <Content Include="Styles\vegam-multiselect-dropdown.css" />
+    <Content Include="UserControls\DynamicGridControl.ascx" />
+    <Content Include="WebServices\Vegam_MaintenanceService.asmx" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\Vegam_AddTaskList.js" />
+    <Content Include="Styles\Images\Configure_Critical_Control_Parameters .png" />
+    <Content Include="Vegam-Responsive.Master" />
+    <Content Include="App_GlobalResources\ExcelFormat\FunctionalLocationInfo.rar" />
+    <Content Include="DownloadHandler.ashx" />
+    <Content Include="HandlerFiles\DownloadHandler.ashx" />
+    <Content Include="HandlerFiles\MeasuringPointUploadHandler.ashx" />
+    <Content Include="Styles\themes\base.less" />
+    <Content Include="Styles\themes\default-dark\style.less" />
+    <Content Include="Styles\themes\default\style.less" />
+    <Content Include="Styles\themes\main.less" />
+    <Content Include="Styles\themes\mixins.less" />
+    <Content Include="Styles\themes\responsive.less" />
+    <Content Include="HandlerFiles\SparePartsUploadHandler.ashx" />
+    <Content Include="HandlerFiles\SOPUploadHandler.ashx" />
+    <None Include="Connected Services\Vegam_MaintenanceService\MaintenanceService.wsdl" />
+    <None Include="Connected Services\Vegam_MaintenanceService\MaintenanceService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Vegam_MaintenanceService\MaintenanceService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Vegam_MaintenanceService\MaintenanceService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Vegam_MaintenanceService\MaintenanceService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Vegam_MaintenanceService\MaintenanceService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.AddFLocationReturnInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.AutoCompleteUserInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.DateTimeInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.DocumentInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.EnumTypeInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentDetailList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentDetailsInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentListInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentModelInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentModelListDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentModelListInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.FLocationInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.FLocationListDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.FLocationListInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.HierarchicalListInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.InstructionSelectorInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.KeyValueInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.LocationWorkGroupInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.MaintenanceFeatureInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.MaintenanceInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.MaintSparePartInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.MaintTaskGroupInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.MaintTaskInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.MasterDataDropDownList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.MasterDataList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.MeasurementDocumentInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.MeasuringPoint.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.MeasuringPointDataTypeList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.MeasuringPointListInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.NotificationInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.NotificationList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.ScheduleDetailInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.ScheduleWorkOrderDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.SiteDateTimeFormatInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.TaskGroupBasicInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.TaskGroupIdentifier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.TaskInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.TaskStartEndReturnInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.ToolsListInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.TypeValueInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.UserWorkGroupInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkGroupInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderBasicInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderEquipmentHistoryDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderEquipmentInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderResourceViewInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderSparePartsInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderTaskDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderTaskImageInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="HandlerFiles\FunctionalLocationUploadHandler.ashx" />
+    <Content Include="HandlerFiles\EquipmentUploadHandler.ashx" />
+    <Content Include="HandlerFiles\WorkGroupUploadHandler.ashx" />
+    <Content Include="Connected Services\Vegam_MaintenanceService\Vegam_MaintenanceModule.Vegam_MaintenanceService.MaintenanceIdentityInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\Nayan.pubxml" />
+    <Content Include="Vegam-Iframe.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.AccessLevelInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.BartederServerConfigurationInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.BartenderServerErrorDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.BartenderServerInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.BusinessUnit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.BusinessUnitList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.CategoryTechnologyList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.CompanyCategoryDownTimeInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.CompanySiteList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.CompanyTechnologyList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.Country.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.CountryDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.CountryInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.CountryRegion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.DefectAgencyInfoList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.DefectListInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.DefectSourceInfoList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.Department.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.DepartmentBasicInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.DepartmentList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.DepartmentRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.DownTimeCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.DownTimeCategoryDepartment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.DynamicGridContentInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.DynamicGridFeatureFieldInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.Language.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.MeasuringAttributeInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.MeasuringAttributeList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.ObjectInfoList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.PasswordPolicy.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.PlantLevelRoles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.QualityDecisionList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.QualityDecisionsFields.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.Region.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.RegionDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.RoleInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.RoleTaskInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.SensorTypeList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.SensorTypeUOMInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.SensorTypeUOMList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.SiteInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.SiteRoleInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.SubBusinessUnitList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.TaskInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.TypeValueInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.UserBasicInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_CompanyService\Vegam_MaintenanceModule.ipas_CompanyService.UserViewFieldInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ipas_UserService\configuration91.svcinfo" />
+    <None Include="Connected Services\ipas_UserService\configuration.svcinfo" />
+    <None Include="Connected Services\ipas_UserService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ipas_CompanyService\configuration91.svcinfo" />
+    <None Include="Connected Services\ipas_CompanyService\configuration.svcinfo" />
+    <None Include="Connected Services\ipas_CompanyService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Login.aspx" />
+    <Content Include="MaintenanceIndex1.aspx" />
+    <Content Include="Scripts\ajaxfileupload.js" />
+    <Content Include="Scripts\autogrow.js" />
+    <Content Include="Scripts\AutoReSize.js" />
+    <Content Include="Scripts\bootstrap-progressbar.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap2.3.1.min.js" />
+    <Content Include="Scripts\dhtmlxscheduler.js" />
+    <Content Include="Scripts\dhtmlxscheduler_timeline.js" />
+    <Content Include="Scripts\dhtmlxscheduler_tooltip.js" />
+    <Content Include="Scripts\highstock.js" />
+    <Content Include="Scripts\html5shiv.min.js" />
+    <Content Include="Scripts\IESpinner.js" />
+    <Content Include="Scripts\iPAS_Common_v4.js" />
+    <Content Include="Scripts\iPAS_SiteNames_v6.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-2.2.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.flip.min.js" />
+    <Content Include="Scripts\jquery.MultiSelect.js" />
+    <Content Include="Scripts\jquery.placeholder.min.js" />
+    <Content Include="Scripts\jquery.scannerdetection.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
+    <Content Include="Scripts\jquery.ui.timepicker.js" />
+    <Content Include="Scripts\knockout-3.4.2.js" />
+    <Content Include="Scripts\knockout.js" />
+    <Content Include="Scripts\knockout.mapping.js" />
+    <Content Include="Scripts\knockout.validation.js" />
+    <Content Include="Scripts\lz-string.min.js" />
+    <Content Include="Scripts\mermaid.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\No-data-to-display.js" />
+    <Content Include="Scripts\placeHolder.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\select3.js" />
+    <Content Include="Scripts\tether.min.js" />
+    <Content Include="Scripts\VegamViewSignalR_v1.js" />
+    <Content Include="Scripts\Vegam_SignalRClient_v2.js" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\fonts\css\font-awesome.min.css" />
+    <Content Include="Styles\fonts\fonts\fontawesome-webfont.svg" />
+    <Content Include="Styles\jquery-ui.min.css" />
+    <Content Include="Styles\jquery.ui.timepicker.css" />
+    <Content Include="Styles\vegam_h_v21.css" />
+    <Content Include="UserControls\Pager.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.AccessInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.AreaInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.AttendanceDetailsInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.AutoCompleteUserInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.BasicUserInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.CompanySites.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.CurrentUserInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.DiaplayUserInfoList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.DispatchAreaInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.DisplayAttendanceUserInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.HandHeldUserPermission.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.Languages.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.PlantLevelDepartmentRoles.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.PLineWorkshopInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.SiteCurrentDate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.SiteFeatureInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.SiteInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.SitePrinters.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.UserFingerPrintInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.UserFingerPrintInfoList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.UserPermissions.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.UserProductionLines.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ipas_UserService\Vegam_MaintenanceModule.ipas_UserService.WorkShopInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Styles\fonts\fonts\fontawesome-webfont.eot" />
+    <Content Include="Styles\fonts\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Styles\fonts\fonts\fontawesome-webfont.woff" />
+    <Content Include="Styles\fonts\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Styles\fonts\fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\CreateSchedule_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateSchedule_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DocumentInfo_Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentInfo_Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\DynamicGridResource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DynamicGridResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\EquipmentModel_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EquipmentModel_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Equipment_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Equipment_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\FunctionalLocation_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FunctionalLocation_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MaintenanceFeatures.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenanceFeatures.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MaintenanceIndex_Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenanceIndex_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MaintenancePageID_Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenancePageID_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MaintenanceSchedule_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaintenanceSchedule_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ManageNotification_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageNotification_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ManageSchedule_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageSchedule_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ManageWorkOrder_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManageWorkOrder_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MeasurementDocument_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MeasurementDocument_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\MeasuringPoint_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MeasuringPoint_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\SparePartsInfo_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SparePartsInfo_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\TaskGroup_Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TaskGroup_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ToolInfo_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToolInfo_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ViewWorkOrderResource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewWorkOrderResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WorkGroup_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkGroup_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WorkOrderCalendar_Resource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkOrderCalendar_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\MaintenanceBLL.cs" />
+    <Compile Include="BLL\SiteBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="CommonBLL.cs" />
+    <Compile Include="Connected Services\ipas_CompanyService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ipas_SiteService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ipas_UserService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\Vegam_MaintenanceService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadHandler.ashx.cs">
+      <DependentUpon>DownloadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Encoder.cs" />
+    <Compile Include="HandlerFiles\DownloadHandler.ashx.cs">
+      <DependentUpon>DownloadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HandlerFiles\EquipmentUploadHandler.ashx.cs">
+      <DependentUpon>EquipmentUploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HandlerFiles\FunctionalLocationUploadHandler.ashx.cs">
+      <DependentUpon>FunctionalLocationUploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HandlerFiles\MeasuringPointUploadHandler.ashx.cs">
+      <DependentUpon>MeasuringPointUploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HandlerFiles\SOPUploadHandler.ashx.cs">
+      <DependentUpon>SOPUploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HandlerFiles\SparePartsUploadHandler.ashx.cs">
+      <DependentUpon>SparePartsUploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HandlerFiles\WorkGroupUploadHandler.ashx.cs">
+      <DependentUpon>WorkGroupUploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceIndex.aspx.cs">
+      <DependentUpon>MaintenanceIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintenanceIndex.aspx.designer.cs">
+      <DependentUpon>MaintenanceIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceIndex1.aspx.cs">
+      <DependentUpon>MaintenanceIndex1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintenanceIndex1.aspx.designer.cs">
+      <DependentUpon>MaintenanceIndex1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceMasterIndex.aspx.cs">
+      <DependentUpon>MaintenanceMasterIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintenanceMasterIndex.aspx.designer.cs">
+      <DependentUpon>MaintenanceMasterIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManufactureIndex.aspx.cs">
+      <DependentUpon>ManufactureIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManufactureIndex.aspx.designer.cs">
+      <DependentUpon>ManufactureIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\AddDocumentsAndImages.aspx.cs">
+      <DependentUpon>AddDocumentsAndImages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\AddDocumentsAndImages.aspx.designer.cs">
+      <DependentUpon>AddDocumentsAndImages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\AddEquipmentInfo.aspx.cs">
+      <DependentUpon>AddEquipmentInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\AddEquipmentInfo.aspx.designer.cs">
+      <DependentUpon>AddEquipmentInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\AddEquipmentModel.aspx.cs">
+      <DependentUpon>AddEquipmentModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\AddEquipmentModel.aspx.designer.cs">
+      <DependentUpon>AddEquipmentModel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\AddFunctionalLocation.aspx.cs">
+      <DependentUpon>AddFunctionalLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\AddFunctionalLocation.aspx.designer.cs">
+      <DependentUpon>AddFunctionalLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\AddMeasuringPoint.aspx.cs">
+      <DependentUpon>AddMeasuringPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\AddMeasuringPoint.aspx.designer.cs">
+      <DependentUpon>AddMeasuringPoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\AddNotificationInfo.aspx.cs">
+      <DependentUpon>AddNotificationInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\AddNotificationInfo.aspx.designer.cs">
+      <DependentUpon>AddNotificationInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\ConfigureSpareParts.aspx.cs">
+      <DependentUpon>ConfigureSpareParts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\ConfigureSpareParts.aspx.designer.cs">
+      <DependentUpon>ConfigureSpareParts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\CreateSchedule.aspx.cs">
+      <DependentUpon>CreateSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\CreateSchedule.aspx.designer.cs">
+      <DependentUpon>CreateSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\CreateWorkGroup.aspx.cs">
+      <DependentUpon>CreateWorkGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\CreateWorkGroup.aspx.designer.cs">
+      <DependentUpon>CreateWorkGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\EquipmentList.aspx.cs">
+      <DependentUpon>EquipmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\EquipmentList.aspx.designer.cs">
+      <DependentUpon>EquipmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\EquipmentModelList.aspx.cs">
+      <DependentUpon>EquipmentModelList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\EquipmentModelList.aspx.designer.cs">
+      <DependentUpon>EquipmentModelList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\FunctionalLocationList.aspx.cs">
+      <DependentUpon>FunctionalLocationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\FunctionalLocationList.aspx.designer.cs">
+      <DependentUpon>FunctionalLocationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\MaintenanceInfo.aspx.cs">
+      <DependentUpon>MaintenanceInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\MaintenanceInfo.aspx.designer.cs">
+      <DependentUpon>MaintenanceInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\MaintenanceSchedule.aspx.cs">
+      <DependentUpon>MaintenanceSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\MaintenanceSchedule.aspx.designer.cs">
+      <DependentUpon>MaintenanceSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\ManageMeasurementDocument.aspx.cs">
+      <DependentUpon>ManageMeasurementDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\ManageMeasurementDocument.aspx.designer.cs">
+      <DependentUpon>ManageMeasurementDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\ManageNotification.aspx.cs">
+      <DependentUpon>ManageNotification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\ManageNotification.aspx.designer.cs">
+      <DependentUpon>ManageNotification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\ManageSchedule.aspx.cs">
+      <DependentUpon>ManageSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\ManageSchedule.aspx.designer.cs">
+      <DependentUpon>ManageSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\ManageWorkOrder.aspx.cs">
+      <DependentUpon>ManageWorkOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\ManageWorkOrder.aspx.designer.cs">
+      <DependentUpon>ManageWorkOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\MeasurementDocument.aspx.cs">
+      <DependentUpon>MeasurementDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\MeasurementDocument.aspx.designer.cs">
+      <DependentUpon>MeasurementDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\MeasuringPointList.aspx.cs">
+      <DependentUpon>MeasuringPointList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\MeasuringPointList.aspx.designer.cs">
+      <DependentUpon>MeasuringPointList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\TaskGroupInfo.aspx.cs">
+      <DependentUpon>TaskGroupInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\TaskGroupInfo.aspx.designer.cs">
+      <DependentUpon>TaskGroupInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\TaskGroupList.aspx.cs">
+      <DependentUpon>TaskGroupList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\TaskGroupList.aspx.designer.cs">
+      <DependentUpon>TaskGroupList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\ToolsInfo.aspx.cs">
+      <DependentUpon>ToolsInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\ToolsInfo.aspx.designer.cs">
+      <DependentUpon>ToolsInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\ViewWorkOrderInfo.aspx.cs">
+      <DependentUpon>ViewWorkOrderInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\ViewWorkOrderInfo.aspx.designer.cs">
+      <DependentUpon>ViewWorkOrderInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\WorkOrderCalendar.aspx.cs">
+      <DependentUpon>WorkOrderCalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\WorkOrderCalendar.aspx.designer.cs">
+      <DependentUpon>WorkOrderCalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\WorkOrderDayView.aspx.cs">
+      <DependentUpon>WorkOrderDayView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\WorkOrderDayView.aspx.designer.cs">
+      <DependentUpon>WorkOrderDayView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\WorkOrderOrderView.aspx.cs">
+      <DependentUpon>WorkOrderOrderView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\WorkOrderOrderView.aspx.designer.cs">
+      <DependentUpon>WorkOrderOrderView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preventive\WorkOrderResourceView.aspx.cs">
+      <DependentUpon>WorkOrderResourceView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preventive\WorkOrderResourceView.aspx.designer.cs">
+      <DependentUpon>WorkOrderResourceView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\DynamicGridControl.ascx.cs">
+      <DependentUpon>DynamicGridControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\DynamicGridControl.ascx.designer.cs">
+      <DependentUpon>DynamicGridControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Pager.ascx.cs">
+      <DependentUpon>Pager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Pager.ascx.designer.cs">
+      <DependentUpon>Pager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Vegam-Iframe.Master.cs">
+      <DependentUpon>Vegam-Iframe.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vegam-Iframe.Master.designer.cs">
+      <DependentUpon>Vegam-Iframe.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vegam-Responsive.Master.cs">
+      <DependentUpon>Vegam-Responsive.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vegam-Responsive.Master.designer.cs">
+      <DependentUpon>Vegam-Responsive.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\Vegam_MaintenanceService.asmx.cs">
+      <DependentUpon>Vegam_MaintenanceService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ipas_CompanyService\" />
+    <WCFMetadataStorage Include="Connected Services\ipas_SiteService\" />
+    <WCFMetadataStorage Include="Connected Services\ipas_UserService\" />
+    <WCFMetadataStorage Include="Connected Services\Vegam_MaintenanceService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MaintenancePageID_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MaintenancePageID_Resource.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\FunctionalLocation_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>FunctionalLocation_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Equipment_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Equipment_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MeasuringPoint_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MeasuringPoint_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\EquipmentModel_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>EquipmentModel_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\DynamicGridResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DynamicGridResource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\DocumentInfo_Resources.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>DocumentInfo_Resources.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\TaskGroup_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>TaskGroup_Resource.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MaintenanceFeatures.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MaintenanceFeatures.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MaintenanceSchedule_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MaintenanceSchedule_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\ManageSchedule_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ManageSchedule_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\ManageWorkOrder_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ManageWorkOrder_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\CreateSchedule_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>CreateSchedule_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\WorkGroup_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>WorkGroup_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MeasurementDocument_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MeasurementDocument_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\ViewWorkOrderResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ViewWorkOrderResource.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\WorkOrderCalendar_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>WorkOrderCalendar_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MaintenanceIndex_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MaintenanceIndex_Resource.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\ToolInfo_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ToolInfo_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\SparePartsInfo_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>SparePartsInfo_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\ManageNotification_Resource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ManageNotification_Resource.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9080</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9080/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

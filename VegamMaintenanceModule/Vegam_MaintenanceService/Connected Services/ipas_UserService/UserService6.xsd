@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" />
+  <xs:import schemaLocation="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" />
+  <xs:import schemaLocation="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/DPFP.Verification" />
+  <xs:import schemaLocation="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service" />
+  <xs:import schemaLocation="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" />
+  <xs:element name="GetCurrentUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetCurrentUserInfoResult" nillable="true" type="q1:CurrentUserInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableSitePrinters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableSitePrintersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetAvailableSitePrintersResult" nillable="true" type="q2:ArrayOfSitePrinters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAssignedPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="pageID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAssignedPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserAssignedPermissionsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAssignedPermissionsWithAccessLevel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q3:BasicInfo" />
+        <xs:element minOccurs="0" name="pageID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAssignedPermissionsWithAccessLevelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetUserAssignedPermissionsWithAccessLevelResult" nillable="true" type="q4:AccessInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserAssignedPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserAssignedPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetAllUserAssignedPermissionsResult" nillable="true" type="q5:ArrayOfUserPermissions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserAssignedPermissionsWithType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="masterData" type="q6:TypeMasterData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserAssignedPermissionsWithTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetAllUserAssignedPermissionsWithTypeResult" nillable="true" type="q7:ArrayOfUserPermissions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHandHeldUserPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="accessLevelID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHandHeldUserPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetHandHeldUserPermissionsResult" nillable="true" type="q8:HandHeldUserPermission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlantUserSites">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlantUserSitesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPlantUserSitesResult" nillable="true" type="q9:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCompanySitesName">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCompanySitesNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetAllCompanySitesNameResult" nillable="true" type="q10:ArrayOfCompanySites" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="pageIDList" nillable="true" type="q11:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetUserPermissionsResult" nillable="true" type="q12:ArrayOfUserPermissions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="userInfo" nillable="true" type="q13:UserCompleteInfo" />
+        <xs:element minOccurs="0" name="updatorID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertOrUpdateUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertOrUpdateUserInfoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPlantUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="filterInfo" nillable="true" type="q14:DisplayUserInfoFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPlantUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetAllPlantUserInfoResult" nillable="true" type="q15:DiaplayUserInfoList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q16:BasicInfo" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="userStatusInfo" nillable="true" type="q17:UserStatusInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteUserResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteImageResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserBasicInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserBasicInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetUserBasicInfoResult" nillable="true" type="q18:BasicUserInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguages">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetLanguagesResult" nillable="true" type="q19:ArrayOfLanguages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetSiteInformationResult" nillable="true" type="q20:SiteInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlantLevelDepartmentRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="departmentRolesInfo" nillable="true" type="q21:DepartmentRolesInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlantLevelDepartmentRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetPlantLevelDepartmentRolesResult" nillable="true" type="q22:ArrayOfPlantLevelDepartmentRoles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserProductionLines">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserProductionLinesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetUserProductionLinesResult" nillable="true" type="q23:ArrayOfUserProductionLines" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDispatchAreaInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="userID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDispatchAreaInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetAllDispatchAreaInfoResult" nillable="true" type="q24:ArrayOfDispatchAreaInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateSaltKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateSaltKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateSaltKeyResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHashedPasswordUsingSha256HashAlgorithm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHashedPasswordUsingSha256HashAlgorithmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetHashedPasswordUsingSha256HashAlgorithmResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserBasicDetials">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserBasicDetialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetUserBasicDetialsResult" nillable="true" type="q25:CurrentUserInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserBasicInfoWithProfileImageAndRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q26:BasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserBasicInfoWithProfileImageAndRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetUserBasicInfoWithProfileImageAndRolesResult" nillable="true" type="q27:UserFingerPrintInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPlantUserInfoForFigerPrintUpload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="filterInfo" nillable="true" type="q28:DisplayUserInfoFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPlantUserInfoForFigerPrintUploadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetAllPlantUserInfoForFigerPrintUploadResult" nillable="true" type="q29:UserFingerPrintInfoList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFingerPrintForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q30:BasicInfo" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="fingerPrintInfo" nillable="true" type="q31:FingerPrintInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFingerPrintForUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUserLoginInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q32:BasicInfo" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="userAreaInfo" nillable="true" type="q33:UserAreaInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUserLoginInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUserLoginInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserLogOutTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q34:BasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserLogOutTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateUserLogOutTimeResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserDepartmentAndRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q35:BasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserDepartmentAndRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetUserDepartmentAndRolesResult" nillable="true" type="q36:ArrayOfPlantLevelDepartmentRoles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyFingerPrintTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="features" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/DPFP.Verification" minOccurs="0" name="verificator" nillable="true" type="q37:Verification" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/DPFP.Verification" minOccurs="0" name="result" nillable="true" type="q38:Verification.Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifyFingerPrintTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerifyFingerPrintTemplateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkshopProductionLineList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q39:BasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkshopProductionLineListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetWorkshopProductionLineListResult" nillable="true" type="q40:WorkShopInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductionLinesWithLastLoginArea">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q41:BasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductionLinesWithLastLoginAreaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetProductionLinesWithLastLoginAreaResult" nillable="true" type="q42:ArrayOfAreaInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDispatchAreaWithLastLoginArea">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q43:BasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDispatchAreaWithLastLoginAreaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetDispatchAreaWithLastLoginAreaResult" nillable="true" type="q44:ArrayOfAreaInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckLastloginAreaLogOutOrNot">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q45:BasicInfo" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="areaType" type="q46:AreaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckLastloginAreaLogOutOrNotResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckLastloginAreaLogOutOrNotResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertAttendanceLogInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="attLogsList" nillable="true" type="q47:ArrayOfAttendanceLog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertAttendanceLogInfoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDeviceTransactionLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="deviceTransLogList" nillable="true" type="q48:ArrayOfDeviceTransactionLog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertDeviceTransactionLogResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoCompleteAreaName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="searchString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoCompleteAreaNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AutoCompleteAreaNameResult" nillable="true" type="q49:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoCompleteUserName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="searchString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoCompleteUserNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AutoCompleteUserNameResult" nillable="true" type="q50:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoCompleteCompanyRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="searchString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoCompleteCompanyRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AutoCompleteCompanyRolesResult" nillable="true" type="q51:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteCurrentMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteCurrentMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetSiteCurrentMonthResult" nillable="true" type="q52:SiteCurrentDate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttendanceList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="attendanceFilter" nillable="true" type="q53:DisplayUserAttendanceFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttendanceListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetAttendanceListResult" nillable="true" type="q54:DisplayAttendanceUserInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttendanceDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="attendanceDetailsFilter" nillable="true" type="q55:AttendanceDetailsFilter" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q56:BasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttendanceDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetAttendanceDetailsResult" nillable="true" type="q57:ArrayOfAttendanceDetailsInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadAttendanceDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="attendanceDetailsFilter" nillable="true" type="q58:AttendanceDetailsFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadAttendanceDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadAttendanceDetailsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadAttendanceLogFromExcel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q59:BasicInfo" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadAttendanceLogFromExcelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadAttendanceLogFromExcelResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadUserDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q60:BasicInfo" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadUserDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadUserDetailsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadAllUserDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q61:BasicInfo" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="userFilter" nillable="true" type="q62:DisplayUserInfoFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadAllUserDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadAllUserDetailsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUserLogInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q63:BasicInfo" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="userLoginInfo" nillable="true" type="q64:UserLoginInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUserLogInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUserLogInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoForAutoCompleteBox">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q65:BasicInfo" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="searchInfo" nillable="true" type="q66:AutoCompleteSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoForAutoCompleteBoxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetUserInfoForAutoCompleteBoxResult" nillable="true" type="q67:ArrayOfAutoCompleteUserInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductionLinesWithWorkShopName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q68:BasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProductionLinesWithWorkShopNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetProductionLinesWithWorkShopNameResult" nillable="true" type="q69:ArrayOfPLineWorkshopInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDispatchAreaForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q70:BasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDispatchAreaForUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="GetDispatchAreaForUserResult" nillable="true" type="q71:ArrayOfPLineWorkshopInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadUserLoginInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q72:BasicInfo" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadUserLoginInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadUserLoginInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadUserLoginInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="basicInfo" nillable="true" type="q73:BasicInfo" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="filter" nillable="true" type="q74:UserLoginInfoFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadUserLoginInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadUserLoginInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteDateFormat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteDateFormatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSiteDateFormatResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Encrypt3AppData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientID" type="xs:int" />
+        <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Encrypt3AppDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Encrypt3AppDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Decrypt3AppData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientID" type="xs:int" />
+        <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Decrypt3AppDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Decrypt3AppDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyFeatureConfiguredURL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+        <xs:element minOccurs="0" name="pLineID" type="xs:int" />
+        <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="featureIDList" nillable="true" type="q75:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyFeatureConfiguredURLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="GetCompanyFeatureConfiguredURLResult" nillable="true" type="q76:ArrayOfSiteFeatureInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

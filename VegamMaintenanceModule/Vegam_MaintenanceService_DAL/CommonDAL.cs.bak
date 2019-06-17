@@ -1,0 +1,137 @@
+﻿using Microsoft.Practices.EnterpriseLibrary.Data;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Vegam_MaintenanceService_DAL
+{
+    public class CommonDAL
+    {
+        public static IDataReader GetActiveSitesInfo(Database db)
+        {
+            StringBuilder sqlCmdBuilder = new StringBuilder();
+            sqlCmdBuilder.Append(" SELECT FSITEID FROM LDB1_COUNTRY_SITES WHERE FSTATUS='A' ");
+
+            DbCommand dbCmd = db.GetSqlStringCommand(sqlCmdBuilder.ToString());
+            dbCmd.CommandType = CommandType.Text;
+
+            return db.ExecuteReader(dbCmd);
+        }
+
+        #region Common_PlantInfo
+        public static IDataReader GetSiteDateTimeFormat(Database db, int siteID)
+        {
+            StringBuilder sqlCmdBuilder = new StringBuilder();
+            sqlCmdBuilder.Append(" SELECT FSITE_DATEFORMAT,FSITE_TIMEFORMAT FROM LDB1_COUNTRY_SITES WHERE FSITEID=:SITEID ");
+
+            DbCommand dbCmd = db.GetSqlStringCommand(sqlCmdBuilder.ToString());
+            dbCmd.CommandType = CommandType.Text;
+
+            db.AddInParameter(dbCmd, ":SITEID", DbType.Int32, siteID);
+
+            return db.ExecuteReader(dbCmd);
+        }
+
+        public static IDataReader GetTimeZoneName(Database db, int siteID)
+        {
+            StringBuilder sqlCmdBuilder = new StringBuilder();
+
+            sqlCmdBuilder.Append(" SELECT FTIMEZONE FROM LDB1_COUNTRY_SITES WHERE FSITEID=:SITEID");
+            System.Data.Common.DbCommand dbCmd = db.GetSqlStringCommand(sqlCmdBuilder.ToString());
+
+            db.AddInParameter(dbCmd, ":SITEID", DbType.Int32, siteID);
+
+            dbCmd.CommandType = CommandType.Text;
+            return db.ExecuteReader(dbCmd);
+        }
+        #endregion
+
+        #region General Log
+
+        public static bool InsertLogInformation(Database db, DbTransaction transaction, int siteID, string logType, string logDescription, string logDesInEnglish, int createdBy, int createdDate, int createdTime)
+        {
+            StringBuilder sqlCmdBuilder = new StringBuilder();
+            sqlCmdBuilder.Append("INSERT INTO LDB1_LOGINFORMATIONS(FLOGID,FLOGTYPE,FLOGDESCRIPTION,FLOGDESINENGLISH,FSITEID,FCREATEDBY,FCREATEDON,FCREATEDTIME) ");
+            sqlCmdBuilder.Append(" VALUES (SEQUENCE_LOGINFORMATIONS_ID.NEXTVAL,:LOGTYPE,:LOGDESCRIPTION,:LOGDESINENGLISH,:SITEID,:CREATEDBY,:CREATEDON,:CREATEDTIME) ");
+
+            DbCommand dbCmd = db.GetSqlStringCommand(sqlCmdBuilder.ToString());
+            dbCmd.CommandType = CommandType.Text;
+
+            db.AddInParameter(dbCmd, ":LOGTYPE", DbType.AnsiStringFixedLength, logType);
+            db.AddInParameter(dbCmd, ":LOGDESCRIPTION", DbType.String, logDescription);
+            db.AddInParameter(dbCmd, ":LOGDESINENGLISH", DbType.String, logDesInEnglish);
+            db.AddInParameter(dbCmd, ":SITEID", DbType.Int32, siteID);
+            db.AddInParameter(dbCmd, ":CREATEDBY", DbType.Int32, createdBy);
+            db.AddInParameter(dbCmd, ":CREATEDON", DbType.Int32, createdDate);
+            db.AddInParameter(dbCmd, ":CREATEDTIME", DbType.Int32, createdTime);
+
+            if (transaction != null)
+                db.ExecuteNonQuery(dbCmd, transaction);
+            else
+                db.ExecuteNonQuery(dbCmd);
+            return true;
+        }
+
+        #endregion
+
+        #region User Permissions
+
+        public static IDataReader GetPlantUserSite(Database db, int userID)
+        {
+            StringBuilder sqlCmdBuilder = new StringBuilder();
+            sqlCmdBuilder.Append(" SELECT U.FSITEID,U.FACCESSLEVELID FROM LDB1_USERINFO U  ");
+            sqlCmdBuilder.Append(" WHERE FUSERID=:USERID AND FSTATUS='A' ");
+
+            System.Data.Common.DbCommand dbCmd = db.GetSqlStringCommand(sqlCmdBuilder.ToString());
+            dbCmd.CommandType = CommandType.Text;
+            db.AddInParameter(dbCmd, ":USERID", DbType.Int32, userID);
+            return db.ExecuteReader(dbCmd);
+        }
+
+        public static IDataReader GetPlantUserSites(Database db, int userID)
+        {
+            StringBuilder sqlCmdBuilder = new StringBuilder();
+            sqlCmdBuilder.Append(" SELECT U.FSITEID FROM LDB1_PLANTUSERINFO U INNER JOIN LDB1_COUNTRY_SITES S ON S.FSITEID = U.FSITEID ");
+            sqlCmdBuilder.Append(" WHERE S.FSTATUS='A' AND FUSERID=:USERID ");
+
+            System.Data.Common.DbCommand dbCmd = db.GetSqlStringCommand(sqlCmdBuilder.ToString());
+            dbCmd.CommandType = CommandType.Text;
+            db.AddInParameter(dbCmd, ":USERID", DbType.Int32, userID);
+            return db.ExecuteReader(dbCmd);
+        }
+
+        public static IDataReader GetUserAssignedPermissions(Database db, int userID, int pageID)
+        {
+            StringBuilder sqlCmdBuilder = new StringBuilder();
+            sqlCmdBuilder.Append(" SELECT TR.FACCESS FROM LDB1_USERROLE R INNER JOIN LDB1_ROLE_TASKS TR ");
+            sqlCmdBuilder.Append(" ON TR.FROLEID = R.FROLEID INNER JOIN LDB1_TASKS T ON T.FTASKID=TR.FTASKID  ");
+            sqlCmdBuilder.Append(" WHERE R.FUSERID=:FUSERID AND T.FIDNUM=:FIDNUM ORDER BY CAST(NVL(TR.FACCESS,0) AS NUMBER(4,0)) DESC ");
+
+            System.Data.Common.DbCommand dbCmd = db.GetSqlStringCommand(sqlCmdBuilder.ToString());
+            dbCmd.CommandType = CommandType.Text;
+            db.AddInParameter(dbCmd, ":FUSERID", DbType.Int32, userID);
+            db.AddInParameter(dbCmd, ":FIDNUM", DbType.Int32, pageID);
+
+            return db.ExecuteReader(dbCmd);
+        }
+
+        #endregion
+
+        public static DataTable GetUserName(Database db, int userID)
+        {
+            StringBuilder sqlCmdBuilder = new StringBuilder();
+            sqlCmdBuilder.Append(" SELECT INITCAP(FLASTNAME)||' '||INITCAP(FFIRSTNAME) AS USERNAME FROM LDB1_USERINFO WHERE FUSERID=:USERID ");
+
+            DbCommand dbCmd = db.GetSqlStringCommand(sqlCmdBuilder.ToString());
+            dbCmd.CommandType = CommandType.Text;
+
+            db.AddInParameter(dbCmd, ":USERID", DbType.Int32, userID);
+
+            return db.ExecuteDataSet(dbCmd).Tables[0];
+        }
+    }
+}

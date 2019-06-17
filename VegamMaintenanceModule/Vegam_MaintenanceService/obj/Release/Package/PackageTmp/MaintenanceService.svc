@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Vegam_MaintenanceService.MaintenanceService" CodeBehind="MaintenanceService.svc.cs" %>

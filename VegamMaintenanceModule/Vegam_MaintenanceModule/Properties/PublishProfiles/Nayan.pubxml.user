@@ -1,0 +1,1174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\VegamMaintenanceWorkingArea\Release\VegamMaintenence3\Vegam_MaintenanceModule</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_GlobalResources/CreateSchedule_Resource.resx">
+      <publishTime>04/08/2019 17:23:37</publishTime>
+    </File>
+    <File Include="App_GlobalResources/DocumentInfo_Resources.resx">
+      <publishTime>04/08/2019 17:23:36</publishTime>
+    </File>
+    <File Include="App_GlobalResources/DynamicGridResource.resx">
+      <publishTime>04/08/2019 17:23:51</publishTime>
+    </File>
+    <File Include="App_GlobalResources/EquipmentModel_Resource.resx">
+      <publishTime>04/10/2019 16:22:08</publishTime>
+    </File>
+    <File Include="App_GlobalResources/Equipment_Resource.resx">
+      <publishTime>04/11/2019 17:36:50</publishTime>
+    </File>
+    <File Include="App_GlobalResources/FunctionalLocation_Resource.resx">
+      <publishTime>04/11/2019 17:37:06</publishTime>
+    </File>
+    <File Include="App_GlobalResources/MaintenanceFeatures.resx">
+      <publishTime>04/08/2019 17:24:25</publishTime>
+    </File>
+    <File Include="App_GlobalResources/MaintenanceIndex_Resource.resx">
+      <publishTime>04/08/2019 17:24:34</publishTime>
+    </File>
+    <File Include="App_GlobalResources/MaintenancePageID_Resource.resx">
+      <publishTime>04/08/2019 17:24:45</publishTime>
+    </File>
+    <File Include="App_GlobalResources/MaintenanceScheduleIndex_Resource.resx">
+      <publishTime>03/22/2019 11:14:27</publishTime>
+    </File>
+    <File Include="App_GlobalResources/MaintenanceSchedule_Resource.resx">
+      <publishTime>04/10/2019 17:55:30</publishTime>
+    </File>
+    <File Include="App_GlobalResources/ManageNotification_Resource.resx">
+      <publishTime>04/08/2019 17:25:03</publishTime>
+    </File>
+    <File Include="App_GlobalResources/ManageSchedule_Resource.resx">
+      <publishTime>04/08/2019 17:25:12</publishTime>
+    </File>
+    <File Include="App_GlobalResources/ManageWorkOrder_Resource.resx">
+      <publishTime>04/10/2019 17:55:46</publishTime>
+    </File>
+    <File Include="App_GlobalResources/MeasurementDocument_Resource.resx">
+      <publishTime>04/08/2019 17:25:33</publishTime>
+    </File>
+    <File Include="App_GlobalResources/MeasuringPoint_Resource.resx">
+      <publishTime>04/11/2019 17:30:55</publishTime>
+    </File>
+    <File Include="App_GlobalResources/SparePartsInfo_Resource.resx">
+      <publishTime>04/08/2019 17:25:50</publishTime>
+    </File>
+    <File Include="App_GlobalResources/TaskGroup_Resource.resx">
+      <publishTime>04/09/2019 15:25:27</publishTime>
+    </File>
+    <File Include="App_GlobalResources/ToolInfo_Resource.resx">
+      <publishTime>04/08/2019 17:26:08</publishTime>
+    </File>
+    <File Include="App_GlobalResources/ViewWorkOrderResource.resx">
+      <publishTime>04/09/2019 18:43:05</publishTime>
+    </File>
+    <File Include="App_GlobalResources/WorkGroup_Resource.resx">
+      <publishTime>04/08/2019 17:26:29</publishTime>
+    </File>
+    <File Include="App_GlobalResources/WorkOrderCalendar_Resource.resx">
+      <publishTime>04/08/2019 17:26:37</publishTime>
+    </File>
+    <File Include="bin/iPAS_Base.dll">
+      <publishTime>03/23/2018 12:27:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>12/13/2016 03:10:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>01/17/2018 16:30:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+      <publishTime>01/17/2018 16:30:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ServiceLocation.dll">
+      <publishTime>01/17/2018 16:30:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Configuration.dll">
+      <publishTime>01/17/2018 16:30:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.dll">
+      <publishTime>01/17/2018 16:30:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Interception.Configuration.dll">
+      <publishTime>01/17/2018 16:30:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Interception.dll">
+      <publishTime>01/17/2018 16:30:16</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/14/2016 21:30:06</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/VegamIOTDataSources.dll">
+      <publishTime>10/25/2018 16:14:30</publishTime>
+    </File>
+    <File Include="bin/Vegam_MaintenanceModule.dll">
+      <publishTime>04/12/2019 18:51:32</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.AccessLevelInfo.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.BartederServerConfigurationInfo.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.BartenderServerErrorDetails.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.BartenderServerInfo.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.BusinessUnit.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.BusinessUnitList.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.CategoryTechnologyList.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.CompanyCategoryDownTimeInfo.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.CompanySiteList.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.CompanyTechnologyList.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.Country.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.CountryDetails.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.CountryInfo.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.CountryRegion.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.DefectAgencyInfoList.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.DefectListInfo.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.DefectSourceInfoList.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.Department.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.DepartmentBasicInfo.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.DepartmentList.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.DepartmentRole.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.DownTimeCategory.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.DownTimeCategoryDepartment.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.DynamicGridContentInfo.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.DynamicGridFeatureFieldInfo.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.Language.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.MeasuringAttributeInfo.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.MeasuringAttributeList.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.ObjectInfoList.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.PasswordPolicy.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.PlantLevelRoles.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.QualityDecisionList.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.QualityDecisionsFields.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.Region.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.RegionDetails.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.RoleInfo.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.RoleTaskInfo.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.SensorTypeList.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.SensorTypeUOMInfo.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.SensorTypeUOMList.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.SiteInformation.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.SiteRoleInfo.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.SubBusinessUnitList.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.TaskInfo.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.TypeValueInfo.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.UserBasicInfo.datasource">
+      <publishTime>03/25/2019 18:08:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_CompanyService/Vegam_MaintenanceModule.ipas_CompanyService.UserViewFieldInfo.datasource">
+      <publishTime>03/25/2019 18:08:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.AdditionalSettings.datasource">
+      <publishTime>03/25/2019 18:07:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.CompanyRegion.datasource">
+      <publishTime>03/25/2019 18:07:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.ConnectionInfo.datasource">
+      <publishTime>03/25/2019 18:07:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.ConnectionTypeSettings.datasource">
+      <publishTime>03/25/2019 18:07:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.CountryInfo.datasource">
+      <publishTime>03/25/2019 18:07:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.IPASModuleSettingInfo.datasource">
+      <publishTime>03/25/2019 18:07:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.ManageSiteList.datasource">
+      <publishTime>03/25/2019 18:07:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.OrderTypeInfo.datasource">
+      <publishTime>03/25/2019 18:07:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.PlantCodeInfo.datasource">
+      <publishTime>03/25/2019 18:07:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.PlantLevelTask.datasource">
+      <publishTime>03/25/2019 18:07:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.PlantSettings.datasource">
+      <publishTime>03/25/2019 18:07:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.PlantTechnologyList.datasource">
+      <publishTime>03/25/2019 18:07:11</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.SiteInfo.datasource">
+      <publishTime>03/25/2019 18:07:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.TimeZoneInfo.datasource">
+      <publishTime>03/25/2019 18:07:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_SiteService/Vegam_MaintenanceModule.ipas_SiteService.UserBasicInfo.datasource">
+      <publishTime>03/25/2019 18:07:10</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.AccessInfo.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.AreaInfo.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.AttendanceDetailsInfo.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.AutoCompleteUserInfo.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.BasicUserInfo.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.CompanySites.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.CurrentUserInfo.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.DiaplayUserInfoList.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.DispatchAreaInfo.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.DisplayAttendanceUserInfo.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.HandHeldUserPermission.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.Languages.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.PlantLevelDepartmentRoles.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.PLineWorkshopInfo.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.SiteCurrentDate.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.SiteFeatureInfo.datasource">
+      <publishTime>03/25/2019 18:07:29</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.SiteInformation.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.SitePrinters.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.UserFingerPrintInfo.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.UserFingerPrintInfoList.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.UserPermissions.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.UserProductionLines.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/ipas_UserService/Vegam_MaintenanceModule.ipas_UserService.WorkShopInfo.datasource">
+      <publishTime>03/25/2019 18:07:28</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.AddFLocationReturnInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.AutoCompleteUserInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.DateTimeInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.DocumentInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.EnumTypeInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentDetail.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentDetailList.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentDetailsInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentDetailsInfoList.datasource">
+      <publishTime>03/28/2019 17:54:44</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentInformation.datasource">
+      <publishTime>03/28/2019 17:54:44</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentListInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentModelInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentModelListDetails.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.EquipmentModelListInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.FLocationDetails.datasource">
+      <publishTime>03/19/2019 11:05:08</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.FLocationDetailsInfo.datasource">
+      <publishTime>03/28/2019 17:54:43</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.FLocationInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.FLocationListDetails.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.FLocationListInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.HierarchicalListInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.InstructionSelectorInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.KeyValueInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.LocationEquipmentInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.LocationWorkGroupInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MaintAttachmentInfo.datasource">
+      <publishTime>04/08/2019 17:34:29</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MaintenanceFeatureInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MaintenanceInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MaintSparePartInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MaintTaskGroupInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MaintTaskInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MasterDataDropDownList.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MasterDataList.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MeasurementDocumentInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MeasuringPoint.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MeasuringPointDataTypeList.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MeasuringPointList.datasource">
+      <publishTime>03/19/2019 11:05:08</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.MeasuringPointListInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.NotificationInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.NotificationList.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.ScheduleDetailInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.ScheduleWorkOrderDetails.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.SiteDateTimeFormatInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.TaskGroupBasicInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.TaskGroupIdentifier.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.TaskInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.TaskStartEndReturnInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.ToolsListInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.TypeValueInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.UserWorkGroupInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkGroupInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderBasicInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderEquipmentHistoryDetails.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderEquipmentInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderResourceViewInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderTaskDetails.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="Connected Services/Vegam_MaintenanceService/Vegam_MaintenanceModule.Vegam_MaintenanceService.WorkOrderTaskImageInfo.datasource">
+      <publishTime>04/12/2019 17:54:09</publishTime>
+    </File>
+    <File Include="DownloadHandler.ashx">
+      <publishTime>01/18/2019 14:57:40</publishTime>
+    </File>
+    <File Include="ExcelFormat/FunctionalLocationInfo.rar">
+      <publishTime>01/18/2019 14:40:04</publishTime>
+    </File>
+    <File Include="HandlerFiles/DownloadHandler.ashx">
+      <publishTime>04/08/2019 17:27:19</publishTime>
+    </File>
+    <File Include="HandlerFiles/MeasuringPointUploadHandler.ashx">
+      <publishTime>04/08/2019 17:27:19</publishTime>
+    </File>
+    <File Include="HandlerFiles/SparePartsUploadHandler.ashx">
+      <publishTime>04/08/2019 17:27:19</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>11/16/2018 14:36:48</publishTime>
+    </File>
+    <File Include="MaintenanceIndex.aspx">
+      <publishTime>04/08/2019 17:31:30</publishTime>
+    </File>
+    <File Include="MaintenanceMasterIndex.aspx">
+      <publishTime>04/08/2019 17:31:30</publishTime>
+    </File>
+    <File Include="ManufactureIndex.aspx">
+      <publishTime>04/08/2019 17:31:30</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/16/2018 12:12:12</publishTime>
+    </File>
+    <File Include="Preventive/AddDocumentsAndImages.aspx">
+      <publishTime>04/08/2019 17:27:44</publishTime>
+    </File>
+    <File Include="Preventive/AddEquipmentInfo.aspx">
+      <publishTime>04/12/2019 16:37:52</publishTime>
+    </File>
+    <File Include="Preventive/AddEquipmentModel.aspx">
+      <publishTime>04/12/2019 16:38:04</publishTime>
+    </File>
+    <File Include="Preventive/AddFunctionalLocation.aspx">
+      <publishTime>04/11/2019 18:22:22</publishTime>
+    </File>
+    <File Include="Preventive/AddMeasuringPoint.aspx">
+      <publishTime>04/12/2019 16:38:14</publishTime>
+    </File>
+    <File Include="Preventive/AddNotificationInfo.aspx">
+      <publishTime>04/10/2019 12:53:25</publishTime>
+    </File>
+    <File Include="Preventive/ConfigureSpareParts.aspx">
+      <publishTime>04/11/2019 18:00:17</publishTime>
+    </File>
+    <File Include="Preventive/CreateSchedule.aspx">
+      <publishTime>04/10/2019 16:56:16</publishTime>
+    </File>
+    <File Include="Preventive/CreateWorkGroup.aspx">
+      <publishTime>04/08/2019 17:27:45</publishTime>
+    </File>
+    <File Include="Preventive/EquipmentList.aspx">
+      <publishTime>04/10/2019 18:31:29</publishTime>
+    </File>
+    <File Include="Preventive/EquipmentModelList.aspx">
+      <publishTime>04/08/2019 17:27:45</publishTime>
+    </File>
+    <File Include="Preventive/FunctionalLocationList.aspx">
+      <publishTime>04/10/2019 18:31:46</publishTime>
+    </File>
+    <File Include="Preventive/MaintenanceInfo.aspx">
+      <publishTime>04/08/2019 17:27:45</publishTime>
+    </File>
+    <File Include="Preventive/MaintenanceSchedule.aspx">
+      <publishTime>04/11/2019 18:34:25</publishTime>
+    </File>
+    <File Include="Preventive/MaintenanceScheduleIndex.aspx">
+      <publishTime>04/08/2019 17:27:45</publishTime>
+    </File>
+    <File Include="Preventive/ManageMeasurementDocument.aspx">
+      <publishTime>04/10/2019 16:59:30</publishTime>
+    </File>
+    <File Include="Preventive/ManageNotification.aspx">
+      <publishTime>04/08/2019 17:27:45</publishTime>
+    </File>
+    <File Include="Preventive/ManageSchedule.aspx">
+      <publishTime>04/12/2019 13:06:19</publishTime>
+    </File>
+    <File Include="Preventive/ManageWorkOrder.aspx">
+      <publishTime>04/10/2019 17:03:13</publishTime>
+    </File>
+    <File Include="Preventive/MeasurementDocument.aspx">
+      <publishTime>04/11/2019 18:36:26</publishTime>
+    </File>
+    <File Include="Preventive/MeasuringPointList.aspx">
+      <publishTime>04/08/2019 17:27:45</publishTime>
+    </File>
+    <File Include="Preventive/TaskGroupInfo.aspx">
+      <publishTime>04/12/2019 12:47:09</publishTime>
+    </File>
+    <File Include="Preventive/TaskGroupList.aspx">
+      <publishTime>04/11/2019 18:36:35</publishTime>
+    </File>
+    <File Include="Preventive/ToolsInfo.aspx">
+      <publishTime>04/08/2019 17:27:45</publishTime>
+    </File>
+    <File Include="Preventive/ViewWorkOrderInfo.aspx">
+      <publishTime>04/12/2019 18:31:07</publishTime>
+    </File>
+    <File Include="Preventive/WorkOrderCalendar.aspx">
+      <publishTime>04/08/2019 17:27:45</publishTime>
+    </File>
+    <File Include="Preventive/WorkOrderDayView.aspx">
+      <publishTime>04/08/2019 17:27:45</publishTime>
+    </File>
+    <File Include="Preventive/WorkOrderOrderView.aspx">
+      <publishTime>04/11/2019 16:58:22</publishTime>
+    </File>
+    <File Include="Preventive/WorkOrderResourceView.aspx">
+      <publishTime>04/11/2019 16:58:42</publishTime>
+    </File>
+    <File Include="ScriptResources/CreateScheduleScriptResource.js">
+      <publishTime>04/08/2019 17:28:36</publishTime>
+    </File>
+    <File Include="ScriptResources/DocumentsAndImagesInfoScriptResource.js">
+      <publishTime>04/08/2019 17:28:36</publishTime>
+    </File>
+    <File Include="ScriptResources/DynamicGridScriptResource.js">
+      <publishTime>04/08/2019 17:28:36</publishTime>
+    </File>
+    <File Include="ScriptResources/EquipmentInfoScriptResource.js">
+      <publishTime>04/08/2019 17:28:36</publishTime>
+    </File>
+    <File Include="ScriptResources/EquipmentModelScriptResource.js">
+      <publishTime>04/10/2019 16:17:16</publishTime>
+    </File>
+    <File Include="ScriptResources/FunctionalLocationScriptResource.js">
+      <publishTime>04/11/2019 17:33:09</publishTime>
+    </File>
+    <File Include="ScriptResources/JQueryCalendarScriptResource.js">
+      <publishTime>04/08/2019 17:28:37</publishTime>
+    </File>
+    <File Include="ScriptResources/MaintenanceInfoScriptResource.js">
+      <publishTime>04/08/2019 17:28:37</publishTime>
+    </File>
+    <File Include="ScriptResources/MaintenanceScheduleScriptResource.js">
+      <publishTime>04/10/2019 17:05:36</publishTime>
+    </File>
+    <File Include="ScriptResources/ManageScheduleScriptResource.js">
+      <publishTime>04/08/2019 17:28:37</publishTime>
+    </File>
+    <File Include="ScriptResources/ManageWorkOrderScriptResource.js">
+      <publishTime>04/10/2019 17:05:46</publishTime>
+    </File>
+    <File Include="ScriptResources/MeasurementDocumentScriptResource.js">
+      <publishTime>04/08/2019 17:28:37</publishTime>
+    </File>
+    <File Include="ScriptResources/MeasuringPointScriptResource.js">
+      <publishTime>04/11/2019 14:17:56</publishTime>
+    </File>
+    <File Include="ScriptResources/NotificationScriptResource.js">
+      <publishTime>04/08/2019 17:28:37</publishTime>
+    </File>
+    <File Include="ScriptResources/SparePartsScriptResource.js">
+      <publishTime>04/08/2019 17:28:37</publishTime>
+    </File>
+    <File Include="ScriptResources/TaskGroupScriptResource.js">
+      <publishTime>04/11/2019 16:53:10</publishTime>
+    </File>
+    <File Include="ScriptResources/ToolsScriptResource.js">
+      <publishTime>04/08/2019 17:28:37</publishTime>
+    </File>
+    <File Include="ScriptResources/ViewWorkOrderInfoScriptResource.js">
+      <publishTime>04/09/2019 18:32:57</publishTime>
+    </File>
+    <File Include="ScriptResources/WorkGroupInfoScriptResource.js">
+      <publishTime>04/08/2019 17:28:37</publishTime>
+    </File>
+    <File Include="ScriptResources/WorkOrderCalendarScriptResource.js">
+      <publishTime>04/08/2019 17:28:37</publishTime>
+    </File>
+    <File Include="ScriptResources/WorkOrderDayViewCalendarScriptResource.js">
+      <publishTime>04/08/2019 17:28:37</publishTime>
+    </File>
+    <File Include="ScriptResources/WorkOrderOrderViewCalendarScriptResource.js">
+      <publishTime>04/08/2019 17:28:37</publishTime>
+    </File>
+    <File Include="ScriptResources/WorkOrderResourceViewCalendarScriptResource.js">
+      <publishTime>04/11/2019 16:58:53</publishTime>
+    </File>
+    <File Include="Scripts/ajaxfileupload.js">
+      <publishTime>04/08/2019 17:28:58</publishTime>
+    </File>
+    <File Include="Scripts/autogrow.js">
+      <publishTime>04/08/2019 17:28:58</publishTime>
+    </File>
+    <File Include="Scripts/AutoReSize.js">
+      <publishTime>04/08/2019 17:28:58</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-progressbar.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>04/08/2019 17:28:58</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap2.3.1.min.js">
+      <publishTime>04/08/2019 17:28:58</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxscheduler.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxscheduler_timeline.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxscheduler_tooltip.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/highstock.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/html5shiv.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/IESpinner.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/iPAS_Common_v4.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/iPAS_Pager.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/iPAS_SiteNames_v6.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/iPAS_Spinner_bs4.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.2.2.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.9.2.custom.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.flip.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.MultiSelect.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.placeholder.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.qrcode.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.scannerdetection.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.2.2.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.2.2.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.timepicker.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.ui.timepicker.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/JsBarcode.code39.min.js">
+      <publishTime>04/11/2019 17:36:06</publishTime>
+    </File>
+    <File Include="Scripts/jstree.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/knockout-3.4.2.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/knockout.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/knockout.mapping.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/knockout.validation.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/lz-string.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/MaintenanceScheduleScriptResource.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/mermaid.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/moment.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/No-data-to-display.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/pdfmake.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/placeHolder.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/select2.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/select3.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/tether.min.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/vakata-jstree.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/vegam-multiselect-dropdown.js">
+      <publishTime>04/11/2019 18:24:52</publishTime>
+    </File>
+    <File Include="Scripts/VegamViewSignalR_v1.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_AddDocumentsAndImages.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_AddEquipmentInfo.js">
+      <publishTime>04/12/2019 16:39:42</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_AddEquipmentModel.js">
+      <publishTime>04/10/2019 18:38:22</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_AddFunctionalLocation.js">
+      <publishTime>04/11/2019 18:06:51</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_AddMeasuringPoint.js">
+      <publishTime>04/11/2019 17:35:23</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_AddNotification.js">
+      <publishTime>04/11/2019 18:24:32</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_AddTaskList.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_ConfigureSpareParts.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_CreateSchedule.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_CreateWorkGroup.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_DynamicGridControlScript_v26.js">
+      <publishTime>04/11/2019 16:59:29</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_EquipmentInfoList.js">
+      <publishTime>04/09/2019 19:31:57</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_EquipmentModelList.js">
+      <publishTime>04/11/2019 18:37:16</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_FunctionalLocationList.js">
+      <publishTime>04/11/2019 14:18:44</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_MaintenanceInfo.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_MaintenanceSchedule.js">
+      <publishTime>04/11/2019 18:10:34</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_ManageMeasurementDocument.js">
+      <publishTime>04/10/2019 17:22:34</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_ManageNotification.js">
+      <publishTime>04/10/2019 13:01:36</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_ManageSchedule.js">
+      <publishTime>04/10/2019 17:23:08</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_ManageWorkOrder.js">
+      <publishTime>04/11/2019 11:32:15</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_MeasurementDocument.js">
+      <publishTime>04/09/2019 19:09:09</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_MeasuringPointList.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_SignalRClient_v2.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_TaskGroupInfo.js">
+      <publishTime>04/11/2019 12:54:35</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_TaskGroupList.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_ToolsInfo.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_ViewWorkOrderInfo.js">
+      <publishTime>04/12/2019 18:30:53</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_WorkOrderCalendar.js">
+      <publishTime>04/12/2019 16:39:51</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_WorkOrderDayView.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_WorkOrderOrderView.js">
+      <publishTime>04/08/2019 17:29:03</publishTime>
+    </File>
+    <File Include="Scripts/Vegam_WorkOrderResourceView.js">
+      <publishTime>04/11/2019 17:00:37</publishTime>
+    </File>
+    <File Include="Styles/bootstrap.min.css">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/dhtmlxscheduler.css">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/fonts/css/font-awesome.min.css">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/fonts/fonts/fontawesome-webfont.eot">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/fonts/fonts/fontawesome-webfont.svg">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/fonts/fonts/fontawesome-webfont.ttf">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/fonts/fonts/fontawesome-webfont.woff">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/fonts/fonts/fontawesome-webfont.woff2">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/fonts/fonts/FontAwesome.otf">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/Images/Configure_Critical_Control_Parameters .png">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/Images/Maint_calender.png">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/Images/Maint_Completed.png">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/Images/Maint_InProgress.png">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/Images/Maint_Overdue.png">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/Images/Maint_Scheduled.png">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/Images/notification.png">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/Images/Spare_parts.png">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/jquery-ui.min.css">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/jquery.ui.timepicker.css">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/proplan_v7.css">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/select2.css">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/tables_v3.css">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/themes/base.less">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/themes/default-dark/32px.png">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/themes/default-dark/40px.png">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/themes/default-dark/style.css">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/themes/default-dark/style.less">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/themes/default-dark/throbber.gif">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/themes/default/32px.png">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/themes/default/40px.png">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/themes/default/style.css">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/themes/default/style.less">
+      <publishTime>04/08/2019 17:29:46</publishTime>
+    </File>
+    <File Include="Styles/themes/default/throbber.gif">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/themes/main.less">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/themes/mixins.less">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/themes/responsive.less">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="Styles/vegam-multiselect-dropdown.css">
+      <publishTime>04/11/2019 18:25:03</publishTime>
+    </File>
+    <File Include="Styles/vegam_h_v21.css">
+      <publishTime>04/08/2019 17:29:47</publishTime>
+    </File>
+    <File Include="UserControls/DynamicGridControl.ascx">
+      <publishTime>01/25/2019 15:51:26</publishTime>
+    </File>
+    <File Include="UserControls/Pager.ascx">
+      <publishTime>11/16/2018 14:54:18</publishTime>
+    </File>
+    <File Include="Vegam-Iframe.Master">
+      <publishTime>03/07/2019 11:05:59</publishTime>
+    </File>
+    <File Include="Vegam-Responsive.Master">
+      <publishTime>11/16/2018 17:09:26</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/27/2019 17:35:38</publishTime>
+    </File>
+    <File Include="WebServices/Vegam_MaintenanceService.asmx">
+      <publishTime>01/16/2019 18:17:56</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

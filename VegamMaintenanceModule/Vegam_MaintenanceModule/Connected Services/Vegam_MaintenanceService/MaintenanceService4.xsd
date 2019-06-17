@@ -1,0 +1,2133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Vegam_MaintenanceService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9093/MaintenanceService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:9093/MaintenanceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:9093/MaintenanceService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DynamicGrid" />
+  <xs:complexType name="MeasusrementDocumentScheduleInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ScheduleID" type="xs:int" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SelectedMeasuringPoints" nillable="true" type="q1:ArrayOfint" />
+          <xs:element minOccurs="0" name="WorkGroupID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MeasusrementDocumentScheduleInfo" nillable="true" type="tns:MeasusrementDocumentScheduleInfo" />
+  <xs:complexType name="BasicParam">
+    <xs:sequence>
+      <xs:element name="AccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="LanguageCode" nillable="true" type="xs:string" />
+      <xs:element name="SiteID" type="xs:int" />
+      <xs:element name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicParam" nillable="true" type="tns:BasicParam" />
+  <xs:complexType name="MeasDocScheduleMeasPoint">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MeasuringPointID" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MeasDocScheduleMeasPoint" nillable="true" type="tns:MeasDocScheduleMeasPoint" />
+  <xs:complexType name="ArrayOfMaintSparePartInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaintSparePartInfo" nillable="true" type="tns:MaintSparePartInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaintSparePartInfo" nillable="true" type="tns:ArrayOfMaintSparePartInfo" />
+  <xs:complexType name="MaintSparePartInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsSOPSparePart" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaterialDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaterialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsedQuantity" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaintSparePartInfo" nillable="true" type="tns:MaintSparePartInfo" />
+  <xs:complexType name="MaintenanceFilterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MaintScheduleID" type="xs:int" />
+          <xs:element minOccurs="0" name="MaintScheduleType" nillable="true" type="tns:ScheduleType" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleDate" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleTime" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkOrderID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaintenanceFilterInfo" nillable="true" type="tns:MaintenanceFilterInfo" />
+  <xs:simpleType name="ScheduleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Schedule">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WorkOrder">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">87</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Inspection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Notification">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ScheduleType" nillable="true" type="tns:ScheduleType" />
+  <xs:complexType name="MaintSparePartDetails">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ScheduleID" type="xs:int" />
+          <xs:element minOccurs="0" name="SparePartList" nillable="true" type="tns:ArrayOfMaintSparePartInfo" />
+          <xs:element minOccurs="0" name="WorkOrderID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaintSparePartDetails" nillable="true" type="tns:MaintSparePartDetails" />
+  <xs:complexType name="MaintSparePartFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ScheduleID" type="xs:int" />
+          <xs:element minOccurs="0" name="SparePartID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkOrderID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaintSparePartFilter" nillable="true" type="tns:MaintSparePartFilter" />
+  <xs:complexType name="ArrayOfDocumentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentInfo" nillable="true" type="tns:DocumentInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocumentInfo" nillable="true" type="tns:ArrayOfDocumentInfo" />
+  <xs:complexType name="DocumentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentID" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentType" type="tns:DocumentType" />
+      <xs:element minOccurs="0" name="DownloadPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsModelDocument" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ThumbnailPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentInfo" nillable="true" type="tns:DocumentInfo" />
+  <xs:simpleType name="DocumentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DOCUMENT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMAGE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VIDEO">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">86</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SDOCUMENT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocumentType" nillable="true" type="tns:DocumentType" />
+  <xs:complexType name="AutoCompleteSearch">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DisplayCount" type="xs:int" />
+          <xs:element minOccurs="0" name="SearchString" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AutoCompleteSearch" nillable="true" type="tns:AutoCompleteSearch" />
+  <xs:complexType name="ArrayOfAutoCompleteUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AutoCompleteUserInfo" nillable="true" type="tns:AutoCompleteUserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAutoCompleteUserInfo" nillable="true" type="tns:ArrayOfAutoCompleteUserInfo" />
+  <xs:complexType name="AutoCompleteUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AutoCompleteUserInfo" nillable="true" type="tns:AutoCompleteUserInfo" />
+  <xs:complexType name="WorkGroupFilterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemID" type="xs:int" />
+          <xs:element minOccurs="0" name="MasterDataType" nillable="true" type="tns:MasterDataType" />
+          <xs:element minOccurs="0" name="SearchString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkGroupID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkGroupFilterInfo" nillable="true" type="tns:WorkGroupFilterInfo" />
+  <xs:simpleType name="MasterDataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MANUFACTURER">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TYPE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CLASS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MP_CATEGORY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GROUPCODE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TASKGRP_TYPE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MAINT_TYPE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WORKGROUP">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPARE_PARTS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOTIFICATION_TYPE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MasterDataType" nillable="true" type="tns:MasterDataType" />
+  <xs:complexType name="WorkGroupInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MasterDataInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WorkGroupAssigneeList" nillable="true" type="tns:ArrayOfWorkGroupUserInfo" />
+          <xs:element minOccurs="0" name="WorkGroupReporterList" nillable="true" type="tns:ArrayOfWorkGroupUserInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkGroupInfo" nillable="true" type="tns:WorkGroupInfo" />
+  <xs:complexType name="MasterDataInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MasterDataID" type="xs:int" />
+      <xs:element minOccurs="0" name="MasterDataName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MasterDataType" nillable="true" type="tns:MasterDataType" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SelectionGroupItemName" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MasterDataInfo" nillable="true" type="tns:MasterDataInfo" />
+  <xs:complexType name="ArrayOfWorkGroupUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkGroupUserInfo" nillable="true" type="tns:WorkGroupUserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkGroupUserInfo" nillable="true" type="tns:ArrayOfWorkGroupUserInfo" />
+  <xs:complexType name="WorkGroupUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsOnComplete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOnDowntime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOnReport" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOnWork" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsScheduleNotification" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkGroupUserType" nillable="true" type="tns:WorkGroupUserType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkGroupUserInfo" nillable="true" type="tns:WorkGroupUserInfo" />
+  <xs:simpleType name="WorkGroupUserType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Assignee">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Report">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">82</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkGroupUserType" nillable="true" type="tns:WorkGroupUserType" />
+  <xs:complexType name="ArrayOfUserWorkGroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserWorkGroupInfo" nillable="true" type="tns:UserWorkGroupInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserWorkGroupInfo" nillable="true" type="tns:ArrayOfUserWorkGroupInfo" />
+  <xs:complexType name="UserWorkGroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WorkGroupIDList" nillable="true" type="q3:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserWorkGroupInfo" nillable="true" type="tns:UserWorkGroupInfo" />
+  <xs:complexType name="WorkOrderResourceViewFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EquipmentIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FunctionalLocIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Month" type="xs:int" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="Year" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkOrderResourceViewFilter" nillable="true" type="tns:WorkOrderResourceViewFilter" />
+  <xs:complexType name="WorkOrderResourceViewInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FunctionalLocationEquipmentList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+      <xs:element minOccurs="0" name="MonthYear" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="eventInfoList" nillable="true" type="tns:ArrayOfWorkOrderTimelineEventInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkOrderResourceViewInfo" nillable="true" type="tns:WorkOrderResourceViewInfo" />
+  <xs:complexType name="ArrayOfTypeValueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TypeValueInfo" nillable="true" type="tns:TypeValueInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTypeValueInfo" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+  <xs:complexType name="TypeValueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeValue" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TypeValueInfo" nillable="true" type="tns:TypeValueInfo" />
+  <xs:complexType name="ArrayOfWorkOrderTimelineEventInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkOrderTimelineEventInfo" nillable="true" type="tns:WorkOrderTimelineEventInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkOrderTimelineEventInfo" nillable="true" type="tns:ArrayOfWorkOrderTimelineEventInfo" />
+  <xs:complexType name="WorkOrderTimelineEventInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="EquipmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventListDetailsList" nillable="true" type="tns:ArrayOfWorkOrderTimelineEventDetails" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduleDate" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkOrderTimelineEventInfo" nillable="true" type="tns:WorkOrderTimelineEventInfo" />
+  <xs:complexType name="ArrayOfWorkOrderTimelineEventDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkOrderTimelineEventDetails" nillable="true" type="tns:WorkOrderTimelineEventDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkOrderTimelineEventDetails" nillable="true" type="tns:ArrayOfWorkOrderTimelineEventDetails" />
+  <xs:complexType name="WorkOrderTimelineEventDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaintenanceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkOrderID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkOrderNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkOrderTimelineEventDetails" nillable="true" type="tns:WorkOrderTimelineEventDetails" />
+  <xs:complexType name="WorkOrderFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkOrderID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkOrderFilter" nillable="true" type="tns:WorkOrderFilter" />
+  <xs:complexType name="WorkOrderBasicInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkOrderCloseInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActualStartDateTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ActualTime" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AssignedTo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompletedDateTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+          <xs:element minOccurs="0" name="EquipmentImagePath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EquipmentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EquipmentOrgImagePath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EquipmentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EstimatedTime" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+          <xs:element minOccurs="0" name="LocationImagePath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocationOrgImagePath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaintenanceName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaintenanceType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReportedTo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ScheduledDateTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDateTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkOrderBasicInfo" nillable="true" type="tns:WorkOrderBasicInfo" />
+  <xs:complexType name="WorkOrderCloseInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BreakdownDuration" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BreakdownDurationUnit" type="tns:UnitOfTime" />
+          <xs:element minOccurs="0" name="BreakdownEndDate" type="xs:int" />
+          <xs:element minOccurs="0" name="BreakdownEndTime" type="xs:int" />
+          <xs:element minOccurs="0" name="BreakdownStartDate" type="xs:int" />
+          <xs:element minOccurs="0" name="BreakdownStartTime" type="xs:int" />
+          <xs:element minOccurs="0" name="ClosedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClosedOn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsWorkOrderClose" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LaborTime" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LaborTimeTakenUnit" type="tns:UnitOfTime" />
+          <xs:element minOccurs="0" name="TimeSpent" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TimeSpentUnit" type="tns:UnitOfTime" />
+          <xs:element minOccurs="0" name="WorkEndDate" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkEndTime" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkOrderID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkStartDate" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkStartTime" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkOrderCloseInfo" nillable="true" type="tns:WorkOrderCloseInfo" />
+  <xs:simpleType name="UnitOfTime">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Hours">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">72</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Minutes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Seconds">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UnitOfTime" nillable="true" type="tns:UnitOfTime" />
+  <xs:complexType name="WorkOrderEquipmentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentInfoList" nillable="true" type="tns:ArrayOfDocumentInfo" />
+      <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="EquipmentImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentOrgImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstalledDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurchaseDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WarrentyExpiryDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WarrentyNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WarretyStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkOrderEquipmentInfo" nillable="true" type="tns:WorkOrderEquipmentInfo" />
+  <xs:complexType name="EquipmentHistoryFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="FromDate" type="xs:int" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="SearchString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SortType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToDate" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkOrderNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EquipmentHistoryFilter" nillable="true" type="tns:EquipmentHistoryFilter" />
+  <xs:complexType name="WorkOrderEquipmentHistoryDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkOrderEquipmentHistoryInfoList" nillable="true" type="tns:ArrayOfWorkOrderEquipmentHistoryInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkOrderEquipmentHistoryDetails" nillable="true" type="tns:WorkOrderEquipmentHistoryDetails" />
+  <xs:complexType name="ArrayOfWorkOrderEquipmentHistoryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkOrderEquipmentHistoryInfo" nillable="true" type="tns:WorkOrderEquipmentHistoryInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkOrderEquipmentHistoryInfo" nillable="true" type="tns:ArrayOfWorkOrderEquipmentHistoryInfo" />
+  <xs:complexType name="WorkOrderEquipmentHistoryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BreakdownDuration" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BreakdownDurationUnit" type="tns:UnitOfTime" />
+      <xs:element minOccurs="0" name="CompleteDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaintenanceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaintenanceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeSpent" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TimeSpentUnit" type="tns:UnitOfTime" />
+      <xs:element minOccurs="0" name="WorkOrderNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkOrderStatus" type="tns:WorkOrderStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkOrderEquipmentHistoryInfo" nillable="true" type="tns:WorkOrderEquipmentHistoryInfo" />
+  <xs:simpleType name="WorkOrderStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SCHEDULED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INPROGRESS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COMPLETED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OVERDUE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CANCELLED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CLOSED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CREATED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkOrderStatus" nillable="true" type="tns:WorkOrderStatus" />
+  <xs:complexType name="WorkOrderTaskDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsScheduledForToday" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SeletionGroupInfoList" nillable="true" type="tns:ArrayOfSelectionGroupInfo" />
+      <xs:element minOccurs="0" name="TaskInfoList" nillable="true" type="tns:ArrayOfWorkOrderTaskInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkOrderTaskDetails" nillable="true" type="tns:WorkOrderTaskDetails" />
+  <xs:complexType name="ArrayOfSelectionGroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SelectionGroupInfo" nillable="true" type="tns:SelectionGroupInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSelectionGroupInfo" nillable="true" type="tns:ArrayOfSelectionGroupInfo" />
+  <xs:complexType name="SelectionGroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyValueInfoList" nillable="true" type="tns:ArrayOfKeyValueInfo" />
+      <xs:element minOccurs="0" name="SelectionGroupID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SelectionGroupInfo" nillable="true" type="tns:SelectionGroupInfo" />
+  <xs:complexType name="ArrayOfKeyValueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueInfo" nillable="true" type="tns:KeyValueInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueInfo" nillable="true" type="tns:ArrayOfKeyValueInfo" />
+  <xs:complexType name="KeyValueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyValueInfo" nillable="true" type="tns:KeyValueInfo" />
+  <xs:complexType name="ArrayOfWorkOrderTaskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkOrderTaskInfo" nillable="true" type="tns:WorkOrderTaskInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkOrderTaskInfo" nillable="true" type="tns:ArrayOfWorkOrderTaskInfo" />
+  <xs:complexType name="WorkOrderTaskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentInfoList" nillable="true" type="tns:ArrayOfDocumentInfo" />
+      <xs:element minOccurs="0" name="EndDateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstimatedTime" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ImageList" nillable="true" type="tns:ArrayOfWorkOrderTaskImageInfo" />
+      <xs:element minOccurs="0" name="IsPPEConfirmed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPictureMandatory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRemarkMandatory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSafetyConfirmed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PPEList" nillable="true" type="tns:ArrayOfWorkOrderTaskImageInfo" />
+      <xs:element minOccurs="0" name="ParameterList" nillable="true" type="tns:ArrayOfWorkOrderTaskParameterInfo" />
+      <xs:element minOccurs="0" name="PictureEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RemarkEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SafetyDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartedDateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskID" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToolsList" nillable="true" type="tns:ArrayOfWorkOrderTaskImageInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkOrderTaskInfo" nillable="true" type="tns:WorkOrderTaskInfo" />
+  <xs:complexType name="ArrayOfWorkOrderTaskImageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkOrderTaskImageInfo" nillable="true" type="tns:WorkOrderTaskImageInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkOrderTaskImageInfo" nillable="true" type="tns:ArrayOfWorkOrderTaskImageInfo" />
+  <xs:complexType name="WorkOrderTaskImageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageID" type="xs:int" />
+      <xs:element minOccurs="0" name="ImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThubmnailPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkOrderTaskImageInfo" nillable="true" type="tns:WorkOrderTaskImageInfo" />
+  <xs:complexType name="ArrayOfWorkOrderTaskParameterInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkOrderTaskParameterInfo" nillable="true" type="tns:WorkOrderTaskParameterInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkOrderTaskParameterInfo" nillable="true" type="tns:ArrayOfWorkOrderTaskParameterInfo" />
+  <xs:complexType name="WorkOrderTaskParameterInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsMandatory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ParameterID" type="xs:int" />
+      <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelectionGroupID" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" type="tns:ParameterType" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueDisplayName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkOrderTaskParameterInfo" nillable="true" type="tns:WorkOrderTaskParameterInfo" />
+  <xs:simpleType name="ParameterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SingleLineText">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MultiLineText">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Numeric">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SelectionCode">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">67</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ParameterType" nillable="true" type="tns:ParameterType" />
+  <xs:complexType name="WorkOrderTaskProcessInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsPPEConfirmed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSafetyConfirmed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TaskID" type="xs:int" />
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TaskPPEIDList" nillable="true" type="q4:ArrayOfint" />
+          <xs:element minOccurs="0" name="WorkOrderID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkOrderTaskProcessInfo" nillable="true" type="tns:WorkOrderTaskProcessInfo" />
+  <xs:complexType name="TaskStartEndReturnInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentDateTime" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MissingParameterIDList" nillable="true" type="q5:ArrayOfint" />
+      <xs:element minOccurs="0" name="ReturnValue" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskStartEndReturnInfo" nillable="true" type="tns:TaskStartEndReturnInfo" />
+  <xs:complexType name="TaskParameterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ParameterList" nillable="true" type="tns:ArrayOfTaskParameterValueInfo" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaskID" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkOrderID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskParameterInfo" nillable="true" type="tns:TaskParameterInfo" />
+  <xs:complexType name="ArrayOfTaskParameterValueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskParameterValueInfo" nillable="true" type="tns:TaskParameterValueInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskParameterValueInfo" nillable="true" type="tns:ArrayOfTaskParameterValueInfo" />
+  <xs:complexType name="TaskParameterValueInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ParameterID" type="xs:int" />
+      <xs:element minOccurs="0" name="ParameterValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelectCodeItem" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskParameterValueInfo" nillable="true" type="tns:TaskParameterValueInfo" />
+  <xs:complexType name="WorkOrderTaskImageUploadInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaskID" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkOrderID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkOrderTaskImageUploadInfo" nillable="true" type="tns:WorkOrderTaskImageUploadInfo" />
+  <xs:complexType name="WorkOrderSparePartsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsOrderInProgress" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WorkOrderSpareParts" nillable="true" type="tns:ArrayOfMaintSparePartInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkOrderSparePartsInfo" nillable="true" type="tns:WorkOrderSparePartsInfo" />
+  <xs:complexType name="ToolsFilterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="SortType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ToolID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ToolsFilterInfo" nillable="true" type="tns:ToolsFilterInfo" />
+  <xs:complexType name="ToolsListInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ToolsList" nillable="true" type="tns:ArrayOfToolsInfo" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ToolsListInfo" nillable="true" type="tns:ToolsListInfo" />
+  <xs:complexType name="ArrayOfToolsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ToolsInfo" nillable="true" type="tns:ToolsInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfToolsInfo" nillable="true" type="tns:ArrayOfToolsInfo" />
+  <xs:complexType name="ToolsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThumbnailPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToolDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToolID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ToolsInfo" nillable="true" type="tns:ToolsInfo" />
+  <xs:complexType name="SparePartsFilterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DynamicGridObjectID" type="xs:int" />
+          <xs:element minOccurs="0" name="DynamicGridSearchInfo" nillable="true" type="tns:DynamicGridSearchInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SparePartsFilterInfo" nillable="true" type="tns:SparePartsFilterInfo" />
+  <xs:complexType name="DynamicGridSearchInfo">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DynamicGrid" minOccurs="0" name="DynamicGridSearchFieldValueInfoList" nillable="true" type="q6:ArrayOfDynamicGridFilterValueInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DynamicGridSearchInfo" nillable="true" type="tns:DynamicGridSearchInfo" />
+  <xs:complexType name="NotificationtFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="FLocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="SearchString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelectionID" type="xs:int" />
+      <xs:element minOccurs="0" name="SortType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationtFilter" nillable="true" type="tns:NotificationtFilter" />
+  <xs:complexType name="NotificationList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotificationInoList" nillable="true" type="tns:ArrayOfNotificationBasicInfo" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationList" nillable="true" type="tns:NotificationList" />
+  <xs:complexType name="ArrayOfNotificationBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NotificationBasicInfo" nillable="true" type="tns:NotificationBasicInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotificationBasicInfo" nillable="true" type="tns:ArrayOfNotificationBasicInfo" />
+  <xs:complexType name="NotificationBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotificationID" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotificationStatus" nillable="true" type="tns:NotificationStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationBasicInfo" nillable="true" type="tns:NotificationBasicInfo" />
+  <xs:simpleType name="NotificationStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CREATED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ASSIGNED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REJECTED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COMPLETED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INPROGRESS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ACCEPTED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CLOSED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NotificationStatus" nillable="true" type="tns:NotificationStatus" />
+  <xs:complexType name="NotificationInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NotificationBasicInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AttachedSchedlueID" type="xs:int" />
+          <xs:element minOccurs="0" name="ClosedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClosedOn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EquipmentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+          <xs:element minOccurs="0" name="EquipmentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FLocationID" type="xs:int" />
+          <xs:element minOccurs="0" name="FLocationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NotificationType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NotificationTypeID" type="xs:int" />
+          <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PriorityValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RejectedReason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RequestedEndDate" type="xs:int" />
+          <xs:element minOccurs="0" name="SequenceID" type="xs:int" />
+          <xs:element minOccurs="0" name="StartTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TimeTaken" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeTakenUnit" type="tns:UnitOfTime" />
+          <xs:element minOccurs="0" name="WorkEndDate" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkEndTime" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkOrderNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkStartDate" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkStartTime" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificationInfo" nillable="true" type="tns:NotificationInfo" />
+  <xs:complexType name="EquipmentFilterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConsiderEquipmentList" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+          <xs:element minOccurs="0" name="InfoType" type="tns:InfoType" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="SearchCategoryIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SearchLocationIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SearchLocationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SearchManufactureIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SerachNameOrCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SortType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EquipmentFilterInfo" nillable="true" type="tns:EquipmentFilterInfo" />
+  <xs:simpleType name="InfoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Location">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">76</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Equipment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Equipment_Model">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Measuring_Point">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MaintenanceAttachment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NotificationAttachment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="InfoType" nillable="true" type="tns:InfoType" />
+  <xs:complexType name="ArrayOfMaintenanceFeatureInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaintenanceFeatureInfo" nillable="true" type="tns:MaintenanceFeatureInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaintenanceFeatureInfo" nillable="true" type="tns:ArrayOfMaintenanceFeatureInfo" />
+  <xs:complexType name="MaintenanceFeatureInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TabName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TabPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaintenanceFeatureInfo" nillable="true" type="tns:MaintenanceFeatureInfo" />
+  <xs:complexType name="SiteDateTimeFormatInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeFormat" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteDateTimeFormatInfo" nillable="true" type="tns:SiteDateTimeFormatInfo" />
+  <xs:complexType name="DateTimeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentDate" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentTime" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DateTimeInfo" nillable="true" type="tns:DateTimeInfo" />
+  <xs:complexType name="ArrayOfEnumTypeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EnumTypeInfo" nillable="true" type="tns:EnumTypeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnumTypeInfo" nillable="true" type="tns:ArrayOfEnumTypeInfo" />
+  <xs:complexType name="EnumTypeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TypeValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnumTypeInfo" nillable="true" type="tns:EnumTypeInfo" />
+  <xs:complexType name="UserPreferenceFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PreferenceEquipmentIDS" nillable="true" type="q7:ArrayOfstring" />
+          <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PreferenceLocationIDS" nillable="true" type="q8:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserPreferenceFilter" nillable="true" type="tns:UserPreferenceFilter" />
+  <xs:complexType name="FLocationFilterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConsiderFLoc" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FLocationID" type="xs:int" />
+          <xs:element minOccurs="0" name="FLocationNameSearch" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FunctionalLocIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="SortType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FLocationFilterInfo" nillable="true" type="tns:FLocationFilterInfo" />
+  <xs:complexType name="FLocationListInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FunctionalLocationListInfo" nillable="true" type="tns:ArrayOfFLocationInfo" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FLocationListInfo" nillable="true" type="tns:FLocationListInfo" />
+  <xs:complexType name="ArrayOfFLocationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FLocationInfo" nillable="true" type="tns:FLocationInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFLocationInfo" nillable="true" type="tns:ArrayOfFLocationInfo" />
+  <xs:complexType name="FLocationInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FLocationDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AsignNewWorkGroupsToChild" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AssignedWorkGroupList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+          <xs:element minOccurs="0" name="FunctionalLocationImageName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FunctionalLocationImagePath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FunctionalLocationUpdatedOn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentLocationID" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkGroupDeletionConfirmed" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FLocationInfo" nillable="true" type="tns:FLocationInfo" />
+  <xs:complexType name="FLocationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FunctionalLocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FunctionalLocationDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FunctionalLocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="FunctionalLocationName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FLocationDetails" nillable="true" type="tns:FLocationDetails" />
+  <xs:complexType name="FLocationListDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FunctionalLocationListInfo" nillable="true" type="tns:ArrayOfFLocationDetails" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FLocationListDetails" nillable="true" type="tns:FLocationListDetails" />
+  <xs:complexType name="ArrayOfFLocationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FLocationDetails" nillable="true" type="tns:FLocationDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFLocationDetails" nillable="true" type="tns:ArrayOfFLocationDetails" />
+  <xs:complexType name="AddFLocationReturnInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MessageList" nillable="true" type="q9:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddFLocationReturnInfo" nillable="true" type="tns:AddFLocationReturnInfo" />
+  <xs:complexType name="ArrayOfHierarchicalListInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HierarchicalListInfo" nillable="true" type="tns:HierarchicalListInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHierarchicalListInfo" nillable="true" type="tns:ArrayOfHierarchicalListInfo" />
+  <xs:complexType name="HierarchicalListInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Children" nillable="true" type="tns:ArrayOfHierarchicalListInfo" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserDefaultEquipment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserDefaultLocation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HierarchicalListInfo" nillable="true" type="tns:HierarchicalListInfo" />
+  <xs:complexType name="ArrayOfLocationWorkGroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocationWorkGroupInfo" nillable="true" type="tns:LocationWorkGroupInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocationWorkGroupInfo" nillable="true" type="tns:ArrayOfLocationWorkGroupInfo" />
+  <xs:complexType name="LocationWorkGroupInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TypeValueInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="WorkGroupInfoList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LocationWorkGroupInfo" nillable="true" type="tns:LocationWorkGroupInfo" />
+  <xs:complexType name="EquipmentListInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EquipmentList" nillable="true" type="tns:ArrayOfEquipmentInformation" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EquipmentListInfo" nillable="true" type="tns:EquipmentListInfo" />
+  <xs:complexType name="ArrayOfEquipmentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EquipmentInformation" nillable="true" type="tns:EquipmentInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEquipmentInformation" nillable="true" type="tns:ArrayOfEquipmentInformation" />
+  <xs:complexType name="EquipmentInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignedWorkGroupList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClassName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="EquipmentImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FunctionalLocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="FunctionalLocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentEquipmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedOn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EquipmentInformation" nillable="true" type="tns:EquipmentInformation" />
+  <xs:complexType name="EquipmentDetailList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EquipmentList" nillable="true" type="tns:ArrayOfEquipmentDetail" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EquipmentDetailList" nillable="true" type="tns:EquipmentDetailList" />
+  <xs:complexType name="ArrayOfEquipmentDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EquipmentDetail" nillable="true" type="tns:EquipmentDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEquipmentDetail" nillable="true" type="tns:ArrayOfEquipmentDetail" />
+  <xs:complexType name="EquipmentDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignedWorkGroupList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+      <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="EquipmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FunctionalLocationID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EquipmentDetail" nillable="true" type="tns:EquipmentDetail" />
+  <xs:complexType name="EquipmentDetailsInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EquipmentInformation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AsignNewWorkGroupsToChild" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+          <xs:element minOccurs="0" name="ClassID" type="xs:int" />
+          <xs:element minOccurs="0" name="EquipmentImageExist" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FLocationID" type="xs:int" />
+          <xs:element minOccurs="0" name="InfoType" type="tns:InfoType" />
+          <xs:element minOccurs="0" name="InstallDate" type="xs:int" />
+          <xs:element minOccurs="0" name="ManufacturerID" type="xs:int" />
+          <xs:element minOccurs="0" name="ModelName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModelNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModelReferenceID" type="xs:int" />
+          <xs:element minOccurs="0" name="PurchaseDate" type="xs:int" />
+          <xs:element minOccurs="0" name="ResourceID" type="xs:int" />
+          <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SupportInfoList" nillable="true" type="tns:ArrayOfSupportInfo" />
+          <xs:element minOccurs="0" name="WarrantyExpireDate" type="xs:int" />
+          <xs:element minOccurs="0" name="WarrantyNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WarrantyStartDate" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkGroupDeletionConfirmed" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EquipmentDetailsInfo" nillable="true" type="tns:EquipmentDetailsInfo" />
+  <xs:complexType name="ArrayOfSupportInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupportInfo" nillable="true" type="tns:SupportInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSupportInfo" nillable="true" type="tns:ArrayOfSupportInfo" />
+  <xs:complexType name="SupportInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SupportEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportID" type="xs:int" />
+      <xs:element minOccurs="0" name="SupportName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportType" type="tns:SupportType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupportInfo" nillable="true" type="tns:SupportInfo" />
+  <xs:simpleType name="SupportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InHouse">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">72</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Third_Party">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SupportType" nillable="true" type="tns:SupportType" />
+  <xs:complexType name="EquipmentSupportInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+          <xs:element minOccurs="0" name="SupportID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EquipmentSupportInfo" nillable="true" type="tns:EquipmentSupportInfo" />
+  <xs:complexType name="EquipmentModelListDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EquipmentModelInfoList" nillable="true" type="tns:ArrayOfEquipmentModelInfo" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EquipmentModelListDetails" nillable="true" type="tns:EquipmentModelListDetails" />
+  <xs:complexType name="ArrayOfEquipmentModelInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EquipmentModelInfo" nillable="true" type="tns:EquipmentModelInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEquipmentModelInfo" nillable="true" type="tns:ArrayOfEquipmentModelInfo" />
+  <xs:complexType name="EquipmentModelInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClassID" type="xs:int" />
+      <xs:element minOccurs="0" name="ClassName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentModelDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentModelID" type="xs:int" />
+      <xs:element minOccurs="0" name="EquipmentModelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquipmentModelNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufacturerID" type="xs:int" />
+      <xs:element minOccurs="0" name="ManufacturerName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EquipmentModelInfo" nillable="true" type="tns:EquipmentModelInfo" />
+  <xs:complexType name="EquipmentModelListInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EquipmentModelList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EquipmentModelListInfo" nillable="true" type="tns:EquipmentModelListInfo" />
+  <xs:complexType name="MeasuringPointFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MeasuringPointDataType" nillable="true" type="tns:MeasuringPointDataType" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="SearchString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SelectionID" type="xs:int" />
+          <xs:element minOccurs="0" name="SortType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MeasuringPointFilter" nillable="true" type="tns:MeasuringPointFilter" />
+  <xs:simpleType name="MeasuringPointDataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Equipment_Model">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Equipment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Functional_Location">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">76</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MeasuringPointDataType" nillable="true" type="tns:MeasuringPointDataType" />
+  <xs:complexType name="MeasuringPointListInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MeasuringPointList" nillable="true" type="tns:ArrayOfMeasuringPointList" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeasuringPointListInfo" nillable="true" type="tns:MeasuringPointListInfo" />
+  <xs:complexType name="ArrayOfMeasuringPointList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MeasuringPointList" nillable="true" type="tns:MeasuringPointList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMeasuringPointList" nillable="true" type="tns:ArrayOfMeasuringPointList" />
+  <xs:complexType name="MeasuringPointList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsActivated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MeasuringPointID" type="xs:int" />
+      <xs:element minOccurs="0" name="MeasuringPointName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeasuringPointList" nillable="true" type="tns:MeasuringPointList" />
+  <xs:complexType name="MeasuringPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DecimalPlaces" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCounter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxTextLength" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaxValueWarning" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MeasuringPointDataType" nillable="true" type="tns:MeasuringPointDataType" />
+      <xs:element minOccurs="0" name="MinValue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MinValueWarning" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpcTagID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentID" type="xs:int" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReadingType" nillable="true" type="tns:ReadingType" />
+      <xs:element minOccurs="0" name="SensorTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="TagUUID" type="xs:int" />
+      <xs:element minOccurs="0" name="UOMID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeasuringPoint" nillable="true" type="tns:MeasuringPoint" />
+  <xs:simpleType name="ReadingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Numeric">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Selection">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReadingType" nillable="true" type="tns:ReadingType" />
+  <xs:complexType name="MeasuringPointDataTypeFilterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MeasuringPointDataTypeList" nillable="true" type="tns:ArrayOfMeasuringPointDataType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MeasuringPointDataTypeFilterInfo" nillable="true" type="tns:MeasuringPointDataTypeFilterInfo" />
+  <xs:complexType name="ArrayOfMeasuringPointDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MeasuringPointDataType" type="tns:MeasuringPointDataType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMeasuringPointDataType" nillable="true" type="tns:ArrayOfMeasuringPointDataType" />
+  <xs:complexType name="MeasuringPointDataTypeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EquipmentList" nillable="true" type="tns:ArrayOfEquipmentDetail" />
+      <xs:element minOccurs="0" name="EquipmentModelList" nillable="true" type="tns:ArrayOfEquipmentDetail" />
+      <xs:element minOccurs="0" name="FunctionalLocationList" nillable="true" type="tns:ArrayOfFLocationDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeasuringPointDataTypeList" nillable="true" type="tns:MeasuringPointDataTypeList" />
+  <xs:complexType name="MeasuringPointFilterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DynamicGridObjectID" type="xs:int" />
+          <xs:element minOccurs="0" name="DynamicGridSearchInfo" nillable="true" type="tns:DynamicGridSearchInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MeasuringPointFilterInfo" nillable="true" type="tns:MeasuringPointFilterInfo" />
+  <xs:complexType name="DocumentBasicInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentID" type="xs:int" />
+          <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+          <xs:element minOccurs="0" name="InfoType" type="tns:InfoType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentBasicInfo" nillable="true" type="tns:DocumentBasicInfo" />
+  <xs:complexType name="DocumentFilterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentType" type="tns:DocumentType" />
+          <xs:element minOccurs="0" name="InfoType" type="tns:InfoType" />
+          <xs:element minOccurs="0" name="ReferenceID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentFilterInfo" nillable="true" type="tns:DocumentFilterInfo" />
+  <xs:complexType name="MasterDataFilterInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MasterDataType" nillable="true" type="tns:MasterDataType" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="SearchString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SortType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MasterDataFilterInfo" nillable="true" type="tns:MasterDataFilterInfo" />
+  <xs:complexType name="MasterDataList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MasterDataInfoList" nillable="true" type="tns:ArrayOfMasterDataInfo" />
+      <xs:element minOccurs="0" name="TotalMasterDataCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MasterDataList" nillable="true" type="tns:MasterDataList" />
+  <xs:complexType name="ArrayOfMasterDataInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MasterDataInfo" nillable="true" type="tns:MasterDataInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMasterDataInfo" nillable="true" type="tns:ArrayOfMasterDataInfo" />
+  <xs:complexType name="MasterDataDropDownListFilterInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MasterDataTypeList" nillable="true" type="tns:ArrayOfMasterDataType" />
+      <xs:element minOccurs="0" name="SortType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MasterDataDropDownListFilterInfo" nillable="true" type="tns:MasterDataDropDownListFilterInfo" />
+  <xs:complexType name="ArrayOfMasterDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MasterDataType" type="tns:MasterDataType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMasterDataType" nillable="true" type="tns:ArrayOfMasterDataType" />
+  <xs:complexType name="MasterDataDropDownList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryInfoList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+      <xs:element minOccurs="0" name="ClassInfoList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+      <xs:element minOccurs="0" name="MPGroupList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+      <xs:element minOccurs="0" name="MPcategoryInfoList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+      <xs:element minOccurs="0" name="ManufacturerInfoList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+      <xs:element minOccurs="0" name="TaskGroupList" nillable="true" type="tns:ArrayOfTypeValueInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MasterDataDropDownList" nillable="true" type="tns:MasterDataDropDownList" />
+  <xs:complexType name="TaskGroupFilterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TaskGroupIdentifier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TaskGroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaskGroupTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskGroupFilterInfo" nillable="true" type="tns:TaskGroupFilterInfo" />
+  <xs:complexType name="TaskGroupIdentifier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdentifierID" type="xs:int" />
+      <xs:element minOccurs="0" name="SelectedTaskID" type="xs:int" />
+      <xs:element minOccurs="0" name="VersionNumber" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskGroupIdentifier" nillable="true" type="tns:TaskGroupIdentifier" />
+  <xs:complexType name="TaskGroupBasicInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TaskGroupIdentifier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TaskBasicInfoList" nillable="true" type="tns:ArrayOfTaskBasicInfo" />
+          <xs:element minOccurs="0" name="TaskGroupID" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskGroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaskGroupStatus" type="tns:TaskGroupStatus" />
+          <xs:element minOccurs="0" name="TaskGroupTypeId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskGroupBasicInfo" nillable="true" type="tns:TaskGroupBasicInfo" />
+  <xs:complexType name="ArrayOfTaskBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskBasicInfo" nillable="true" type="tns:TaskBasicInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskBasicInfo" nillable="true" type="tns:ArrayOfTaskBasicInfo" />
+  <xs:complexType name="TaskBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SequenceNum" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskID" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskBasicInfo" nillable="true" type="tns:TaskBasicInfo" />
+  <xs:simpleType name="TaskGroupStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Approved">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Draft">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MODIFIED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TaskGroupStatus" nillable="true" type="tns:TaskGroupStatus" />
+  <xs:complexType name="ArrayOfTaskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskInfo" nillable="true" type="tns:TaskInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskInfo" nillable="true" type="tns:ArrayOfTaskInfo" />
+  <xs:complexType name="TaskInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TaskBasicInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentInfoList" nillable="true" type="tns:ArrayOfDocumentInfo" />
+          <xs:element minOccurs="0" name="EstimatedTime" type="xs:long" />
+          <xs:element minOccurs="0" name="PPEInfoList" nillable="true" type="tns:ArrayOfTaskPPEInfo" />
+          <xs:element minOccurs="0" name="ParameterInfoList" nillable="true" type="tns:ArrayOfParameterInfo" />
+          <xs:element minOccurs="0" name="PictureEnabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PictureMandatory" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RecordActionEnabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RemarkEnabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RemarkMandatory" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SafetyDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SparePartInfoList" nillable="true" type="tns:ArrayOfMaintSparePartInfo" />
+          <xs:element minOccurs="0" name="ToolsInfoList" nillable="true" type="tns:ArrayOfTaskToolsInfo" />
+          <xs:element minOccurs="0" name="UnitOfTime" type="tns:UnitOfTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskInfo" nillable="true" type="tns:TaskInfo" />
+  <xs:complexType name="ArrayOfTaskPPEInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskPPEInfo" nillable="true" type="tns:TaskPPEInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskPPEInfo" nillable="true" type="tns:ArrayOfTaskPPEInfo" />
+  <xs:complexType name="TaskPPEInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PPEDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PPEID" type="xs:int" />
+      <xs:element minOccurs="0" name="PPEImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskPPEID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskPPEInfo" nillable="true" type="tns:TaskPPEInfo" />
+  <xs:complexType name="ArrayOfParameterInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParameterInfo" nillable="true" type="tns:ParameterInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParameterInfo" nillable="true" type="tns:ArrayOfParameterInfo" />
+  <xs:complexType name="ParameterInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsMandatory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ParameterID" type="xs:int" />
+      <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParameterType" type="tns:ParameterType" />
+      <xs:element minOccurs="0" name="SelectionGroupID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParameterInfo" nillable="true" type="tns:ParameterInfo" />
+  <xs:complexType name="ArrayOfTaskToolsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskToolsInfo" nillable="true" type="tns:TaskToolsInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskToolsInfo" nillable="true" type="tns:ArrayOfTaskToolsInfo" />
+  <xs:complexType name="TaskToolsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskToolsID" type="xs:int" />
+      <xs:element minOccurs="0" name="ToolsDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToolsID" type="xs:int" />
+      <xs:element minOccurs="0" name="ToolsImagePath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskToolsInfo" nillable="true" type="tns:TaskToolsInfo" />
+  <xs:complexType name="ArrayOfInstructionSelectorInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InstructionSelectorInfo" nillable="true" type="tns:InstructionSelectorInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInstructionSelectorInfo" nillable="true" type="tns:ArrayOfInstructionSelectorInfo" />
+  <xs:complexType name="InstructionSelectorInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstructionID" type="xs:int" />
+      <xs:element minOccurs="0" name="InstructionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InstructionSelectorInfo" nillable="true" type="tns:InstructionSelectorInfo" />
+  <xs:complexType name="MaintenanceInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EquipmentID" type="xs:int" />
+          <xs:element minOccurs="0" name="EquipmentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FLocationID" type="xs:int" />
+          <xs:element minOccurs="0" name="FLocationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FLocationOrEquipmentImg" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsTaskGroupSOPRemoved" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsWorkGroupAvailable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MaintScheduleID" type="xs:int" />
+          <xs:element minOccurs="0" name="MaintScheduleType" type="tns:ScheduleType" />
+          <xs:element minOccurs="0" name="MaintenanceDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaintenanceName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaintenancePriorityType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaintenanceTypeID" type="xs:int" />
+          <xs:element minOccurs="0" name="ManualTaskGroupID" type="xs:int" />
+          <xs:element minOccurs="0" name="NotificationID" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleDate" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleDetailID" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ScheduleTime" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskGroupID" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskGroupIdentifier" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskGroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaskGroupVersion" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkGroupID" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkGroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkOrderStatus" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaintenanceInfo" nillable="true" type="tns:MaintenanceInfo" />
+  <xs:complexType name="MaintenanceIdentityInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaintScheduleID" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkOrderID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaintenanceIdentityInfo" nillable="true" type="tns:MaintenanceIdentityInfo" />
+  <xs:complexType name="MaintWorkGroupFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ReferenceID" type="xs:int" />
+          <xs:element minOccurs="0" name="ReferenceType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaintWorkGroupFilter" nillable="true" type="tns:MaintWorkGroupFilter" />
+  <xs:complexType name="MaintTaskGroupFilterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Identifier" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleID" type="xs:int" />
+          <xs:element minOccurs="0" name="SearchTaskGroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaskGroupID" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskGroupTypeID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaintTaskGroupFilterInfo" nillable="true" type="tns:MaintTaskGroupFilterInfo" />
+  <xs:complexType name="ArrayOfMaintTaskGroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaintTaskGroupInfo" nillable="true" type="tns:MaintTaskGroupInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaintTaskGroupInfo" nillable="true" type="tns:ArrayOfMaintTaskGroupInfo" />
+  <xs:complexType name="MaintTaskGroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Identifier" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskGroupID" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskGroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VersionNumber" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaintTaskGroupInfo" nillable="true" type="tns:MaintTaskGroupInfo" />
+  <xs:complexType name="ArrayOfMaintTaskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaintTaskInfo" nillable="true" type="tns:MaintTaskInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaintTaskInfo" nillable="true" type="tns:ArrayOfMaintTaskInfo" />
+  <xs:complexType name="MaintTaskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstimatedTime" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaskID" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaintTaskInfo" nillable="true" type="tns:MaintTaskInfo" />
+  <xs:complexType name="ScheduleFilterInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MaintScheduleID" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleType" nillable="true" type="tns:ScheduleType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScheduleFilterInfo" nillable="true" type="tns:ScheduleFilterInfo" />
+  <xs:complexType name="ScheduleDetailInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BasedOnLastPerformanceDate" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EndDate" type="xs:int" />
+          <xs:element minOccurs="0" name="EndNumOccurrence" type="xs:int" />
+          <xs:element minOccurs="0" name="Frequency" nillable="true" type="tns:Schd_Frequency" />
+          <xs:element minOccurs="0" name="Interval" type="xs:int" />
+          <xs:element minOccurs="0" name="ItemID" type="xs:int" />
+          <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MonthDay" nillable="true" type="q10:ArrayOfint" />
+          <xs:element minOccurs="0" name="MonthOption" nillable="true" type="tns:Schd_MonthOption" />
+          <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MonthPosition" nillable="true" type="q11:ArrayOfstring" />
+          <xs:element minOccurs="0" name="NotifyDay" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleDetailID" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleID" type="xs:int" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:int" />
+          <xs:element minOccurs="0" name="StartTime" type="xs:int" />
+          <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WeekDay" nillable="true" type="q12:ArrayOfstring" />
+          <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="YearMonth" nillable="true" type="q13:ArrayOfstring" />
+          <xs:element minOccurs="0" name="YearOption" nillable="true" type="tns:Schd_YearOption" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScheduleDetailInfo" nillable="true" type="tns:ScheduleDetailInfo" />
+  <xs:simpleType name="Schd_Frequency">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HOURLY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DAILY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WEEKLY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MONTHLY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YEARLY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Schd_Frequency" nillable="true" type="tns:Schd_Frequency" />
+  <xs:simpleType name="Schd_MonthOption">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Monthly_By_Date">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Monthly_By_Day">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Schd_MonthOption" nillable="true" type="tns:Schd_MonthOption" />
+  <xs:simpleType name="Schd_YearOption">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Yearly_By_Date">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Yearly_By_Day">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Schd_YearOption" nillable="true" type="tns:Schd_YearOption" />
+  <xs:complexType name="ScheduleWorkOrderFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleDate" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleID" type="xs:int" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScheduleWorkOrderFilter" nillable="true" type="tns:ScheduleWorkOrderFilter" />
+  <xs:complexType name="ScheduleWorkOrderDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkOrderList" nillable="true" type="tns:ArrayOfScheduleWorkOrderInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleWorkOrderDetails" nillable="true" type="tns:ScheduleWorkOrderDetails" />
+  <xs:complexType name="ArrayOfScheduleWorkOrderInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleWorkOrderInfo" nillable="true" type="tns:ScheduleWorkOrderInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScheduleWorkOrderInfo" nillable="true" type="tns:ArrayOfScheduleWorkOrderInfo" />
+  <xs:complexType name="ScheduleWorkOrderInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlannedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduleDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkOrder" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleWorkOrderInfo" nillable="true" type="tns:ScheduleWorkOrderInfo" />
+  <xs:complexType name="MeasurementDocumentFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CategoryIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EquipmentIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FLocationIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MeasuringPoint" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="ScheduleID" type="xs:int" />
+          <xs:element minOccurs="0" name="SortType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WorkGroupID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MeasurementDocumentFilter" nillable="true" type="tns:MeasurementDocumentFilter" />
+  <xs:complexType name="MeasurementDocumentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MeasDocName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeasPointsList" nillable="true" type="tns:ArrayOfMeasDocMeasPoint" />
+      <xs:element minOccurs="0" name="ScheduleDetailID" type="xs:int" />
+      <xs:element minOccurs="0" name="ScheduleStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkGroupID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeasurementDocumentInfo" nillable="true" type="tns:MeasurementDocumentInfo" />
+  <xs:complexType name="ArrayOfMeasDocMeasPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MeasDocMeasPoint" nillable="true" type="tns:MeasDocMeasPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMeasDocMeasPoint" nillable="true" type="tns:ArrayOfMeasDocMeasPoint" />
+  <xs:complexType name="MeasDocMeasPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Equipment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FunctionalLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeasuringPointID" type="xs:int" />
+      <xs:element minOccurs="0" name="MeasuringPointName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeasDocMeasPoint" nillable="true" type="tns:MeasDocMeasPoint" />
+</xs:schema>

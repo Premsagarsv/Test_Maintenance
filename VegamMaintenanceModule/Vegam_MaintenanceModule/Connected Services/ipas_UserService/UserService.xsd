@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nayan-pc:8081/UserService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://nayan-pc:8081/UserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://nayan-pc:8081/UserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" />
+  <xs:import schemaLocation="http://nayan-pc:8081/UserService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Site" />
+  <xs:import schemaLocation="http://nayan-pc:8081/UserService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service" />
+  <xs:complexType name="CurrentUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevel" type="tns:AccessLevel" />
+      <xs:element minOccurs="0" name="AdminAccessCount" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="EnabledSaveUserCredential" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FingerPrintVersionNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLockedByAdmin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUserLocked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LanguageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastLoginDate" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionID" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserPermission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserProfileImage" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserSiteList" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="VersionNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurrentUserInfo" nillable="true" type="tns:CurrentUserInfo" />
+  <xs:simpleType name="AccessLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="COMPANY_LEVEL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REGIONAL_LEVEL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COUNTRY_LEVEL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PLANT_MANAGER_LEVEL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PLANT_LEVEL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PORTAL_ADMIN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccessLevel" nillable="true" type="tns:AccessLevel" />
+  <xs:complexType name="ArrayOfSitePrinters">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SitePrinters" nillable="true" type="tns:SitePrinters" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSitePrinters" nillable="true" type="tns:ArrayOfSitePrinters" />
+  <xs:complexType name="SitePrinters">
+    <xs:sequence>
+      <xs:element name="DefaultDISPrinter" type="xs:int" />
+      <xs:element name="DefaultKittingPrinter" type="xs:int" />
+      <xs:element name="DefaultMNFPrinter" type="xs:int" />
+      <xs:element name="DefaultPreweighPrinter" type="xs:int" />
+      <xs:element name="DefaultRMLabelCount" type="xs:int" />
+      <xs:element name="DefaultRMLabelType" type="tns:RMLabelType" />
+      <xs:element name="DefaultRMPrinter" type="xs:int" />
+      <xs:element name="DefaultSECRPrinter" type="xs:int" />
+      <xs:element name="DefaultSTGPrinter" type="xs:int" />
+      <xs:element name="PrinterID" type="xs:int" />
+      <xs:element minOccurs="0" name="PrinterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrinterShortName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" name="SitePrinterArea" type="q2:PrinterArea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SitePrinters" nillable="true" type="tns:SitePrinters" />
+  <xs:simpleType name="RMLabelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SMALL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BIG">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">76</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SMALL_BIG">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">66</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RMLabelType" nillable="true" type="tns:RMLabelType" />
+  <xs:complexType name="BasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="LanguageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicInfo" nillable="true" type="tns:BasicInfo" />
+  <xs:complexType name="AccessInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="AccessValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccessInfo" nillable="true" type="tns:AccessInfo" />
+  <xs:complexType name="ArrayOfUserPermissions">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserPermissions" nillable="true" type="tns:UserPermissions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserPermissions" nillable="true" type="tns:ArrayOfUserPermissions" />
+  <xs:complexType name="UserPermissions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PageIDNumber" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserPermissions" nillable="true" type="tns:UserPermissions" />
+  <xs:simpleType name="TypeMasterData">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MasterData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Staging">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Manufacture">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dispatch">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Inbound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TypeMasterData" nillable="true" type="tns:TypeMasterData" />
+  <xs:complexType name="HandHeldUserPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowDeliveryReassignBatch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AllowToStartMultipleProcessOrderInBulk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AllowToStartMultipleProcessOrderInFilling" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChangeOverExecution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChooseAllSlotDowntime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConfirmPhaseAtAnyTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DispatchAccessValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DispatchPacking" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DispatchPicking" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoBinToBin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoKitting" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoPicking" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoPutAway" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnabelBulkHandling" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnabelFillingHandling" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnableCreateSTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnableManualBatchEntryDuringManufactureMix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FGBinToBin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FGPutAway" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FGStockTransfer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IBCTracking" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KanbanReplenishment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManageRMSamples" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufactureAccessValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufactureQtyEnterField" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarkPackoffCompleted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlantInfo" nillable="true" type="tns:PlantInfo" />
+      <xs:element minOccurs="0" name="ReceiveAccessValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplenishAdditions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplenishPackagingIDH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReprintLabel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnToWarehouse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TPMServiceExecution" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HandHeldUserPermission" nillable="true" type="tns:HandHeldUserPermission" />
+  <xs:complexType name="PlantInfo">
+    <xs:sequence>
+      <xs:element name="BatchDeterminationLogic" type="tns:StagingBatchDeterminationLogic" />
+      <xs:element minOccurs="0" name="ConnectionType" type="tns:ConnectionType" />
+      <xs:element name="EnableBatchScanDuringMixing" type="xs:boolean" />
+      <xs:element name="EnableFullBagPPE" type="xs:boolean" />
+      <xs:element name="EnableInboundOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableKanban" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableMolarMassStaging" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnablePreProcessing" type="xs:boolean" />
+      <xs:element name="EnablePurchaseOrder" type="xs:boolean" />
+      <xs:element name="EnableRecordContainerType" type="xs:boolean" />
+      <xs:element name="EnableSTO" type="xs:boolean" />
+      <xs:element name="EnableSalesOrderReturn" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnabledExternalKitting" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnabledProdcutionDateAlert" type="xs:boolean" />
+      <xs:element name="HasGateManagement" type="xs:boolean" />
+      <xs:element name="HasPalletAndPackPhoto" type="xs:boolean" />
+      <xs:element name="HasQCForReceivedMaterial" type="xs:boolean" />
+      <xs:element name="HasUploadCOA" type="xs:boolean" />
+      <xs:element name="HasVendorQuestionary" type="xs:boolean" />
+      <xs:element name="PickKitProcess" type="tns:StagingProcess" />
+      <xs:element name="PlantDateFormat" nillable="true" type="xs:string" />
+      <xs:element name="PlantTimeFormat" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/iPAS_Service.Site" name="SapAvailabilityStatus" type="q3:SAPStatus" />
+      <xs:element minOccurs="0" name="ShelfLifeAlertValue" type="xs:int" />
+      <xs:element name="ShowCCPRange" type="xs:boolean" />
+      <xs:element name="ShowMaterialCharacters" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlantInfo" nillable="true" type="tns:PlantInfo" />
+  <xs:simpleType name="StagingBatchDeterminationLogic">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TRBased">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RealTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">82</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StagingBatchDeterminationLogic" nillable="true" type="tns:StagingBatchDeterminationLogic" />
+  <xs:simpleType name="ConnectionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SAP">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Oracle">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">79</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Excel">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConnectionType" nillable="true" type="tns:ConnectionType" />
+  <xs:simpleType name="StagingProcess">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PickKitTogether">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PickKitSeperate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StagingProcess" nillable="true" type="tns:StagingProcess" />
+  <xs:complexType name="ArrayOfCompanySites">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanySites" nillable="true" type="tns:CompanySites" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompanySites" nillable="true" type="tns:ArrayOfCompanySites" />
+  <xs:complexType name="CompanySites">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanySites" nillable="true" type="tns:CompanySites" />
+  <xs:complexType name="UserCompleteInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicUserInfo">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AreaID" nillable="true" type="q4:ArrayOfint" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PLineID" nillable="true" type="q5:ArrayOfint" />
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PrinterID" nillable="true" type="q6:ArrayOfint" />
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RoleID" nillable="true" type="q7:ArrayOfint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserCompleteInfo" nillable="true" type="tns:UserCompleteInfo" />
+  <xs:complexType name="BasicUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultSiteAccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LanguageID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfileImage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionID" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserStatus" type="tns:UserLogType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicUserInfo" nillable="true" type="tns:BasicUserInfo" />
+  <xs:simpleType name="UserLogType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Failure">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lock">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">76</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unlock">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">85</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Active">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InActive">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserLogType" nillable="true" type="tns:UserLogType" />
+  <xs:complexType name="DisplayUserInfoFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="PageStartIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="SearchEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchEmployeeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="SortType" nillable="true" type="tns:UserInfoSortOrder" />
+      <xs:element minOccurs="0" name="UserAccountStatus" type="tns:UserLogType" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisplayUserInfoFilter" nillable="true" type="tns:DisplayUserInfoFilter" />
+  <xs:simpleType name="UserInfoSortOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UserName_asc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UserName_desc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EmailId_asc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EmailId_desc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FirstName_asc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FirstName_desc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LastName_asc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LastName_desc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserInfoSortOrder" nillable="true" type="tns:UserInfoSortOrder" />
+  <xs:complexType name="DiaplayUserInfoList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+      <xs:element minOccurs="0" name="UserInfoList" nillable="true" type="tns:ArrayOfDisplayUserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DiaplayUserInfoList" nillable="true" type="tns:DiaplayUserInfoList" />
+  <xs:complexType name="ArrayOfDisplayUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DisplayUserInfo" nillable="true" type="tns:DisplayUserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDisplayUserInfo" nillable="true" type="tns:ArrayOfDisplayUserInfo" />
+  <xs:complexType name="DisplayUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastLoginDate" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfileImage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserAccountStatus" type="tns:UserLogType" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRoles" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisplayUserInfo" nillable="true" type="tns:DisplayUserInfo" />
+  <xs:complexType name="UserStatusInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ByUserID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsAllowToDeleteUserInfo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDownGradeUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFromPlantLevel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserStatus" type="tns:UserLogType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserStatusInfo" nillable="true" type="tns:UserStatusInfo" />
+  <xs:complexType name="ArrayOfLanguages">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Languages" nillable="true" type="tns:Languages" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLanguages" nillable="true" type="tns:ArrayOfLanguages" />
+  <xs:complexType name="Languages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LanguageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LanguageID" type="xs:int" />
+      <xs:element minOccurs="0" name="LanguageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LanguageValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Languages" nillable="true" type="tns:Languages" />
+  <xs:complexType name="SiteInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="RegionID" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteInformation" nillable="true" type="tns:SiteInformation" />
+  <xs:complexType name="ArrayOfPlantLevelDepartmentRoles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlantLevelDepartmentRoles" nillable="true" type="tns:PlantLevelDepartmentRoles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlantLevelDepartmentRoles" nillable="true" type="tns:ArrayOfPlantLevelDepartmentRoles" />
+  <xs:complexType name="PlantLevelDepartmentRoles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepartmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="DepartmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:ArrayOfPlantLevelRoles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlantLevelDepartmentRoles" nillable="true" type="tns:PlantLevelDepartmentRoles" />
+  <xs:complexType name="ArrayOfPlantLevelRoles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlantLevelRoles" nillable="true" type="tns:PlantLevelRoles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlantLevelRoles" nillable="true" type="tns:ArrayOfPlantLevelRoles" />
+  <xs:complexType name="PlantLevelRoles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleID" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRole" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlantLevelRoles" nillable="true" type="tns:PlantLevelRoles" />
+  <xs:complexType name="ArrayOfUserProductionLines">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserProductionLines" nillable="true" type="tns:UserProductionLines" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserProductionLines" nillable="true" type="tns:ArrayOfUserProductionLines" />
+  <xs:complexType name="UserProductionLines">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProductionID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductionLineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserPLine" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserProductionLines" nillable="true" type="tns:UserProductionLines" />
+  <xs:complexType name="ArrayOfDispatchAreaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DispatchAreaInfo" nillable="true" type="tns:DispatchAreaInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDispatchAreaInfo" nillable="true" type="tns:ArrayOfDispatchAreaInfo" />
+  <xs:complexType name="DispatchAreaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaID" type="xs:int" />
+      <xs:element minOccurs="0" name="KeyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeyValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserAreaID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DispatchAreaInfo" nillable="true" type="tns:DispatchAreaInfo" />
+  <xs:complexType name="UserFingerPrintInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicUserInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DepartmentRoleList" nillable="true" type="tns:ArrayOfPlantLevelDepartmentRoles" />
+          <xs:element minOccurs="0" name="FingerPrintVersionNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsLastLoggedAreaLogOut" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsUserHasProductionLine" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastLoginAreaType" type="tns:AreaType" />
+          <xs:element minOccurs="0" name="ProfileImageByte" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="TodayLoggedHours" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UserPermission" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserFingerPrintInfo" nillable="true" type="tns:UserFingerPrintInfo" />
+  <xs:simpleType name="AreaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Other_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Receiving_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">82</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Staging_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Manufacture_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dispatch_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Office">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">79</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Break_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">66</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="No_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AreaType" nillable="true" type="tns:AreaType" />
+  <xs:complexType name="UserFingerPrintInfoList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+      <xs:element minOccurs="0" name="UserInfoList" nillable="true" type="tns:ArrayOfFingerPrintUserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserFingerPrintInfoList" nillable="true" type="tns:UserFingerPrintInfoList" />
+  <xs:complexType name="ArrayOfFingerPrintUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FingerPrintUserInfo" nillable="true" type="tns:FingerPrintUserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFingerPrintUserInfo" nillable="true" type="tns:ArrayOfFingerPrintUserInfo" />
+  <xs:complexType name="FingerPrintUserInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasicInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessLevel" type="tns:AccessLevel" />
+          <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsFingerPrintUpload" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProfileImage" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FingerPrintUserInfo" nillable="true" type="tns:FingerPrintUserInfo" />
+  <xs:complexType name="FingerPrintInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FingerPrintInfo" nillable="true" type="tns:FingerPrintInfo" />
+  <xs:complexType name="UserAreaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AreaType" type="tns:AreaType" />
+      <xs:element minOccurs="0" name="DispatchAreaID" type="xs:int" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PLineIDList" nillable="true" type="q8:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAreaInfo" nillable="true" type="tns:UserAreaInfo" />
+  <xs:complexType name="WorkShopInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsLastLoginAreaLogOut" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastLoginProductionLine" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WorkShopNameList" nillable="true" type="q9:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkShopInfo" nillable="true" type="tns:WorkShopInfo" />
+  <xs:complexType name="ArrayOfAreaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AreaInfo" nillable="true" type="tns:AreaInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAreaInfo" nillable="true" type="tns:ArrayOfAreaInfo" />
+  <xs:complexType name="AreaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaID" type="xs:int" />
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLastLoginAreaLogOut" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastLoginArea" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AreaInfo" nillable="true" type="tns:AreaInfo" />
+  <xs:complexType name="ArrayOfAttendanceLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttendanceLog" nillable="true" type="tns:AttendanceLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttendanceLog" nillable="true" type="tns:ArrayOfAttendanceLog" />
+  <xs:complexType name="AttendanceLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="AreaId" type="xs:int" />
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeviceId" type="xs:int" />
+      <xs:element minOccurs="0" name="DispatchAreaId" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeId" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeMESName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="EntryType" nillable="true" type="q10:DeviceEntryType" />
+      <xs:element minOccurs="0" name="InOutMode" type="xs:int" />
+      <xs:element minOccurs="0" name="MesEmployeeId" type="xs:int" />
+      <xs:element minOccurs="0" name="PlineId" type="xs:int" />
+      <xs:element minOccurs="0" name="ScanDateInt" type="xs:int" />
+      <xs:element minOccurs="0" name="ScanTimeInt" type="xs:int" />
+      <xs:element minOccurs="0" name="ScannedDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeOfArea" nillable="true" type="tns:AreaType" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/iPAS_Service" minOccurs="0" name="TypeOfDevice" nillable="true" type="q11:DeviceType" />
+      <xs:element minOccurs="0" name="TypeOfSubArea" nillable="true" type="tns:SubAreaType" />
+      <xs:element minOccurs="0" name="WarehouseName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttendanceLog" nillable="true" type="tns:AttendanceLog" />
+  <xs:simpleType name="SubAreaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Root_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">82</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="New_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Group_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">71</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Production_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Warehouse_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">87</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dispatch_Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SubAreaType" nillable="true" type="tns:SubAreaType" />
+  <xs:simpleType name="AttendanceLogType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Failure">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Device">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FTPServer">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Area">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AttendanceLogType" nillable="true" type="tns:AttendanceLogType" />
+  <xs:complexType name="SiteCurrentDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:int" />
+      <xs:element minOccurs="0" name="Month" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteCurrentDate" nillable="true" type="tns:SiteCurrentDate" />
+  <xs:complexType name="DisplayUserAttendanceFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="PageStartIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="SearchArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchEmployeeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchRole" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisplayUserAttendanceFilter" nillable="true" type="tns:DisplayUserAttendanceFilter" />
+  <xs:complexType name="DisplayAttendanceUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttendanceUserInfoList" nillable="true" type="tns:ArrayOfUserAttendanceInfo" />
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisplayAttendanceUserInfo" nillable="true" type="tns:DisplayAttendanceUserInfo" />
+  <xs:complexType name="ArrayOfUserAttendanceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserAttendanceInfo" nillable="true" type="tns:UserAttendanceInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserAttendanceInfo" nillable="true" type="tns:ArrayOfUserAttendanceInfo" />
+  <xs:complexType name="UserAttendanceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmployeeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OnlineTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRole" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAttendanceInfo" nillable="true" type="tns:UserAttendanceInfo" />
+  <xs:complexType name="AttendanceDetailsFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevelID" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="PageStartIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="SearchByArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchByRole" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchEmployeeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchFromDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchToDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttendanceDetailsFilter" nillable="true" type="tns:AttendanceDetailsFilter" />
+  <xs:complexType name="ArrayOfAttendanceDetailsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttendanceDetailsInfo" nillable="true" type="tns:AttendanceDetailsInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttendanceDetailsInfo" nillable="true" type="tns:ArrayOfAttendanceDetailsInfo" />
+  <xs:complexType name="AttendanceDetailsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromDateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSystemLogOut" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OnlineTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToDateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttendanceDetailsInfo" nillable="true" type="tns:AttendanceDetailsInfo" />
+  <xs:complexType name="UserLoginInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaType" type="tns:AreaType" />
+      <xs:element minOccurs="0" name="LoginDate" type="xs:int" />
+      <xs:element minOccurs="0" name="LoginTime" type="xs:int" />
+      <xs:element minOccurs="0" name="LogoutDate" type="xs:int" />
+      <xs:element minOccurs="0" name="LogoutTime" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductionLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserLoginInfo" nillable="true" type="tns:UserLoginInfo" />
+  <xs:complexType name="ArrayOfAutoCompleteUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AutoCompleteUserInfo" nillable="true" type="tns:AutoCompleteUserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAutoCompleteUserInfo" nillable="true" type="tns:ArrayOfAutoCompleteUserInfo" />
+  <xs:complexType name="AutoCompleteUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AutoCompleteUserInfo" nillable="true" type="tns:AutoCompleteUserInfo" />
+  <xs:complexType name="ArrayOfPLineWorkshopInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PLineWorkshopInfo" nillable="true" type="tns:PLineWorkshopInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPLineWorkshopInfo" nillable="true" type="tns:ArrayOfPLineWorkshopInfo" />
+  <xs:complexType name="PLineWorkshopInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PLine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLineID" type="xs:int" />
+      <xs:element minOccurs="0" name="ShiftLength" type="xs:int" />
+      <xs:element minOccurs="0" name="Workshop" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PLineWorkshopInfo" nillable="true" type="tns:PLineWorkshopInfo" />
+  <xs:complexType name="UserLoginInfoFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaTye" type="tns:AreaType" />
+      <xs:element minOccurs="0" name="LoginDate" type="xs:int" />
+      <xs:element minOccurs="0" name="LogoutDate" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserLoginInfoFilter" nillable="true" type="tns:UserLoginInfoFilter" />
+</xs:schema>

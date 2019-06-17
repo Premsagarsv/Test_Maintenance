@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dcd59b76-a296-4620-aff7-1482a3ccf030" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.1.100/iPAS_Service/UserService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserService.xsd" MetadataType="Schema" ID="37bab6f6-b025-4079-a7e4-93569fcf6c64" SourceId="1" SourceUrl="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd3" />
+    <MetadataFile FileName="UserService1.xsd" MetadataType="Schema" ID="c63f4ae9-1e52-4f6c-9db9-c636c42a5415" SourceId="1" SourceUrl="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd4" />
+    <MetadataFile FileName="UserService.wsdl" MetadataType="Wsdl" ID="8c12b3cf-10c4-448e-8e3f-12b7887bab42" SourceId="1" SourceUrl="http://192.168.1.100/iPAS_Service/UserService.svc?wsdl" />
+    <MetadataFile FileName="UserService2.xsd" MetadataType="Schema" ID="c928eafa-096d-4ab0-ac96-153949b32cf9" SourceId="1" SourceUrl="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd6" />
+    <MetadataFile FileName="UserService3.xsd" MetadataType="Schema" ID="38b839a5-76d7-4fdc-bc6c-a3a8b1283d32" SourceId="1" SourceUrl="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd7" />
+    <MetadataFile FileName="UserService4.xsd" MetadataType="Schema" ID="4f973bc0-6d81-47e5-a631-8e46ca017ef9" SourceId="1" SourceUrl="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd8" />
+    <MetadataFile FileName="UserService5.xsd" MetadataType="Schema" ID="0335e5fb-a072-4e61-ace0-1903db61ddf2" SourceId="1" SourceUrl="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd5" />
+    <MetadataFile FileName="UserService.disco" MetadataType="Disco" ID="14185cff-182f-44c4-967e-37f7ea0f21f5" SourceId="1" SourceUrl="http://192.168.1.100/iPAS_Service/UserService.svc?disco" />
+    <MetadataFile FileName="UserService6.xsd" MetadataType="Schema" ID="6bf6f795-3c4e-46b8-bc0e-8011f138630a" SourceId="1" SourceUrl="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserService7.xsd" MetadataType="Schema" ID="4d389558-53c6-4de5-9e97-f766dab1dcfb" SourceId="1" SourceUrl="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserService8.xsd" MetadataType="Schema" ID="bba87fae-1013-44ac-af54-b50f62c9227a" SourceId="1" SourceUrl="http://192.168.1.100/iPAS_Service/UserService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

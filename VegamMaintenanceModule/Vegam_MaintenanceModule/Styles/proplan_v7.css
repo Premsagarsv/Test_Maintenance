@@ -1,0 +1,311 @@
+
+.pro-plan .wrapper-dropdown .dropdown {
+    display: none;
+}
+
+.pro-plan .active.wrapper-dropdown .dropdown {
+    display: block;    
+}
+
+/*campaign button*/
+.btn-violet {
+    color: white;
+    background: #786dd1;
+    border: 1px solid #786dd1;
+}
+
+.ui-sortable-helper {
+    background: gray;
+    color: white;
+    animation-play-state: paused;
+}
+
+.br-green td {
+    border-top: 2px solid green;
+    border-bottom: 2px solid green;
+}
+
+.br-red td {
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+}
+
+.show {
+    display: block !important;
+}
+/*reduce btn size for pro-plan page*/
+.pro-plan .btn-sm {
+    padding: .16rem .70rem;
+}
+
+.pro-plan .dropdown-menu li {
+    width: 100%;
+    display: block;
+    float: left;
+    border-bottom: 1px solid gainsboro;
+}
+
+.pro-plan .dropdown-menu ul {
+    border-bottom: 1px solid gainsboro;
+}
+
+.pro-plan .dropdown-menu {
+    border: 1px solid gainsboro;
+    background: #f9f9f9;
+    min-width: 175px !important;
+    z-index:10041 !important;
+}
+
+    .pro-plan .dropdown-menu li:hover {
+        background: #cdd2d2;
+    }
+
+.modal-backdrop {
+    z-index: 10042;
+}
+
+.modal {
+    z-index: 10043;
+}
+.select2-container {
+    z-index: 100044;
+}
+    .pro-plan .dropdown-menu .arrow-up {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 5px solid #008e3f;
+        font-size: 0;
+        line-height: 0;
+        top: -6px;
+        position: absolute;
+    }
+
+.pro-plan .user-view {
+    border: 2px dotted deepskyblue;
+    border-radius: 5px;
+    margin-top: -2px;
+}
+
+.target-info-block {
+    background-color: #00BFFF;
+    border: 2px solid #87CEFA;
+    width: 16%;
+    margin-top: -1.5%;
+    padding-left: 6px;
+    padding-bottom: 0px;
+    padding-top: 2px;
+    margin-left: 5%;
+}
+
+.no-rightborder-radius {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0
+}
+
+.no-leftborder-radius {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.pro-plan .fa-cog.dropdown-toggle::after {
+    content: none
+}
+
+.pro-plan .fa-sitemap.dropdown-toggle::after {
+    content: none
+}
+
+.pro-plan .fa-save.dropdown-toggle::after {
+    content: none
+}
+
+.pro-plan .table th {
+    font-weight: 500 !important;
+    font-size: 15.2px !important;
+}
+
+.pro-plan .table-side-box-heading {
+    background: #737b84;
+}
+
+.ui-datepicker {
+    position: absolute !important;
+}
+
+.pro-plan .custom-table {
+    border: 1px solid #cdd2d2;
+    border-radius: 5px !important;
+    padding: 2px !important;
+}
+
+    .pro-plan .custom-table th {
+        /*  background: #b4d8f7 !important; */
+        height: 36px;
+        vertical-align: middle;
+        padding-right:3px;
+    }
+
+    .pro-plan .custom-table td {
+        vertical-align: middle;
+        padding-right: 3px;
+    }
+
+        .pro-plan .custom-table td:first-child {
+            padding-right: 10px;
+            padding-left:9px;
+        }
+    .pro-plan .custom-table th:first-child {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .pro-plan tr:nth-child(even) {
+        background: #f1efef;
+    }
+
+    .pro-plan .custom-table tr:nth-child(even) {
+        background: white;
+    }
+
+
+    .pro-plan .custom-table tfoot td {
+        background: white !important
+    }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: gray;
+    opacity: .7;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    color: gray;
+    opacity: .7;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    color: gray;
+    opacity: .7;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: gray;
+    opacity: .7;
+}
+/* handle class for drag and drop */
+.some-handle {
+    height: 10px;
+    background: #dedede;
+    cursor: all-scroll;
+}
+/* 
+ * dragtable
+ *
+ * @Version 1.0.3
+ *
+ * default css
+ *
+ */
+
+
+.dragtable-drag-handle {
+    cursor: move;
+}
+/*##### the dragtable stuff #####*/
+.dragtable-sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    -moz-user-select: none;
+}
+
+    .dragtable-sortable li {
+        margin: 0;
+        padding: 0;
+        float: left;
+        font-size: 1em;
+        background: green !important;
+    }
+
+    .dragtable-sortable th, .dragtable-sortable td {
+        border-left: 0px;
+
+    }
+
+    .dragtable-sortable li:first-child th, .dragtable-sortable li:first-child td {
+        border-left: 1px solid #CCC;
+
+    }
+
+.ui-sortable-helper {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+   
+}
+
+.ui-sortable-placeholder {
+    -moz-box-shadow: 4px 5px 4px #C6C6C6 inset;
+    -webkit-box-shadow: 4px 5px 4px #C6C6C6 inset;
+    box-shadow: 4px 5px 4px #C6C6C6 inset;
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    visibility: visible !important;
+    background: #EFEFEF !important;
+    visibility: visible !important;
+   
+}
+
+    .ui-sortable-placeholder * {
+        opacity: 0.0;
+        visibility: hidden;
+        
+    }
+.dragableTableColumn {
+    min-width: 0 !important;
+}
+/*Floating scrollbar*/
+.float-scroll {
+    overflow: auto;
+    z-index: 9;
+    width:3%;
+    overflow-x: hidden;
+    right: 15px;
+    margin-top: 32px;
+}
+
+.float-scroll-div {
+    color: transparent;   
+    overflow-x: hidden;
+}
+.ui-dialog{
+    z-index:10044 !important;
+}
+/*search block floating*/
+@media screen and (min-width: 769px) {
+    .pro-plan .dynamic-columns .col-lg-2 {
+        width: 14.6%;
+    }
+
+    .pro-plan .dynamic-columns input.col-lg-5 {
+        width: 49% !important;
+        margin-right: .5%;
+        font-size: 12.6px !important;
+    }    
+}
+/*search-block floating*/
+@media only screen and (max-width: 768px) {
+    .target-info-block {       
+        width: 50%;
+        margin-top: -3.5%;       
+    }
+    #spnDynamicGridTableHeader {
+        display:block;
+    }
+}
+@media only screen and (max-width:414px){
+    .pro-plan #btnRequest {
+        margin-top: 5px;
+    }
+}
+

@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SiteService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1590/SiteService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1590/SiteService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1590/SiteService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Site" />
+      <xsd:import schemaLocation="http://localhost:1590/SiteService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" />
+      <xsd:import schemaLocation="http://localhost:1590/SiteService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" />
+      <xsd:import schemaLocation="http://localhost:1590/SiteService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" />
+      <xsd:import schemaLocation="http://localhost:1590/SiteService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISiteService_GetPlantSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlantSettings" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetPlantSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlantSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_InsertSiteInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSiteInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_InsertSiteInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSiteInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_UpdateSiteInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSiteInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_UpdateSiteInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSiteInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_DeleteSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSite" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_DeleteSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSiteForEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteForEdit" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSiteForEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteForEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetTimeZoneList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeZoneList" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetTimeZoneList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeZoneListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetCountryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryList" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetCountryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllSiteInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSiteInfoList" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllSiteInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSiteInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllRegionsForCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRegionsForCompany" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAllRegionsForCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRegionsForCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetUsersForAutoComplete_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForAutoComplete" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetUsersForAutoComplete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForAutoCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_InsertPlantCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPlantCodes" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_InsertPlantCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPlantCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_DeletePlantCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePlantCode" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_DeletePlantCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePlantCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetPlantCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlantCodes" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetPlantCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlantCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_InsertSiteOrderType_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSiteOrderType" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_InsertSiteOrderType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSiteOrderTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_DeleteSiteOrderType_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSiteOrderType" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_DeleteSiteOrderType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSiteOrderTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSiteOrderType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteOrderType" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetSiteOrderType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiteOrderTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAdditionalSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdditionalSettings" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetAdditionalSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdditionalSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_UpdateAdditionalSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAdditionalSettings" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_UpdateAdditionalSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAdditionalSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetEnableModuleForSite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnableModuleForSite" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetEnableModuleForSite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnableModuleForSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetEnableModuleBasedOnTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnableModuleBasedOnTasks" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetEnableModuleBasedOnTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnableModuleBasedOnTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetPlantTechnologyInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlantTechnologyInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetPlantTechnologyInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlantTechnologyInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SetPlantTechnology_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPlantTechnology" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_SetPlantTechnology_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPlantTechnologyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConnection" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_UpdatePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_UpdatePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_InsertOrUpdateConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateConnection" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_InsertOrUpdateConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrUpdateConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_TestSAPConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestSAPConnection" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_TestSAPConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestSAPConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetDefaultConnectionSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefaultConnectionSettings" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_GetDefaultConnectionSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefaultConnectionSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_LoadAllPlantLevelCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAllPlantLevelCategories" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_LoadAllPlantLevelCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAllPlantLevelCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_LoadAllPlantLevelTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAllPlantLevelTasks" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_LoadAllPlantLevelTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAllPlantLevelTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_InsertUpdatePageAccessForPlant_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdatePageAccessForPlant" />
+  </wsdl:message>
+  <wsdl:message name="ISiteService_InsertUpdatePageAccessForPlant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUpdatePageAccessForPlantResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISiteService">
+    <wsdl:operation name="GetPlantSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetPlantSettings" message="tns:ISiteService_GetPlantSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetPlantSettingsResponse" message="tns:ISiteService_GetPlantSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSiteInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/InsertSiteInfo" message="tns:ISiteService_InsertSiteInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/InsertSiteInfoResponse" message="tns:ISiteService_InsertSiteInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSiteInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/UpdateSiteInfo" message="tns:ISiteService_UpdateSiteInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/UpdateSiteInfoResponse" message="tns:ISiteService_UpdateSiteInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/DeleteSite" message="tns:ISiteService_DeleteSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/DeleteSiteResponse" message="tns:ISiteService_DeleteSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteForEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetSiteForEdit" message="tns:ISiteService_GetSiteForEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetSiteForEditResponse" message="tns:ISiteService_GetSiteForEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZoneList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetTimeZoneList" message="tns:ISiteService_GetTimeZoneList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetTimeZoneListResponse" message="tns:ISiteService_GetTimeZoneList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetCountryList" message="tns:ISiteService_GetCountryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetCountryListResponse" message="tns:ISiteService_GetCountryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSiteInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetAllSiteInfoList" message="tns:ISiteService_GetAllSiteInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetAllSiteInfoListResponse" message="tns:ISiteService_GetAllSiteInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegionsForCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetAllRegionsForCompany" message="tns:ISiteService_GetAllRegionsForCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetAllRegionsForCompanyResponse" message="tns:ISiteService_GetAllRegionsForCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForAutoComplete">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetUsersForAutoComplete" message="tns:ISiteService_GetUsersForAutoComplete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetUsersForAutoCompleteResponse" message="tns:ISiteService_GetUsersForAutoComplete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPlantCodes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/InsertPlantCodes" message="tns:ISiteService_InsertPlantCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/InsertPlantCodesResponse" message="tns:ISiteService_InsertPlantCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePlantCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/DeletePlantCode" message="tns:ISiteService_DeletePlantCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/DeletePlantCodeResponse" message="tns:ISiteService_DeletePlantCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlantCodes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetPlantCodes" message="tns:ISiteService_GetPlantCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetPlantCodesResponse" message="tns:ISiteService_GetPlantCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSiteOrderType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/InsertSiteOrderType" message="tns:ISiteService_InsertSiteOrderType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/InsertSiteOrderTypeResponse" message="tns:ISiteService_InsertSiteOrderType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSiteOrderType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/DeleteSiteOrderType" message="tns:ISiteService_DeleteSiteOrderType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/DeleteSiteOrderTypeResponse" message="tns:ISiteService_DeleteSiteOrderType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteOrderType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetSiteOrderType" message="tns:ISiteService_GetSiteOrderType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetSiteOrderTypeResponse" message="tns:ISiteService_GetSiteOrderType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdditionalSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetAdditionalSettings" message="tns:ISiteService_GetAdditionalSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetAdditionalSettingsResponse" message="tns:ISiteService_GetAdditionalSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdditionalSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/UpdateAdditionalSettings" message="tns:ISiteService_UpdateAdditionalSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/UpdateAdditionalSettingsResponse" message="tns:ISiteService_UpdateAdditionalSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnableModuleForSite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetEnableModuleForSite" message="tns:ISiteService_GetEnableModuleForSite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetEnableModuleForSiteResponse" message="tns:ISiteService_GetEnableModuleForSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnableModuleBasedOnTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetEnableModuleBasedOnTasks" message="tns:ISiteService_GetEnableModuleBasedOnTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetEnableModuleBasedOnTasksResponse" message="tns:ISiteService_GetEnableModuleBasedOnTasks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlantTechnologyInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetPlantTechnologyInfo" message="tns:ISiteService_GetPlantTechnologyInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetPlantTechnologyInfoResponse" message="tns:ISiteService_GetPlantTechnologyInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPlantTechnology">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/SetPlantTechnology" message="tns:ISiteService_SetPlantTechnology_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/SetPlantTechnologyResponse" message="tns:ISiteService_SetPlantTechnology_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetConnection" message="tns:ISiteService_GetConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetConnectionResponse" message="tns:ISiteService_GetConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/UpdatePassword" message="tns:ISiteService_UpdatePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/UpdatePasswordResponse" message="tns:ISiteService_UpdatePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/InsertOrUpdateConnection" message="tns:ISiteService_InsertOrUpdateConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/InsertOrUpdateConnectionResponse" message="tns:ISiteService_InsertOrUpdateConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestSAPConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/TestSAPConnection" message="tns:ISiteService_TestSAPConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/TestSAPConnectionResponse" message="tns:ISiteService_TestSAPConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultConnectionSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/GetDefaultConnectionSettings" message="tns:ISiteService_GetDefaultConnectionSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/GetDefaultConnectionSettingsResponse" message="tns:ISiteService_GetDefaultConnectionSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllPlantLevelCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/LoadAllPlantLevelCategories" message="tns:ISiteService_LoadAllPlantLevelCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/LoadAllPlantLevelCategoriesResponse" message="tns:ISiteService_LoadAllPlantLevelCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllPlantLevelTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/LoadAllPlantLevelTasks" message="tns:ISiteService_LoadAllPlantLevelTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/LoadAllPlantLevelTasksResponse" message="tns:ISiteService_LoadAllPlantLevelTasks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdatePageAccessForPlant">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteService/InsertUpdatePageAccessForPlant" message="tns:ISiteService_InsertUpdatePageAccessForPlant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteService/InsertUpdatePageAccessForPlantResponse" message="tns:ISiteService_InsertUpdatePageAccessForPlant_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISiteService" type="tns:ISiteService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPlantSettings">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetPlantSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSiteInfo">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/InsertSiteInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSiteInfo">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/UpdateSiteInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSite">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/DeleteSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteForEdit">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetSiteForEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZoneList">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetTimeZoneList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryList">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetCountryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSiteInfoList">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetAllSiteInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegionsForCompany">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetAllRegionsForCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForAutoComplete">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetUsersForAutoComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPlantCodes">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/InsertPlantCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePlantCode">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/DeletePlantCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlantCodes">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetPlantCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSiteOrderType">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/InsertSiteOrderType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSiteOrderType">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/DeleteSiteOrderType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiteOrderType">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetSiteOrderType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdditionalSettings">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetAdditionalSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdditionalSettings">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/UpdateAdditionalSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnableModuleForSite">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetEnableModuleForSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnableModuleBasedOnTasks">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetEnableModuleBasedOnTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlantTechnologyInfo">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetPlantTechnologyInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPlantTechnology">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/SetPlantTechnology" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConnection">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrUpdateConnection">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/InsertOrUpdateConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestSAPConnection">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/TestSAPConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultConnectionSettings">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/GetDefaultConnectionSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllPlantLevelCategories">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/LoadAllPlantLevelCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllPlantLevelTasks">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/LoadAllPlantLevelTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdatePageAccessForPlant">
+      <soap:operation soapAction="http://tempuri.org/ISiteService/InsertUpdatePageAccessForPlant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SiteService">
+    <wsdl:port name="BasicHttpBinding_ISiteService" binding="tns:BasicHttpBinding_ISiteService">
+      <soap:address location="http://localhost:1590/SiteService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

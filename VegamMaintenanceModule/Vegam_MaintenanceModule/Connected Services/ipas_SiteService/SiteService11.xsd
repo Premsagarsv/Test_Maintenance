@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/iPAS_Service.Site" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Site" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1590/SiteService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" />
+  <xs:import schemaLocation="http://localhost:1590/SiteService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" />
+  <xs:import schemaLocation="http://localhost:1590/SiteService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:1590/SiteService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service" />
+  <xs:import schemaLocation="http://localhost:1590/SiteService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" />
+  <xs:complexType name="PlantSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatchRuleID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="ConnectionType" type="q1:ConnectionType" />
+      <xs:element minOccurs="0" name="ConsiderClientPrinter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ConsiderInternalBatch" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="DefaultLabelSyncDataType" nillable="true" type="q2:LabelSyncDataType" />
+      <xs:element minOccurs="0" name="EnableBillingModule" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableCLPLabel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableConcentrated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableEncodedOrEmptyRMDesc" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableExternalWarehouseModule" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableGHSLabel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableHazardMaterialCheck" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableIMPPO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableJITPO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableMaintenance" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableMolarMass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableOfflineDispatch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableOfflineReceive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnablePLC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnablePickByStorageType" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnablePreProcess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableVegamIOT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableWarehouseModule" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnabledExternalKitting" type="xs:boolean" />
+      <xs:element name="GHSSyncSetting" type="tns:GHSSyncSettingType" />
+      <xs:element minOccurs="0" name="IsEnableDCSIntegration" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableGoodsReceiptModule" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableManufactureModule" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LanguageID" type="xs:int" />
+      <xs:element minOccurs="0" name="PickKitProcess" type="tns:PlantPickKitProcess" />
+      <xs:element minOccurs="0" name="QCDecisionType" type="tns:QCDecisionType" />
+      <xs:element minOccurs="0" name="RMDescriptionDisplayType" type="tns:RMDiscriptionDisplay" />
+      <xs:element minOccurs="0" name="RecordContainerType" type="xs:boolean" />
+      <xs:element name="SapAvailabilityStatus" type="tns:SAPStatus" />
+      <xs:element minOccurs="0" name="SiteDateFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteTimeFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteType" type="tns:SiteType" />
+      <xs:element minOccurs="0" name="TransactionPostingType" type="tns:PostingType" />
+      <xs:element minOccurs="0" name="WarehouseNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlantSettings" nillable="true" type="tns:PlantSettings" />
+  <xs:simpleType name="GHSSyncSettingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SyncFromSAP">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PartialSyncFromSAP">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MaintainManually">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GHSSyncSettingType" nillable="true" type="tns:GHSSyncSettingType" />
+  <xs:simpleType name="PlantPickKitProcess">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Picking_Kitting_Together">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Picking_Kitting_Seperate">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PlantPickKitProcess" nillable="true" type="tns:PlantPickKitProcess" />
+  <xs:simpleType name="QCDecisionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="By_Batch">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">66</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="By_Count">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">67</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="QCDecisionType" nillable="true" type="tns:QCDecisionType" />
+  <xs:simpleType name="RMDiscriptionDisplay">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Every_Where">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RM_LabelOnly">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">82</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RMDiscriptionDisplay" nillable="true" type="tns:RMDiscriptionDisplay" />
+  <xs:simpleType name="SAPStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Down">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Finacial_Close">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SAPStatus" nillable="true" type="tns:SAPStatus" />
+  <xs:simpleType name="SiteType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal_Plant">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Vendor_Plant">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">86</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SiteType" nillable="true" type="tns:SiteType" />
+  <xs:simpleType name="PostingType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Auto_Posting">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Manual_Posting">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PostingType" nillable="true" type="tns:PostingType" />
+  <xs:complexType name="SiteInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LanguageID" type="xs:int" />
+      <xs:element minOccurs="0" name="PlantName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlantSize" type="xs:int" />
+      <xs:element minOccurs="0" name="PostalCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PurchaseOrganization" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Region" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="RegionalUserInfo" nillable="true" type="q3:UserBasicInfo" />
+      <xs:element minOccurs="0" name="ShowMaterialDescription" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SiteType" type="tns:SiteType" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="SiteUserInfo" nillable="true" type="q4:UserBasicInfo" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="SubRegionalUserInfo" nillable="true" type="q5:UserBasicInfo" />
+      <xs:element minOccurs="0" name="TimeFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeZone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WareHouseNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteInfo" nillable="true" type="tns:SiteInfo" />
+  <xs:complexType name="ArrayOfTimeZoneInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeZoneInfo" nillable="true" type="tns:TimeZoneInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeZoneInfo" nillable="true" type="tns:ArrayOfTimeZoneInfo" />
+  <xs:complexType name="TimeZoneInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TimeZoneID" type="xs:int" />
+      <xs:element minOccurs="0" name="TimezoneName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeZoneInfo" nillable="true" type="tns:TimeZoneInfo" />
+  <xs:complexType name="ManageSiteFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="WareHouseNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ManageSiteFilter" nillable="true" type="tns:ManageSiteFilter" />
+  <xs:complexType name="ManageSiteList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ManageSiteInfo" nillable="true" type="tns:ArrayOfManageSiteInfo" />
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ManageSiteList" nillable="true" type="tns:ManageSiteList" />
+  <xs:complexType name="ArrayOfManageSiteInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ManageSiteInfo" nillable="true" type="tns:ManageSiteInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfManageSiteInfo" nillable="true" type="tns:ArrayOfManageSiteInfo" />
+  <xs:complexType name="ManageSiteInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SAPPlantCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteType" type="tns:SiteType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ManageSiteInfo" nillable="true" type="tns:ManageSiteInfo" />
+  <xs:complexType name="CompanyRegionFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/iPAS_Service" base="q6:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CompanyRegionFilter" nillable="true" type="tns:CompanyRegionFilter" />
+  <xs:complexType name="ArrayOfCompanyRegion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyRegion" nillable="true" type="tns:CompanyRegion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompanyRegion" nillable="true" type="tns:ArrayOfCompanyRegion" />
+  <xs:complexType name="CompanyRegion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RegionID" type="xs:int" />
+      <xs:element minOccurs="0" name="RegionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyRegion" nillable="true" type="tns:CompanyRegion" />
+  <xs:complexType name="PlantCodeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPrimary" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PlantCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlantCodeInfo" nillable="true" type="tns:PlantCodeInfo" />
+  <xs:complexType name="ArrayOfPlantCodeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlantCodeInfo" nillable="true" type="tns:PlantCodeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlantCodeInfo" nillable="true" type="tns:ArrayOfPlantCodeInfo" />
+  <xs:complexType name="OrderTypeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OrderTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteOrderType" nillable="true" type="tns:SiteOrderType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderTypeInfo" nillable="true" type="tns:OrderTypeInfo" />
+  <xs:simpleType name="SiteOrderType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BULK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">66</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FILLING">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REWORK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">82</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RELABEL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">76</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INBOUND_DELIVERY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OUTBOUND_DELIVERY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">79</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SALES_ORDER_RETURN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DELIVERY_ORDER">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PURCHASE_ORDER">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SiteOrderType" nillable="true" type="tns:SiteOrderType" />
+  <xs:complexType name="ArrayOfOrderTypeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderTypeInfo" nillable="true" type="tns:OrderTypeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderTypeInfo" nillable="true" type="tns:ArrayOfOrderTypeInfo" />
+  <xs:complexType name="AdditionalFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/iPAS_Service" base="q7:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AdditionalFilter" nillable="true" type="tns:AdditionalFilter" />
+  <xs:complexType name="AdditionalSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DispatchSetting" nillable="true" type="tns:DispatchSettingInfo" />
+      <xs:element minOccurs="0" name="GoodsReceiptSetting" nillable="true" type="tns:GoodsReceiptSettingInfo" />
+      <xs:element minOccurs="0" name="IPASModuleSetting" nillable="true" type="tns:IPASModuleSettingInfo" />
+      <xs:element minOccurs="0" name="LabelPrintingSetting" nillable="true" type="tns:LabelPrintingInfo" />
+      <xs:element minOccurs="0" name="ManufactureSetting" nillable="true" type="tns:ManufactureSettingInfo" />
+      <xs:element minOccurs="0" name="StagingSettings" nillable="true" type="tns:StagingSettingInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalSettings" nillable="true" type="tns:AdditionalSettings" />
+  <xs:complexType name="DispatchSettingInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnableAssembleProcess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnablePickByStorageType" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RecordContainerType" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DispatchSettingInfo" nillable="true" type="tns:DispatchSettingInfo" />
+  <xs:complexType name="GoodsReceiptSettingInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ECOA" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableEncodeMaterialDescription" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableIMPPO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableInboundOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableJITPO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnablePackMaterialSample" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnablePurchaseOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableRawMaterialSample" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableSTOOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableSalesOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGateBasedOnTechnology" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaintainQuestion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ManageGate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaterialDescriptionDisplay" type="tns:RMDiscriptionDisplay" />
+      <xs:element minOccurs="0" name="PalletPackPhoto" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PrintReceivingLabels" type="tns:PrintReceivingLabels" />
+      <xs:element minOccurs="0" name="QC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="QCDecisionType" type="tns:QCDecisionType" />
+      <xs:element minOccurs="0" name="ReceiveWarehouseStock" type="tns:ReceiveWarehouseStock" />
+      <xs:element minOccurs="0" name="RecordContainerType" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowCriticalChar" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GoodsReceiptSettingInfo" nillable="true" type="tns:GoodsReceiptSettingInfo" />
+  <xs:simpleType name="PrintReceivingLabels">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ByPack">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ByPallet">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">76</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PrintReceivingLabels" nillable="true" type="tns:PrintReceivingLabels" />
+  <xs:simpleType name="ReceiveWarehouseStock">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Warehouse">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">87</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BlockedStock">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">66</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReceiveWarehouseStock" nillable="true" type="tns:ReceiveWarehouseStock" />
+  <xs:complexType name="IPASModuleSettingInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatchRuleID" type="xs:int" />
+      <xs:element minOccurs="0" name="BatchRuleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsiderInternalBatch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableBilling" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableDCSIntegration" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableDispatch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableDstore" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableExternalWarehouse" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableGoodsReceipt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableHazardMaterial" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableLabelPrinting" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableManufacturing" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableOfflineDispatch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableOfflineReceive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableOfflineStaging" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableStaging" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableSync" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableVPromax" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableVegamIoT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableVegamMaintenance" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableWarehouseModule" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IPASModuleSettingInfo" nillable="true" type="tns:IPASModuleSettingInfo" />
+  <xs:complexType name="LabelPrintingInfo">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/iPAS_Service.Plant" minOccurs="0" name="DefaultLabelSyncDataType" type="q8:LabelSyncDataType" />
+      <xs:element minOccurs="0" name="GHSSyncSetting" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsEnableBalLabel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableCLPLabeling" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableDispatchLabel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableFGLabel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableFGSampleLabel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableGHSLabelPrinting" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableKitLabel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableLabelPrintSolution" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableRMPallet" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableRMSampleLabel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableSupplierReceipt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableTPMLabel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableTollerFGLabel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableTruckTokenLabel" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LabelPrintingInfo" nillable="true" type="tns:LabelPrintingInfo" />
+  <xs:complexType name="ManufactureSettingInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConsiderBulkIDHProdDateForFeederPO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableCustomerProduct" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableManfBatchScan" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEditFillWeight" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnableAddition" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnablePLC" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsManufactureKStockConversion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPutAwayComplete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowCCPRange" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ManufactureSettingInfo" nillable="true" type="tns:ManufactureSettingInfo" />
+  <xs:complexType name="StagingSettingInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnableBatchTRLogic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableConcentrated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableCrossSiteRMShortage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableIsWarehouseManaged" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableKanban" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableKitExternalWarehouse" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnablePickKitTogether" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnablePreProcessingMaterial" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableProposedBatchByPackSize" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableReceiveKitVerification" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxOrderShowForPicking" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfDaysForDisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="StorageLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StorageType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StagingSettingInfo" nillable="true" type="tns:StagingSettingInfo" />
+  <xs:complexType name="ModuleBasedOnTasks">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/iPAS_Service" base="q9:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConsiderPlantTasks" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ModuleBasedOnTasks" nillable="true" type="tns:ModuleBasedOnTasks" />
+  <xs:complexType name="PlantTechnologyFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/iPAS_Service" base="q10:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+          <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="ShowPlantTechnologyOnly" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PlantTechnologyFilter" nillable="true" type="tns:PlantTechnologyFilter" />
+  <xs:complexType name="PlantTechnologyList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TechnologyInfo" nillable="true" type="tns:ArrayOfPlantTechnology" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlantTechnologyList" nillable="true" type="tns:PlantTechnologyList" />
+  <xs:complexType name="ArrayOfPlantTechnology">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlantTechnology" nillable="true" type="tns:PlantTechnology" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlantTechnology" nillable="true" type="tns:ArrayOfPlantTechnology" />
+  <xs:complexType name="PlantTechnology">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsPlantTechnology" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TechnologyID" type="xs:int" />
+      <xs:element minOccurs="0" name="TechnologyName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlantTechnology" nillable="true" type="tns:PlantTechnology" />
+  <xs:complexType name="ConnectionTypeSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConnectionType" type="tns:ERPConnectionType" />
+      <xs:element minOccurs="0" name="HostName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLabelSAPServer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConnectionTypeSettings" nillable="true" type="tns:ConnectionTypeSettings" />
+  <xs:simpleType name="ERPConnectionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SAP">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Oracle">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">79</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Excel">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ERPConnectionType" nillable="true" type="tns:ERPConnectionType" />
+  <xs:complexType name="ConnectionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Connection1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection10" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection11" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection12" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection13" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection14" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection6" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection7" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection8" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Connection9" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConnectionType" type="tns:ERPConnectionType" />
+      <xs:element minOccurs="0" name="IsLabelSAPServer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PostingType" type="tns:PostingType" />
+      <xs:element minOccurs="0" name="TimeZone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConnectionInfo" nillable="true" type="tns:ConnectionInfo" />
+  <xs:complexType name="ChangePasswordFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsLabelSyncServer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OldPassword" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangePasswordFilter" nillable="true" type="tns:ChangePasswordFilter" />
+  <xs:complexType name="ArrayOfConnectionTypeSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConnectionTypeSettings" nillable="true" type="tns:ConnectionTypeSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConnectionTypeSettings" nillable="true" type="tns:ArrayOfConnectionTypeSettings" />
+  <xs:complexType name="PlantTaskFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/iPAS_Service" base="q11:BasicParam">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalSetting" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PageCategory" nillable="true" type="xs:string" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/iPAS_Service.Company" minOccurs="0" name="TaskModule" type="q12:TaskModule" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PlantTaskFilter" nillable="true" type="tns:PlantTaskFilter" />
+  <xs:complexType name="ArrayOfPlantLevelTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlantLevelTask" nillable="true" type="tns:PlantLevelTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlantLevelTask" nillable="true" type="tns:ArrayOfPlantLevelTask" />
+  <xs:complexType name="PlantLevelTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsSelectedPage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PageIDNum" type="xs:int" />
+      <xs:element minOccurs="0" name="PageName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlantLevelTask" nillable="true" type="tns:PlantLevelTask" />
+  <xs:complexType name="PlantTaskBasicParam">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PlantTaskFilter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsRemovePage" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PageIDNum" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PlantTaskBasicParam" nillable="true" type="tns:PlantTaskBasicParam" />
+</xs:schema>

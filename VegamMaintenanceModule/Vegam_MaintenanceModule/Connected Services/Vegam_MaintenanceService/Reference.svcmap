@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="69921db0-1ab1-443a-92a4-f525afcf4fdc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9093/MaintenanceService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MaintenanceService.xsd" MetadataType="Schema" ID="d2eaeede-d318-4901-9295-ad8395893371" SourceId="1" SourceUrl="http://localhost:9093/MaintenanceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="MaintenanceService1.xsd" MetadataType="Schema" ID="c055d5fa-2f39-4b5a-a2b7-4efd3143cdf3" SourceId="1" SourceUrl="http://localhost:9093/MaintenanceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MaintenanceService2.xsd" MetadataType="Schema" ID="1c25efe3-7a98-442b-aa94-9e1e22935681" SourceId="1" SourceUrl="http://localhost:9093/MaintenanceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MaintenanceService3.xsd" MetadataType="Schema" ID="836c9744-5cbe-4097-9221-af3bae799564" SourceId="1" SourceUrl="http://localhost:9093/MaintenanceService.svc?xsd=xsd4" />
+    <MetadataFile FileName="MaintenanceService.disco" MetadataType="Disco" ID="ace5ac88-2742-4b75-b184-140cf5183abe" SourceId="1" SourceUrl="http://localhost:9093/MaintenanceService.svc?disco" />
+    <MetadataFile FileName="MaintenanceService.wsdl" MetadataType="Wsdl" ID="8befa0ec-2948-4c58-9e63-7728ed8e7cf3" SourceId="1" SourceUrl="http://localhost:9093/MaintenanceService.svc?wsdl" />
+    <MetadataFile FileName="MaintenanceService4.xsd" MetadataType="Schema" ID="36b2a51c-1366-4a79-bdb7-280c4bc04cb8" SourceId="1" SourceUrl="http://localhost:9093/MaintenanceService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

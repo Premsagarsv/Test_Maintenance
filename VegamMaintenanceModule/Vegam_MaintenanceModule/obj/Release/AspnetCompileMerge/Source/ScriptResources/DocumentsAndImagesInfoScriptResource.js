@@ -1,0 +1,25 @@
+﻿var languageResource = {};
+languageResource.resMsg_Error = "Error: ";
+languageResource.resMsg_Ok = "Ok";
+languageResource.resMsg_FailedToLoadDocumentAndImageInfo = "Failed to load documents photos and videos";
+languageResource.resMsg_DeleteImageOrVideoConfrim = "Are you sure you want to delete this photo/video ?";
+languageResource.resMsg_Confirm = "Confirm";
+languageResource.resMsg_Cancel = "Cancel";
+languageResource.resMsg_PleaseSelect = "Please select";
+languageResource.resMsg_DeleteManualDocumentConfrim = "Are you sure you want to delete this manual document ?";
+languageResource.resMsg_DeleteSpecificationDocumentConfirm = "Are you sure you want to delete this specification document?";
+languageResource.resMsg_ImageVideoInfoDoesNotExist = "Photo/Video doen't exist";
+languageResource.resMsg_DocumentDoesNotExist = "Document doesn't exist";
+languageResource.resMsg_FailedToImageVideoInfo = "Failed to delete photo/video";
+languageResource.resMsg_FailedToDeleteDocument = "Failed to delete documnet";
+languageResource.resMsg_InvalidFormat = "File format not supported";
+languageResource.resMsg_FaliedToUpload = "Failed to upload ";
+languageResource.resMsg_FailedToDownloadImageOrVideo = "Failed to download photo/video";
+languageResource.resMsg_FailedToDownloadDocument = "Failed to download document";
+languageResource.resMsg_InvalidFormatSelectDocumnetFile = "File format not supported, Please select document files.";
+languageResource.resMsg_FaliedToDocumentUpload = "Failed to load document info.";
+languageResource.resMsg_FailedToBindEquipmentModelList = "Failed to bind equipment model list";
+languageResource.resMsg_FailedToBindEquipmentList = "Failed to bind equipment list";
+
+languageResource.resMsg_Equipment = "Equipment";
+languageResource.resMsg_EquipmentModel = "Equipment Model";

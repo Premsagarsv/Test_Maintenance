@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/iPAS_Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/iPAS_Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nayan-pc:8085/iPAS_Service/UserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://nayan-pc:8085/iPAS_Service/UserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" />
+  <xs:simpleType name="DeviceEntryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OUT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IN_OUT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DeviceEntryType" nillable="true" type="tns:DeviceEntryType" />
+  <xs:simpleType name="DeviceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SelectAll" />
+      <xs:enumeration value="FINGER_PRINT" />
+      <xs:enumeration value="CAMERA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DeviceType" nillable="true" type="tns:DeviceType" />
+  <xs:complexType name="ArrayOfDeviceTransactionLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeviceTransactionLog" nillable="true" type="tns:DeviceTransactionLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeviceTransactionLog" nillable="true" type="tns:ArrayOfDeviceTransactionLog" />
+  <xs:complexType name="DeviceTransactionLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeviceID" type="xs:int" />
+      <xs:element minOccurs="0" name="LogMessage" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/iPAS_Service.UserInfo" minOccurs="0" name="LogType" type="q1:AttendanceLogType" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalRecordCount" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdatedRecordCount" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeviceTransactionLog" nillable="true" type="tns:DeviceTransactionLog" />
+</xs:schema>

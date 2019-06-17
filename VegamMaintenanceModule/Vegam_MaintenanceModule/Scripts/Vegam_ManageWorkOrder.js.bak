@@ -1,0 +1,460 @@
+﻿jQuery.ManageWorkOrderNameSpace = jQuery.ManageWorkOrderNameSpace || {};
+jQuery.ManageWorkOrderNameSpace.PagerData = jQuery.ManageWorkOrderNameSpace.PagerData || {};
+jQuery.ManageWorkOrderNameSpace.ScheduleTypeList = { 'Schedule': 'S', 'WorkOrder': 'W', 'Inspection': 'I' };
+jQuery.ManageWorkOrderNameSpace.WorkOrderStatusInfo = jQuery.ManageWorkOrderNameSpace.WorkOrderStatusInfo || {};
+jQuery.ManageWorkOrderNameSpace.ScheduleTime = 0;
+
+var workGroupInfoViewModel = {
+    AssigneeUserName: ko.observable(''),
+    ReportToUserName: ko.observable('')
+};
+
+function LoadManageWorkOrderInfo(gridProperties, manageWorkOrderAccess, newWorkOrderHTML, editWorkOrderHTML, deleteWorkOrderHTML, basePath) {
+    jQuery.ManageWorkOrderNameSpace.PagerData = gridProperties.PagerData;
+    jQuery.ManageWorkOrderNameSpace.ManageWorkOrderAccess = manageWorkOrderAccess;
+    jQuery.ManageWorkOrderNameSpace.EditWorkOrderHTML = editWorkOrderHTML;
+    jQuery.ManageWorkOrderNameSpace.DeleteWorkOrderHTML = deleteWorkOrderHTML;
+    jQuery.ManageWorkOrderNameSpace.BasePath = basePath;
+
+    if (gridProperties.PagerData.AccessLevelID != 5)
+        jQuery.DynamicGridNamespace.FeatureAdditionalInfo = 'ADMINUSER';
+    else
+        jQuery.DynamicGridNamespace.FeatureAdditionalInfo = 'PLANTUSER';
+
+    GetWorkOrderStatusType("MAINT_WORKORDERSTATUS");
+    bindDatePickerAndSelectDefaultDate();
+    LoadDynamicGridBasicInfo(gridProperties);
+    ManageSiteMapUrl();
+    ko.applyBindings(workGroupInfoViewModel, document.getElementById('divWorkGroupInfo'));
+
+    jQuery("#divColumnAndGroupBy").append(newWorkOrderHTML);
+}
+
+function BindFieldIDVariables() {
+    jQuery.ManageWorkOrderNameSpace.FieldIDInfo = {};
+    ko.utils.arrayForEach(dynamicGridViewModel.GridFieldList(), function (columnInfo) {
+        if (columnInfo.FieldIdentifier != undefined) {
+            if (columnInfo.FieldIdentifier.toLowerCase() == "fscheduleid")
+                jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleID = columnInfo.FieldID;
+            else if (columnInfo.FieldIdentifier.toLowerCase() == "fwork_orderid")
+                jQuery.ManageWorkOrderNameSpace.FieldIDInfo.WorkOrderID = columnInfo.FieldID;
+            else if (columnInfo.FieldIdentifier.toLowerCase() == "fworkgroup")
+                jQuery.ManageWorkOrderNameSpace.FieldIDInfo.WorkGroupID = columnInfo.FieldID;
+            else if (columnInfo.FieldIdentifier.toLowerCase() == "fassignee")
+                jQuery.ManageWorkOrderNameSpace.FieldIDInfo.AssigneeID = columnInfo.FieldID;
+            else if (columnInfo.FieldIdentifier.toLowerCase() == "freportedto")
+                jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ReportToID = columnInfo.FieldID;
+            else if (columnInfo.FieldIdentifier.toLowerCase() == "fstatuskey")
+                jQuery.ManageWorkOrderNameSpace.FieldIDInfo.StatusKeyID = columnInfo.FieldID;
+            else if (columnInfo.FieldIdentifier.toLowerCase() == "maint_workorderstatus")
+                jQuery.ManageWorkOrderNameSpace.FieldIDInfo.WorkOrderStatusID = columnInfo.FieldID;
+            else if (columnInfo.FieldIdentifier != undefined && columnInfo.FieldIdentifier.toLowerCase() == "userid")
+                jQuery.ManageWorkOrderNameSpace.FieldIDInfo.UserIDFieldID = columnInfo.FieldID;
+            else if (columnInfo.FieldIdentifier != undefined && columnInfo.FieldIdentifier.toLowerCase() == "scheduletype")
+                jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleType = columnInfo.FieldID;
+            else if (columnInfo.FieldIdentifier != undefined && columnInfo.FieldIdentifier.toLowerCase() == "scheduletime")
+                jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleTime = columnInfo.FieldID;
+            else if (columnInfo.FieldIdentifier != undefined && columnInfo.FieldIdentifier.toLowerCase() == "scheduletime_num")
+                jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleTimeNum = columnInfo.FieldID;
+        }
+    });
+}
+
+function CustomGridContentBind(rowInfo, rowIndex, columnInfo) {
+    var fieldID = columnInfo.FieldID;
+    var fieldIdentifier = columnInfo.FieldIdentifier;
+    var content = "";
+
+    if (fieldIdentifier.toLowerCase() == "action") {
+        //var actionContent = '';
+        //if (jQuery.ManageWorkOrderNameSpace.ManageWorkOrderAccess.toLowerCase() != "read_only") {
+        //    actionContent = jQuery.ManageWorkOrderNameSpace.EditWorkOrderHTML;
+        //    actionContent += jQuery.ManageWorkOrderNameSpace.DeleteWorkOrderHTML;
+        //}
+
+        //if (actionContent.length > 0) {
+        //    content = "<div class='relative pull-xs-left'><button class='btn btn-sm btn-defult dropdown-toggle' type='button'></button>";
+        //    content += "<div class='absolute col-xs-12 p-x-0 dropdown-menu hide' style='z-index: 1020; overflow-y: auto; max-height: 200px; overflow-x: hidden; min-width: 190px !important; left:42px;top:3px;'>";
+        //    content += "<ul class='p-a-0' style='list-style: none;'>";
+        //    content += actionContent;
+        //    content += "</ul></div>";
+        //    content += "</div>";
+        //}
+        //else {
+        //    content = "<div class='relative pull-xs-left'><button class='btn btn-sm btn-defult dropdown-toggle' type='button' disabled='disabled'></button></div>";
+        //}
+        content += "<div class='center-align'>";
+        content += jQuery.ManageWorkOrderNameSpace.EditWorkOrderHTML;
+        if (rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleType] == "S") {
+            content += "<i class='fa fa-trash-o red big tiny-leftmargin tiny-rightmargin v-icon  cursor-pointer icon-muted '></i>";
+        }
+        else {
+            content += jQuery.ManageWorkOrderNameSpace.DeleteWorkOrderHTML;
+        }
+        content += "</div>";
+    }
+    else if (fieldIdentifier.toLowerCase() == "fworkgroup") {
+        var assigneeInfo = rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.AssigneeID];
+        var reportToInfo = rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ReportToID];
+        if (assigneeInfo != "" || reportToInfo != "") {
+            content = "<span class='pull-xs-left nowrap'><i class='fa fa-info-circle blue font-big tiny-rightmargin' data-placement='left' onmouseover='ShowWorkGroupInfo(this,\"" + assigneeInfo + "\",\"" + reportToInfo + "\");return false;' onmouseout='HideWorkGroupInfo(this);return false;'/>" + "<span>" + rowInfo[fieldID] + "</span></span>";
+        }
+        else {
+            content = rowInfo[fieldID];
+        }
+    }
+    else if (fieldIdentifier.toLowerCase() == "maint_workorderstatus") {
+        if (jQuery.ManageWorkOrderNameSpace.FieldIDInfo.WorkOrderStatusID != undefined && rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.WorkOrderStatusID] != undefined) {
+            var status = rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.StatusKeyID];
+            var statusDisplayName = jQuery.ManageWorkOrderNameSpace.WorkOrderStatusInfo[status] == undefined ? '' : jQuery.ManageWorkOrderNameSpace.WorkOrderStatusInfo[status].DisplayName;
+            content = "<span class='pover' data-placement='top'  data-content='" + statusDisplayName + "' style='cursor: pointer'>" + rowInfo[fieldID] + "</span>";
+        }
+        else {
+            content = rowInfo[fieldID];
+        }
+    }
+    else if (fieldIdentifier.toLowerCase() == "scheduletime") {
+        var scheduleTime;
+        if (rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleTime] != undefined && rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleTime] != "")
+            scheduleTime = rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleTime];
+        else
+            scheduleTime = languageResource.resMsg_SelectScheduleTime;
+        content = "<div><label class='font-small' name='scheduletime'>" + scheduleTime + "</label><i class='fa fa-pencil font-big blue tiny-leftmargin cursor-pointer tiny-rightmargin' onclick='UpdateScheduleStartTime(this);return false;'></i></div>";
+    }
+
+    jQuery(".td-center").closest("td").addClass("center-align");
+    return content;
+}
+
+function GetCustomFilters(gridContentFilter) {
+    if (jQuery.DynamicGridNamespace.FeatureAdditionalInfo == 'PLANTUSER') {
+        var userIDField = {};
+        userIDField.FieldID = jQuery.ManageWorkOrderNameSpace.FieldIDInfo.UserIDFieldID;
+        userIDField.FilterValueList = [];
+        userIDField.FilterValueList.push(jQuery.ManageWorkOrderNameSpace.PagerData.UserID);
+        gridContentFilter.GridFilteredFieldInfoValueList.push(userIDField);
+    }
+}
+
+function AddNewWorkOrder() {
+    window.location.href = jQuery.ManageWorkOrderNameSpace.BasePath + "/Preventive/MaintenanceSchedule.aspx?id=" + jQuery.ManageWorkOrderNameSpace.PagerData.SiteID+"&isworkorder=true";
+}
+
+function EditWorkOrderInfo(editCtl) {
+    var rowInfo = ko.dataFor(jQuery(editCtl).closest("tr")[0]);
+    var scheduleID = rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleID];
+    var workOrderID = rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.WorkOrderID];
+    var scheduleType = rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleType];
+    window.location.href = jQuery.ManageWorkOrderNameSpace.BasePath + "/Preventive/MaintenanceSchedule.aspx?id=" + jQuery.ManageWorkOrderNameSpace.PagerData.SiteID + "&maintscheduleid=" + scheduleID + "&isworkorder=true&workorderid=" + workOrderID + "&scheduletype=" + scheduleType;
+}
+
+function DeleteWorkOrderInfoConfirm(deleteCtl) {
+    var rowInfo = ko.dataFor(jQuery(deleteCtl).closest("tr")[0]);
+    var scheduleID = rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleID];
+
+    jQuery("#alertMessage").removeClass("text-danger");
+    jQuery("#alertMessage").html(languageResource.resMsg_DeleteWorkOrderConfirm);
+    jQuery("#confirmModal").dialog({
+        zIndex: 1060,
+        closeOnEscape: false,
+        open: function (event, ui) {
+            jQuery(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+            jQuery(".ui-widget-overlay").css('z-index', '10043');
+        },
+        modal: true,
+        buttons: [
+            {
+                text: languageResource.resMsg_Confirm,
+                click: function () {
+                    jQuery("#confirmModal").dialog("close");
+                    DeleteWorkOrderInfo(scheduleID);
+                }
+            },
+            {
+                text: languageResource.resMsg_Cancel,
+                click: function () {
+
+                    jQuery("#confirmModal").dialog("close");
+                    isTrue = false;
+                }
+            }
+        ]
+    });
+}
+
+function DeleteWorkOrderInfo(scheduleID) {
+    var filterInfo = {};
+    filterInfo.SiteID = jQuery.ManageWorkOrderNameSpace.PagerData.SiteID;
+    filterInfo.UserID = jQuery.ManageWorkOrderNameSpace.PagerData.UserID;
+    filterInfo.MaintScheduleID = scheduleID;
+    filterInfo.MaintScheduleType = jQuery.ManageWorkOrderNameSpace.ScheduleTypeList.WorkOrder.charCodeAt();
+
+    jQuery.ajax({
+        type: "POST",
+        url: jQuery.ManageWorkOrderNameSpace.PagerData.ServicePath + "/Vegam_MaintenanceService.asmx/DeleteMaintenanceInfo",
+        data: JSON.stringify({ filterInfo: filterInfo }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (json) {
+            if (json.d != undefined && json.d != null) {
+                if (json.d > 0) {
+                    ReLoadGridContent();
+                }
+                else if (json.d == -1) {
+                    ShowErrorMessagePopUp(languageResource.resMsg_WorkOrderIsStartedDeleteNotPossible, true);
+                }
+            }
+            else {
+                ShowErrorMessagePopUp(languageResource.resMsg_FailedToDeleteWorkOrder, true);
+            }
+        },
+        error: function (request, error) {
+            var msg;
+            if (request.responseText != "") {
+                var errorMsg = jQuery.parseJSON(request.responseText);
+                if (errorMsg != undefined && errorMsg != null && errorMsg.Message != undefined && errorMsg.Message != null)
+                    msg = languageResource.resMsg_Error + errorMsg.Message;
+                else
+                    msg = languageResource.resMsg_Error + languageResource.resMsg_FailedToDeleteWorkOrder;
+            }
+            else {
+                msg = languageResource.resMsg_Error + languageResource.resMsg_FailedToDeleteWorkOrder;
+            }
+            ShowErrorMessagePopUp(msg, true);
+        },
+    });
+}
+
+function ShowWorkGroupInfo(ctlInfo, assigneeInfo, reportToInfo) {
+    workGroupInfoViewModel.AssigneeUserName(assigneeInfo);
+    workGroupInfoViewModel.ReportToUserName(reportToInfo);
+
+    jQuery('.popover').remove();
+    jQuery(ctlInfo).popover({
+        html: true,
+        trigger: "manual",
+        content: function () {
+            return jQuery('.pop-content').html();
+        }
+    });
+    jQuery(ctlInfo).popover("show");
+}
+
+function HideWorkGroupInfo(ctlInfo) {
+    jQuery(ctlInfo).popover("hide");
+}
+
+function ShowErrorMessagePopUp(msg, isError) {
+    if (isError == true || isError == undefined)
+        jQuery("#alertMessage").addClass("text-danger")
+    else
+        jQuery("#alertMessage").removeClass("text-danger")
+    jQuery("#alertMessage").html(msg);
+    jQuery("#confirmModal").dialog({
+        modal: true,
+        buttons: [
+            {
+                text: languageResource.resMsg_Ok,
+                click: function () {
+                    jQuery("#confirmModal").dialog("close");
+                }
+            }
+        ]
+    });
+}
+
+function GetWorkOrderStatusType(enumType) {   
+    var basicParam = {};
+    basicParam.SiteID = jQuery.ManageWorkOrderNameSpace.PagerData.SiteID;
+    basicParam.UserID = jQuery.ManageWorkOrderNameSpace.PagerData.UserID;
+
+    jQuery.ajax({
+        type: "POST",
+        url: jQuery.ManageWorkOrderNameSpace.PagerData.ServicePath + "/Vegam_MaintenanceService.asmx/GetEnumInfoList",
+        data: JSON.stringify({ basicParam: basicParam, EnumType: enumType}),
+        dataType: 'json',
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            if (data.d !== null) {
+                ko.utils.arrayForEach(data.d, function (statusInfo) {
+                    var statusTypeInfo = {};
+                    statusTypeInfo.DisplayName = statusInfo.DisplayName;
+                    statusTypeInfo.ImageName = statusInfo.ImageName;
+                    statusTypeInfo.TypeValue = statusInfo.TypeValue;
+                    jQuery.ManageWorkOrderNameSpace.WorkOrderStatusInfo[statusInfo.TypeValue] = statusTypeInfo;
+                });
+            } else {
+                ShowErrorMessage(LanguageResource.resMsg_FailedToLoadWorkOrderStatusTypeInfo);
+            }
+        },
+        error: function (request, error) {
+            if (request.responseText != "") {
+                var errorMsg = jQuery.parseJSON(request.responseText);
+                if (errorMsg !== undefined && errorMsg !== null && errorMsg.Message !== undefined && errorMsg.Message !== null)
+                    ShowErrorMessage(LanguageResource.resMsg_Error + errorMsg.Message);
+                else
+                    ShowErrorMessage(LanguageResource.resMsg_FailedToLoadWorkOrderStatusTypeInfo);
+            }
+            else {
+                ShowErrorMessage(LanguageResource.resMsg_FailedToLoadWorkOrderStatusTypeInfo);
+            }
+        }
+    });
+}
+
+function ManageSiteMapUrl() {
+    var scheduleURL = jQuery.ManageWorkOrderNameSpace.BasePath + "/ManufactureIndex.aspx?id=" + jQuery.ManageWorkOrderNameSpace.PagerData.SiteID;
+
+    jQuery("#lnkAdminTab,#A1").attr("isSetDefault", "false");
+    jQuery("#lnkAdminTab").attr("href", scheduleURL); // Set herf value
+    jQuery("#A1").attr("href", scheduleURL); // Set herf value
+}
+
+function UpdateScheduleStartTime(ctrl) {
+    var rowInfo = ko.dataFor(jQuery(ctrl).closest("tr")[0]);
+    var timeInt = rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleTimeNum];
+    jQuery.ManageWorkOrderNameSpace.ScheduleTime = timeInt;
+    jQuery("#txtScheduleTime").val(ConvertSiteDateTimeToTimePickerFormat(timeInt));
+
+    jQuery("#btnUpdateStartTime").unbind("click");
+    jQuery("#btnUpdateStartTime").bind("click", function () { UpdateWorkOrderScheduleTime(ctrl); return false; });
+    jQuery("#divUpdateStartTimeModal").modal("show");
+}
+
+function ConvertSiteDateTimeToTimePickerFormat(timeString) {
+    if (timeString > 0) {
+        var hour = parseInt(timeString.substr(0, 2));
+        var minute = timeString.substr(2, 2);
+        if (jQuery.ManageWorkOrderNameSpace.PagerData.PlantTimeFormat.indexOf('tt') !== -1) {
+            if (hour >= 12) {
+                if (hour > 12) hour -= 12;
+                if (hour < 10) hour = "0" + hour;
+                return hour + ":" + minute + " PM";
+            }
+            else {
+                if (hour == 0) hour = 12;
+                if (hour < 10) hour = "0" + hour;
+                return hour + ":" + minute + " AM";
+            }
+        }
+        else {
+            return hour + ":" + minute;
+        }
+    }
+    else
+        return "";
+}
+
+function bindDatePickerAndSelectDefaultDate() {
+    if (jQuery.ManageWorkOrderNameSpace.PagerData.PlantTimeFormat.indexOf('tt') !== -1) {
+        jQuery("#txtScheduleTime").timepicker({
+            minutes: {
+                starts: 0,
+                ends: 59,
+                interval: 1
+            },
+            amPmText: ['AM', 'PM'],
+            defaultTime: "00:00",
+            showPeriod: true,
+            showPeriodLabels: true,
+            showMinutesLeadingZero: false,
+            onSelect: function (time, inst) {
+                jQuery.ManageWorkOrderNameSpace.ScheduleTime=ConvertTimePickerFormatToInt(time);
+            }
+        });
+    }
+    else {
+        jQuery("#txtScheduleTime").timepicker({
+            hours: {
+                starts: 0,
+                ends: 23
+            },
+            minutes: {
+                starts: 0,
+                ends: 59,
+                interval: 1
+            },
+
+            defaultTime: "00:00",
+            showPeriodLabels: false,
+            showMinutesLeadingZero: false
+        });
+    }
+
+    jQuery("#txtScheduleTime").keydown(function () {
+        return false;
+    });
+}
+
+function ConvertTimePickerFormatToInt(timeString) {
+    if (timeString != undefined && timeString != "") {
+        var hour = parseInt(timeString.substr(0, 2));
+        var minute = timeString.substr(3, 2);
+        if (jQuery.ManageWorkOrderNameSpace.PagerData.PlantTimeFormat.indexOf('tt') !== -1) {
+            var amPMText = timeString.substr(timeString.indexOf(' ') + 1, 2);
+            if (amPMText == "AM") {
+                if (hour == 12) hour = 0;
+                return hour + "" + minute + "00";
+            }
+            else {
+                if (hour < 12) hour += 12;
+                return hour + "" + minute + "00";
+            }
+        }
+        else {
+            return hour + "" + minute + "00";
+        }
+    }
+    else
+        return 0;
+}
+
+function UpdateWorkOrderScheduleTime(ctrl) {
+    var rowInfo = ko.dataFor(jQuery(ctrl).closest("tr")[0]);
+    var workOrderID = rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.WorkOrderID];
+
+    var filterInfo = {};
+    filterInfo.SiteID = jQuery.ManageWorkOrderNameSpace.PagerData.SiteID;
+    filterInfo.UserID = jQuery.ManageWorkOrderNameSpace.PagerData.UserID;
+    filterInfo.WorkOrderID = workOrderID;
+    filterInfo.ScheduleTime = jQuery.ManageWorkOrderNameSpace.ScheduleTime;
+    if (filterInfo.ScheduleTime > 0) {
+        jQuery.ajax({
+            type: "POST",
+            url: jQuery.ManageWorkOrderNameSpace.PagerData.ServicePath + "/Vegam_MaintenanceService.asmx/UpdateMaintWorkOrderScheduleTime",
+            data: JSON.stringify({ filterInfo: filterInfo }),
+            contentType: "application/json; charset=utf-8",
+            datatype: 'json',
+            success: function (json) {
+                if (json != undefined && json.d != undefined && json.d == true) {
+                    var scheduleTimecolumnIndex = -1;
+                    jQuery("#tblDynamicGrid th").each(function (thIndex) {
+                        if (jQuery(this).attr("fieldid") == jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleTime)
+                            scheduleTimecolumnIndex = thIndex;
+                    });
+                    var siteTimeString = ConvertSiteDateTimeToTimePickerFormat(filterInfo.ScheduleTime);
+                    jQuery(ctrl).closest("tr").find("td:eq(" + scheduleTimecolumnIndex + ") label[name='scheduletime']").html(siteTimeString);
+                    rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleTime] = siteTimeString;
+                    rowInfo[jQuery.ManageWorkOrderNameSpace.FieldIDInfo.ScheduleTimeNum] = filterInfo.ScheduleTime;
+                    jQuery("#divUpdateStartTimeModal").modal("hide");
+                }
+                else {
+                    jQuery("#spnUpdateStartTimeModalErrorMessage").text(languageResource.resMsg_FailedToUpdateWorkOrderScheduleTime);
+                }
+            },
+            error: function (request, error) {
+                var msg = languageResource.resMsg_FailedToUpdateWorkOrderScheduleTime;
+                var errorMessage = languageResource.resMsg_Error + msg;
+                if (request.responseText != "") {
+                    var errorMsg = jQuery.parseJSON(request.responseText);
+                    if (errorMsg != undefined && errorMsg != null && errorMsg.Message != undefined && errorMsg.Message != null)
+                        errorMessage = languageResource.resMsg_Error + errorMsg.Message;
+                }
+                jQuery("#spnUpdateStartTimeModalErrorMessage").text(errorMessage);
+            }
+        });
+    }
+    else {
+        jQuery("#spnUpdateStartTimeModalErrorMessage").text(languageResource.resMsg_SelectWorkOrderScheduleTime);
+    }
+}
